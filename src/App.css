@@ -149,6 +149,18 @@ body {
   border-color: var(--accent-green);
 }
 
+.cv-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.cv-btn:hover {
+  background: rgba(0, 255, 65, 0.1);
+  color: var(--accent-green);
+}
+
 .hero-image-wrapper {
   position: relative;
   flex: 0 0 400px;

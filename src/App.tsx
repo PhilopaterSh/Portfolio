@@ -126,7 +126,7 @@ function App() {
             </div>
             <div className="hero-btns-row">
               <a href="#contact" className="main-cta">Initiate Contact</a>
-              <a href="#experience" className="secondary-cta">View Experience</a>
+              <a href="/CV_Philopater.pdf" target="_blank" className="secondary-cta cv-btn">Download CV</a>
             </div>
           </div>
           <div className="hero-image-wrapper">
