@@ -1,7 +1,7 @@
 import './App.css'
 import profileImg from './assets/profile.png'
 
-function App() {
+function App() { 
   const experiences = [
     {
       company: "Digital Pioneers",
