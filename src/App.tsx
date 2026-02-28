@@ -211,7 +211,7 @@ function App() {
           </div>
           <div className="exp-list">
             {experiences.map((exp: any, i) => (
-              <div key={i} className={`exp-card ${exp.isBB ? 'bb-card' : ''}`}>
+              <div key={i} className="exp-card">
                 <div className="exp-sidebar">
                   <span className="exp-year">{exp.period}</span>
                 </div>

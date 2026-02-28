@@ -378,18 +378,6 @@ body {
 .exp-highlights { color: var(--text-secondary); font-size: 0.95rem; padding-left: 18px; }
 .exp-highlights li { margin-bottom: 8px; }
 
-.bb-card {
-  border-left: 4px solid #f2994a;
-}
-
-.bb-card:hover {
-  border-color: #f2994a;
-}
-
-.bb-card .company-name {
-  color: #f2994a;
-}
-
 /* Projects Grid */
 .projects-grid {
   display: grid;
