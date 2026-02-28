@@ -4,6 +4,7 @@ import profileImg from './assets/profile.png'
 function App() { 
   const experiences = [
     {
+<<<<<<< HEAD
       company: "Digilians - الرواد الرقميون",
       period: "Dec 2025 – Present",
       role: "Cybersecurity Specialized Professional Diploma (Internship)",
@@ -32,10 +33,32 @@ function App() {
         "Conducted independent reconnaissance and exploitation on assigned live targets.",
         "Discovered and documented real-world vulnerabilities and prepared professional, submission-ready bug reports.",
         "Refined penetration testing techniques in a professional environment at Al-Bohouth, Cairo."
+=======
+      company: "Digital Pioneers",
+      period: "Dec 2025 – Sep 2026",
+      role: "Participant",
+      highlights: [
+        "Selected for a nationally sponsored scholarship in collaboration with the Egyptian Military Academy and global partners (Google, AWS, Microsoft, Cisco, etc.).",
+        "Completed a 9-month intensive diploma emphasizing penetration testing, vulnerability analysis, and system hardening.",
+        "Developed expertise in security frameworks aligned with international standards.",
+        "Applied SMART goals and Agile methodologies to manage final project deliverables using tools like Notion and Excel."
+      ]
+    },
+    {
+      company: "YAT Learning Centers",
+      period: "Feb 2024 – Sep 2025",
+      role: "Technical Trainer in DECI Program",
+      highlights: [
+        "Mentored and trained 100+ students (ages 12-17) in the Digital Egypt Cubs Initiative (DECI).",
+        "Cultivated a 'Problem-Solving Mindset' by teaching students to deconstruct complex technical issues before coding.",
+        "Successfully increased the overall technical awareness of participants by over 30%.",
+        "Adapted complex security concepts into age-appropriate content for high engagement."
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
       ]
     },
     {
       company: "National Telecommunication Institute (NTI)",
+<<<<<<< HEAD
       period: "Feb 2025 – May 2025",
       role: "Ethical Hacking & Penetration Testing (EME Program)",
       highlights: [
@@ -61,11 +84,21 @@ function App() {
       highlights: [
         "Offering specialized cybersecurity services and technical support to diverse clients.",
         "Performing targeted vulnerability assessments and providing actionable security reports. (Asyut, Egypt)"
+=======
+      period: "Feb – May 2025",
+      role: "Penetration Testing Intern",
+      highlights: [
+        "Participated in an intensive 288-hour program covering web, network, mobile PT, and system hardening.",
+        "Gained hands-on experience with Nmap, Burp Suite, Metasploit, and Wireshark in simulated attack scenarios.",
+        "Developed Python scripts for network packet manipulation and web exploitation automation.",
+        "Strengthened knowledge in Windows AD security and Linux administration."
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
       ]
     },
     {
       company: "Digital Egypt Pioneers Initiative (DEPI)",
       period: "Apr – Oct 2024",
+<<<<<<< HEAD
       role: "Vulnerability Analyst / Penetration Tester",
       highlights: [
         "Executed comprehensive vulnerability assessments on complex systems using TryHackMe, HackTheBox, and PortSwigger.",
@@ -91,6 +124,13 @@ function App() {
       highlights: [
         "Gained hands-on experience in IT infrastructure, including server management and router/switch configurations.",
         "Assisted in the Data Center and Network department to understand operational roles and security setups. (Asyut, Egypt)"
+=======
+      role: "Vulnerability Analyst Intern",
+      highlights: [
+        "Conducted vulnerability scanning on VMs and external systems using Nessus and OpenVAS.",
+        "Performed authorized PT on platforms like PortSwigger Academy, TryHackMe, and Hack The Box.",
+        "Exploited vulnerabilities including SQLi, XSS, and CSRF using Metasploit and Burp Suite to understand remediation."
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
       ]
     }
   ];
@@ -118,10 +158,14 @@ function App() {
 
   const certs = [
     { name: "ECIH v2 (Certified Incident Handler)", date: "2024" },
+<<<<<<< HEAD
     { name: "Red Hat System Administration - I", date: "Nov 2023" },
     { name: "Understanding Machine Learning", date: "2024" },
     { name: "Play It Safe: Manage Security Risks", date: "2024" },
     { name: "Introduction to Cybersecurity", date: "2024" },
+=======
+    { name: "Red Hat System Administration I & II", date: "Nov 2023" },
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
     { name: "Web App & Network Penetration Testing", date: "Nov 2023" },
     { name: "eLearnSecurity Junior PT (eJPT v1)", date: "Aug 2023" },
     { name: "OWASP Top 10 (Web)", date: "July 2023" },
@@ -132,16 +176,28 @@ function App() {
   ];
 
   const technicalSkills = [
+<<<<<<< HEAD
     { category: "Web Security", items: ["OWASP Top 10", "SQLi", "XSS", "SSRF", "LFI/RFI", "Bug Bounty"] },
     { category: "Testing & Audit", items: ["Network PT", "Vulnerability Assessment", "Burp Suite", "Metasploit", "Nmap"] },
     { category: "Cloud & OS", items: ["Cloud Security", "Red Hat", "Kali Linux", "Windows Server", "AD Hardening"] },
     { category: "Automation", items: ["Python", "Go", "Bash Scripting", "SQL", "Security Automation"] },
     { category: "Networking", items: ["TCP/IP", "DNS", "Traffic Analysis", "Wireshark", "Hardening"] }
+=======
+    { category: "Web Security", items: ["OWASP Top 10", "SQLi", "XSS", "SSRF", "LFI/RFI", "Root Cause Analysis"] },
+    { category: "Testing & Audit", items: ["Network PT", "Vulnerability Assessment", "Burp Suite", "Metasploit", "Nmap"] },
+    { category: "OS & Hardening", items: ["Red Hat", "Kali Linux", "Windows Server", "AD Security", "System Hardening"] },
+    { category: "Automation", items: ["Python", "Go", "PowerShell", "Bash Scripting", "API Integration"] },
+    { category: "Networking", items: ["TCP/IP", "DNS", "HTTP/HTTPS", "Traffic Analysis", "Wireshark"] }
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
   ];
 
   const softSkills = [
     "Analytical Thinking", "Problem-Solving Under Pressure", "Self-Learning", 
+<<<<<<< HEAD
     "Technical Communication", "Teamwork & Collaboration", "Design Thinking"
+=======
+    "Technical Communication", "Teamwork & Collaboration", "Time Management"
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
   ];
 
   return (
@@ -149,7 +205,11 @@ function App() {
       <div className="background-glow"></div>
       
       <nav className="nav-container">
+<<<<<<< HEAD
         <div className="nav-logo">PhilopaterSh<span className="cursor">_</span></div>
+=======
+        <div className="nav-logo">P.SHENOUDA<span className="cursor">_</span></div>
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
         <div className="nav-links">
           <a href="#about">ABOUT</a>
           <a href="#experience">EXPERIENCE</a>
@@ -162,6 +222,7 @@ function App() {
       <header className="hero-section">
         <div className="hero-content">
           <div className="hero-text">
+<<<<<<< HEAD
             <h2 className="hero-subtitle">Penetration Tester | Cybersecurity Engineer</h2>
             <h1 className="hero-title">Philopater Shenouda</h1>
             <p className="hero-description">
@@ -174,6 +235,19 @@ function App() {
               <a href="https://github.com/PhilopaterSh" target="_blank" className="social-pill">GitHub</a>
               <a href="https://philopatersh.my.canva.site/" target="_blank" className="social-pill">Portfolio</a>
               <a href="https://x.com/PhilopaterSh" target="_blank" className="social-pill">X / Twitter</a>
+=======
+            <h2 className="hero-subtitle">Junior Penetration Tester</h2>
+            <h1 className="hero-title">Philopater Shenouda Sedkiy</h1>
+            <p className="hero-description">
+              Information Technology graduate specializing in <strong>Vulnerability Assessment</strong>, 
+              <strong>Red Teaming</strong>, and <strong>Security Automation</strong>. 
+              Proven track record in delivering actionable vulnerability reports.
+            </p>
+            <div className="social-pill-container">
+              <a href="https://linkedin.com/in/philopater-shenouda" target="_blank" className="social-pill">LinkedIn</a>
+              <a href="https://github.com/PhilopaterSh" target="_blank" className="social-pill">GitHub</a>
+              <a href="https://medium.com/@PhilopaterSh" target="_blank" className="social-pill">Medium</a>
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
             </div>
             <div className="hero-btns-row">
               <a href="#contact" className="main-cta">Initiate Contact</a>
@@ -196,10 +270,23 @@ function App() {
           <div className="about-grid">
             <div className="about-text">
               <p>
+<<<<<<< HEAD
                 As an aspiring penetration tester and vulnerability analyst, I focus on identifying security flaws responsibly. 
                 My goal is to help organizations reduce their attack surfaces through thorough testing and clear remediation insights. 
                 I am continuously learning and evolving within the realm of cybersecurity and network engineering.
               </p>
+=======
+                As a freelance security researcher, I conduct deep-dive assessments and deliver structured reports. 
+                My background includes intensive training at NTI and DEPI, and mentoring 100+ students in 
+                cybersecurity awareness. I am passionate about building security labs and continuous 
+                professional development in the Red Teaming space.
+              </p>
+              <div className="edu-card mini">
+                <h4>Education</h4>
+                <p>Bachelor of Information Technology | EELU | GPA 3.08/4</p>
+                <p><strong>Languages:</strong> Arabic (Native) | English (Conversational)</p>
+              </div>
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
             </div>
           </div>
         </section>
@@ -210,8 +297,13 @@ function App() {
             <h2>Professional Experience</h2>
           </div>
           <div className="exp-list">
+<<<<<<< HEAD
             {experiences.map((exp: any, i) => (
               <div key={i} className={`exp-card ${exp.isBB ? 'bb-card' : ''}`}>
+=======
+            {experiences.map((exp, i) => (
+              <div key={i} className="exp-card">
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
                 <div className="exp-sidebar">
                   <span className="exp-year">{exp.period}</span>
                 </div>
@@ -219,7 +311,11 @@ function App() {
                   <h3>{exp.role}</h3>
                   <h4 className="company-name">{exp.company}</h4>
                   <ul className="exp-highlights">
+<<<<<<< HEAD
                     {exp.highlights.map((h: string, j: number) => <li key={j}>{h}</li>)}
+=======
+                    {exp.highlights.map((h, j) => <li key={j}>{h}</li>)}
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
                   </ul>
                 </div>
               </div>
@@ -227,6 +323,7 @@ function App() {
           </div>
         </section>
 
+<<<<<<< HEAD
         <section id="education" className="content-section">
           <div className="section-header">
             <span className="section-num">03</span>
@@ -263,6 +360,11 @@ function App() {
         <section id="projects" className="content-section">
           <div className="section-header">
             <span className="section-num">04</span>
+=======
+        <section id="projects" className="content-section">
+          <div className="section-header">
+            <span className="section-num">03</span>
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
             <h2>Projects & Tools</h2>
           </div>
           <div className="projects-grid">
@@ -277,6 +379,32 @@ function App() {
           </div>
         </section>
 
+<<<<<<< HEAD
+=======
+        <section id="skills" className="content-section">
+          <div className="section-header">
+            <span className="section-num">04</span>
+            <h2>Technical Expertise</h2>
+          </div>
+          <div className="skills-grid">
+            {technicalSkills.map((group, i) => (
+              <div key={i} className="skill-group">
+                <h4>{group.category}</h4>
+                <div className="skills-tags">
+                  {group.items.map((s, j) => <span key={j} className="skill-tag">{s}</span>)}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="soft-skills-container" style={{marginTop: '40px'}}>
+            <h4 style={{marginBottom: '15px', fontSize: '0.9rem', color: '#888'}}>SOFT SKILLS</h4>
+            <div className="skills-tags">
+              {softSkills.map((s, i) => <span key={i} className="skill-tag soft">{s}</span>)}
+            </div>
+          </div>
+        </section>
+
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
         <section id="certs" className="content-section">
           <div className="section-header">
             <span className="section-num">05</span>
@@ -291,6 +419,7 @@ function App() {
             ))}
           </div>
         </section>
+<<<<<<< HEAD
 
         <section id="skills" className="content-section">
           <div className="section-header">
@@ -334,6 +463,8 @@ function App() {
             </div>
           </div>
         </section>
+=======
+>>>>>>> 0e171b1d54c9a0304d2e6530d42dbc8c926ab93c
       </main>
 
       <footer id="contact" className="footer-section">
