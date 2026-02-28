@@ -322,15 +322,18 @@ function App() {
           </div>
         </section>
 
-        <section className="content-section mini-section">
+        <section id="languages" className="content-section mini-section">
           <div className="section-header">
             <span className="section-num">07</span>
             <h2>Languages</h2>
           </div>
-          <div className="languages-grid">
-            <div className="lang-item">
-              <h4>Languages</h4>
-              <p>Arabic (Native) | English (Conversational)</p>
+          <div className="exp-list">
+            <div className="exp-card">
+              <div className="exp-main" style={{padding: '10px 0'}}>
+                <p style={{fontSize: '1.2rem', color: 'var(--text-primary)', fontWeight: '500'}}>
+                  Arabic (Native) | English (Conversational)
+                </p>
+              </div>
             </div>
           </div>
         </section>
