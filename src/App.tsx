@@ -172,7 +172,6 @@ function App() {
             <div className="social-pill-container">
               <a href="https://linkedin.com/in/philopatershenouda" target="_blank" className="social-pill">LinkedIn</a>
               <a href="https://github.com/PhilopaterSh" target="_blank" className="social-pill">GitHub</a>
-              <a href="https://philopatersh.my.canva.site/" target="_blank" className="social-pill">Portfolio</a>
               <a href="https://x.com/PhilopaterSh" target="_blank" className="social-pill">X / Twitter</a>
               <a href="https://medium.com/@PhilopaterSh" target="_blank" className="social-pill">Medium</a>
             </div>
