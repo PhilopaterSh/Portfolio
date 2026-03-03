@@ -1,7 +1,41 @@
+import { useState, useEffect } from 'react'
 import './App.css'
 import profileImg from './assets/profile.png'
 
+// Import Education Logos
+import eeluLogo from '../public/Education/eelu.png'
+import digiliansLogo from '../public/Education/digilians.jpg'
+
+// Import Testimonials
+import scandeImg from '../public/Testimonials/scande.png'
+import img3 from '../public/Testimonials/3.png'
+import img4 from '../public/Testimonials/4.png'
+import ss1 from '../public/Testimonials/ss1.png'
+import ss2 from '../public/Testimonials/ss2.png'
+import ss3 from '../public/Testimonials/ss3.png'
+import ss4 from '../public/Testimonials/ss4.png'
+
 function App() { 
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const testimonialImages = [
+    scandeImg,
+    img3,
+    img4,
+    ss1,
+    ss2,
+    ss3,
+    ss4
+  ];
+
+  // Auto-slide logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonialImages.length);
+    }, 4000); // تغيير الصورة كل 4 ثوانٍ
+    return () => clearInterval(timer);
+  }, [testimonialImages.length]);
+
   const experiences = [
     {
       company: "Digilians - الرواد الرقميون",
@@ -154,6 +188,7 @@ function App() {
           <a href="#about">ABOUT</a>
           <a href="#experience">EXPERIENCE</a>
           <a href="#projects">PROJECTS</a>
+          <a href="#testimonials">TESTIMONIALS</a>
           <a href="#skills">SKILLS</a>
           <a href="#contact" className="nav-cta">GET IN TOUCH</a>
         </div>
@@ -236,6 +271,7 @@ function App() {
             <div className="exp-card">
               <div className="exp-sidebar">
                 <span className="exp-year">2020 – 2024</span>
+                <img src={eeluLogo} alt="EELU Logo" style={{width: '60px', marginTop: '15px', borderRadius: '8px'}} />
               </div>
               <div className="exp-main">
                 <h3>Bachelor of Information Technology</h3>
@@ -248,6 +284,7 @@ function App() {
             <div className="exp-card">
               <div className="exp-sidebar">
                 <span className="exp-year">Dec 2025</span>
+                <img src={digiliansLogo} alt="Digilians Logo" style={{width: '60px', marginTop: '15px', borderRadius: '8px'}} />
               </div>
               <div className="exp-main">
                 <h3>Professional Diploma in Cybersecurity Specialized</h3>
@@ -277,9 +314,39 @@ function App() {
           </div>
         </section>
 
-        <section id="certs" className="content-section">
+        <section id="testimonials" className="content-section">
           <div className="section-header">
             <span className="section-num">05</span>
+            <h2>Testimonials</h2>
+          </div>
+          <div className="testimonial-slider-container">
+            <div 
+              className="slider-track" 
+              style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+            >
+              {testimonialImages.map((img, i) => (
+                <div key={i} className="slider-item">
+                  <img src={img} alt={`Testimonial ${i + 1}`} className="slider-img" />
+                </div>
+              ))}
+            </div>
+            
+            {/* Dots for navigation */}
+            <div className="slider-dots">
+              {testimonialImages.map((_, i) => (
+                <button 
+                  key={i} 
+                  className={`dot ${i === currentTestimonial ? 'active' : ''}`}
+                  onClick={() => setCurrentTestimonial(i)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="certs" className="content-section">
+          <div className="section-header">
+            <span className="section-num">06</span>
             <h2>Certifications</h2>
           </div>
           <div className="certs-grid">
