@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import profileImg from './assets/profile.png'
+import profileImg from './assets/Profile.jpg'
 
 // Import Education Logos
 import eeluLogo from '../public/Education/eelu.png'
