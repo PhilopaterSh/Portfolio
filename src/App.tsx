@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import profileImg from './assets/Profile.jpg'
+import profileImg from './assets/profile.png'
 
 // Import Education Logos
 import eeluLogo from '../public/Education/eelu.png'
@@ -14,6 +14,14 @@ import ss1 from '../public/Testimonials/ss1.png'
 import ss2 from '../public/Testimonials/ss2.png'
 import ss3 from '../public/Testimonials/ss3.png'
 import ss4 from '../public/Testimonials/ss4.png'
+
+// Import Professional Experience Logos
+import asorcLogo from '../public/Professional Experience/asorc.jpg'
+import deciLogo from '../public/Professional Experience/deci.png'
+import depiLogo from '../public/Professional Experience/depi.png'
+import fortressLogo from '../public/Professional Experience/digital_fortress.jpg'
+import ntiLogo from '../public/Professional Experience/nti.png'
+import yatLogo from '../public/Professional Experience/yat.png'
 
 function App() { 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -41,6 +49,7 @@ function App() {
       company: "Digilians - الرواد الرقميون",
       period: "Dec 2025 – Present",
       role: "Cybersecurity Specialized Professional Diploma (Internship)",
+      image: digiliansLogo,
       highlights: [
         "Engaged in a nationally sponsored, fully funded cybersecurity diploma delivered in collaboration with the Egyptian Military Academy and leading global technology partners.",
         "Aligning academic training with real-world industry requirements through a 9-month intensive program.",
@@ -62,6 +71,7 @@ function App() {
       company: "Digital Fortress EG",
       period: "Aug 2025",
       role: "Internship Trainee",
+      image: fortressLogo,
       highlights: [
         "Conducted independent reconnaissance and exploitation on assigned live targets.",
         "Discovered and documented real-world vulnerabilities and prepared professional, submission-ready bug reports.",
@@ -72,6 +82,7 @@ function App() {
       company: "National Telecommunication Institute (NTI)",
       period: "Feb 2025 – May 2025",
       role: "Ethical Hacking & Penetration Testing (EME Program)",
+      image: ntiLogo,
       highlights: [
         "Participated in an intensive 288-hour technical program covering web, network, mobile PT, and Red Hat Linux.",
         "Hands-on experience with Nmap, Burp Suite, Metasploit, and Wireshark in advanced labs.",
@@ -101,6 +112,7 @@ function App() {
       company: "Digital Egypt Pioneers Initiative (DEPI)",
       period: "Apr – Oct 2024",
       role: "Vulnerability Analyst / Penetration Tester",
+      image: depiLogo,
       highlights: [
         "Executed comprehensive vulnerability assessments on complex systems using TryHackMe, HackTheBox, and PortSwigger.",
         "Spearheaded team projects during graduation internship, coordinating efforts for innovative security solutions.",
@@ -111,6 +123,7 @@ function App() {
       company: "YAT Learning Centers",
       period: "Aug 2024 – Jan 2026",
       role: "Instructor / Technical Trainer (DECI Program)",
+      image: yatLogo,
       highlights: [
         "Mentored and trained participants in the Digital Egypt Cubs Initiative (DECI), focusing on Design Thinking and Cybersecurity.",
         "Simplified complex security concepts and networking fundamentals for young learners.",
@@ -122,6 +135,7 @@ function App() {
       company: "ASORC - Assiut Oil Refining Company",
       period: "Sep 2022",
       role: "IT & Network Trainee",
+      image: asorcLogo,
       highlights: [
         "Gained hands-on experience in IT infrastructure, including server management and router/switch configurations.",
         "Assisted in the Data Center and Network department to understand operational roles and security setups. (Asyut, Egypt)"
@@ -249,6 +263,13 @@ function App() {
               <div key={i} className="exp-card">
                 <div className="exp-sidebar">
                   <span className="exp-year">{exp.period}</span>
+                  {exp.image && (
+                    <img 
+                      src={exp.image} 
+                      alt="Logo" 
+                      style={{width: '60px', marginTop: '15px', borderRadius: '8px', display: 'block'}} 
+                    />
+                  )}
                 </div>
                 <div className="exp-main">
                   <h3>{exp.role}</h3>
@@ -271,7 +292,11 @@ function App() {
             <div className="exp-card">
               <div className="exp-sidebar">
                 <span className="exp-year">2020 – 2024</span>
-                <img src={eeluLogo} alt="EELU Logo" style={{width: '60px', marginTop: '15px', borderRadius: '8px'}} />
+                <img 
+                  src={eeluLogo} 
+                  alt="EELU Logo" 
+                  style={{width: '60px', marginTop: '15px', borderRadius: '8px', display: 'block'}} 
+                />
               </div>
               <div className="exp-main">
                 <h3>Bachelor of Information Technology</h3>
@@ -284,7 +309,11 @@ function App() {
             <div className="exp-card">
               <div className="exp-sidebar">
                 <span className="exp-year">Dec 2025</span>
-                <img src={digiliansLogo} alt="Digilians Logo" style={{width: '60px', marginTop: '15px', borderRadius: '8px'}} />
+                <img 
+                  src={digiliansLogo} 
+                  alt="Digilians Logo" 
+                  style={{width: '60px', marginTop: '15px', borderRadius: '8px', display: 'block'}} 
+                />
               </div>
               <div className="exp-main">
                 <h3>Professional Diploma in Cybersecurity Specialized</h3>
