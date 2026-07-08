@@ -1,28 +1,24 @@
-import { useState, useEffect } from "react";
-import { useTheme } from "../ThemeContext";
+import { useState, useMemo } from "react";
+import { calculateEntropy } from "../utils/passwordEntropy";
 
 interface PasswordEntropyLabProps {
   password: string;
   setPassword: (pwd: string) => void;
 }
 
-const calculateEntropy = (pwd: string) => {
-  if (!pwd) return 0;
-  let poolSize = 0;
-  if (/[a-z]/.test(pwd)) poolSize += 26;
-  if (/[A-Z]/.test(pwd)) poolSize += 26;
-  if (/[0-9]/.test(pwd)) poolSize += 10;
-  if (/[^a-zA-Z0-9]/.test(pwd)) poolSize += 32;
-  const result = pwd.length * Math.log2(poolSize);
-  return parseFloat(result.toFixed(2));
+const strengthForEntropy = (e: number): { strength: string; color: string } => {
+  if (e === 0) return { strength: "Empty", color: "#555" };
+  if (e < 28) return { strength: "Very Weak", color: "#ff4d4d" };
+  if (e < 36) return { strength: "Weak", color: "#ffa500" };
+  if (e < 60) return { strength: "Moderate", color: "#ffff00" };
+  if (e < 128) return { strength: "Strong", color: "#00ff41" };
+  return { strength: "Very Strong", color: "#00d4ff" };
 };
 
 const PasswordEntropyLab = ({ password, setPassword }: PasswordEntropyLabProps) => {
-  const { theme } = useTheme();
-  const [entropy, setEntropy] = useState(0);
-  const [strength, setStrength] = useState("");
-  const [color, setColor] = useState("#555");
   const [copyStatus, setCopyStatus] = useState<"IDLE" | "COPIED" | "FAILED">("IDLE");
+  const entropy = useMemo(() => calculateEntropy(password), [password]);
+  const { strength, color } = useMemo(() => strengthForEntropy(entropy), [entropy]);
 
   const generateSecurePassword = () => {
     const length = 16;
@@ -66,30 +62,6 @@ const PasswordEntropyLab = ({ password, setPassword }: PasswordEntropyLabProps) 
       setTimeout(() => setCopyStatus("IDLE"), 2000);
     }
   };
-
-  useEffect(() => {
-    const e = calculateEntropy(password);
-    setEntropy(e);
-    if (e === 0) {
-      setStrength("Empty");
-      setColor("#555");
-    } else if (e < 28) {
-      setStrength("Very Weak");
-      setColor("#ff4d4d");
-    } else if (e < 36) {
-      setStrength("Weak");
-      setColor("#ffa500");
-    } else if (e < 60) {
-      setStrength("Moderate");
-      setColor("#ffff00");
-    } else if (e < 128) {
-      setStrength("Strong");
-      setColor("#00ff41");
-    } else {
-      setStrength("Very Strong");
-      setColor("#00d4ff");
-    }
-  }, [password]);
 
   return (
     <div className="awareness-card">

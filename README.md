@@ -145,6 +145,21 @@ To create an optimized production build:
 npm run build
 ```
 
+### Testing
+
+```bash
+npm run test        # run once (CI)
+npm run test:watch  # watch mode
+```
+
+### Spec-Driven Development
+
+This project uses [Spec Kit](https://github.com/github/spec-kit) for new
+feature work. See `.specify/memory/constitution.md` for the project's core
+principles, and use the `/speckit-specify` → `/speckit-plan` →
+`/speckit-tasks` → `/speckit-implement` flow in Claude Code when adding
+features.
+
 ---
 
 ## 👨‍💻 About the Developer

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useTheme } from "../ThemeContext";
 
 interface LocationData {
   ip: string;
@@ -13,7 +12,6 @@ interface LocationData {
 }
 
 const NetworkTrace = () => {
-  const { theme } = useTheme();
   const [locationData, setLocationData] = useState<LocationData | null>(null);
   const [loadingLocation, setLoadingLocation] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
