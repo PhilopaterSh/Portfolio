@@ -15,12 +15,19 @@ const ContactFooter = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setFormStatus("error");
+      setFormError("CONFIG_MISSING: EMAILJS ENV VARS NOT SET (see .env.example).");
+      setTimeout(() => setFormStatus("idle"), 5000);
+      return;
+    }
+
     setFormStatus("sending");
     setFormError("");
-
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_bqjdi3j";
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_os0aogs";
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "lqh0BTAatZozitAj3";
 
     emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
       .then(
