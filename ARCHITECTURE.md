@@ -208,6 +208,16 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.7 Tooling: Git, Tests, CI, Spec Kit (July 2026)
+- **Version control:** Initialized the git repository (it previously had no `.git` history despite README instructions referencing `git clone`).
+- **Duplicate cleanup:** Removed a fully duplicated `Portfolio-main/Portfolio-main/` directory (a zip-extraction artifact) that mirrored the entire project.
+- **Testing:** Added Vitest + React Testing Library. `calculateEntropy` extracted from `PasswordEntropyLab.tsx` into `src/utils/passwordEntropy.ts` with unit tests; added component tests for `PasswordEntropyLab` and `ThemeContext`. `npm run test` / `npm run test:watch` added.
+- **Refactor:** `PasswordEntropyLab.tsx` derives entropy/strength/color via `useMemo` instead of `useState` + `useEffect`, fixing a `react-hooks/set-state-in-effect` lint error and removing an unnecessary render pass.
+- **Lint fixes:** Removed dead `useTheme()` calls in `NetworkTrace.tsx` and `PasswordEntropyLab.tsx` (destructured `theme` was never used).
+- **CI:** Added `.github/workflows/ci.yml` running lint, typecheck, test, and build on every push/PR to `main`.
+- **EmailJS secrets:** `deploy.yml` now injects `VITE_EMAILJS_*` from GitHub Actions repository secrets at build time. The hardcoded fallback values in `ContactFooter.tsx` remain as a legacy gap — see Section 4 risks.
+- **Spec Kit:** Initialized GitHub Spec Kit (`.specify/`, `.claude/skills/speckit-*`) with a `constitution.md` authored from this document's Quality Goals and Cross-cutting Concerns sections. Future features should flow through `/speckit-specify` → `/speckit-plan` → `/speckit-tasks` → `/speckit-implement`.
+
 ### 5.6 Component Refactoring & CSS Split (July 2026)
 - **Navbar extracted:** Duplicated nav code from `Home.tsx` and `CybersecurityAwareness.tsx` unified into a single `Navbar.tsx` component using `useLocation` for active-state detection.
 - **Page decomposition:** `Home.tsx` (909 lines → ~30) split into 12 focused components under `src/components/`. `CybersecurityAwareness.tsx` (923 lines → ~100) split into 6 components.
