@@ -1,0 +1,503 @@
+.awareness-root {
+  padding: 120px 8% 80px;
+  background-color: var(--bg-black);
+  min-height: 100vh;
+  color: var(--text-primary);
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.awareness-header {
+  margin-bottom: 50px;
+  border-left: 4px solid var(--accent-green);
+  padding-left: 20px;
+}
+
+.awareness-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.awareness-header p {
+  color: var(--text-secondary);
+  max-width: 800px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.awareness-grid-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.awareness-grid-secondary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.awareness-trace-section {
+  margin-bottom: 40px;
+}
+
+.awareness-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.awareness-card--compact {
+  padding: 30px;
+}
+
+.awareness-card-label {
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.awareness-card h2,
+.awareness-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Password Entropy Lab */
+.entropy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.entropy-title {
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.entropy-icon {
+  font-size: 2rem;
+}
+
+.entropy-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.entropy-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.entropy-btn--generate {
+  background: var(--accent-green);
+  color: #000;
+}
+
+[data-theme="light"] .entropy-btn--generate {
+  background: #008a20;
+  color: #fff;
+}
+
+.entropy-btn--copy {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.entropy-btn--copy:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.entropy-btn--copy-failed {
+  background: rgba(255, 77, 77, 0.1);
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.password-input-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.password-input {
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-black);
+  color: var(--accent-green);
+  font-size: 1.3rem;
+  font-family: monospace;
+  outline: none;
+}
+
+.entropy-strength-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.entropy-strength-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.entropy-strength-value {
+  font-weight: bold;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.entropy-bar-track {
+  height: 4px;
+  width: 100%;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.entropy-bar-fill {
+  height: 100%;
+  transition: width 0.8s ease;
+  border-radius: 10px;
+}
+
+.entropy-value-container {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.entropy-value {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.entropy-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  letter-spacing: 4px;
+}
+
+/* Checklist */
+.checklist-title {
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+  display: block;
+}
+
+.checklist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.checklist-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-black);
+}
+
+.checklist-item.met {
+  background: rgba(0, 255, 65, 0.05);
+  border-color: var(--accent-green);
+}
+
+.checklist-item-inner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checklist-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.checklist-label {
+  font-size: 0.9rem;
+}
+
+.checklist-gain {
+  font-size: 0.7rem;
+  color: #ffa500;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.checklist-optimized {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--accent-blue);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Formula */
+.formula-display {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+  padding: 20px;
+  background-color: var(--bg-black);
+  border-radius: 8px;
+  border: 1px dashed var(--border-color);
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+
+.formula-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Attack Card */
+.attack-card {
+  background-color: var(--bg-black);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 3px solid;
+}
+
+.attack-description {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.attack-estimate {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--bg-black);
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.attack-estimate-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.attack-estimate-value {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Time Scale */
+.time-scale-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.time-scale-row {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.3s;
+}
+
+.time-scale-row--active {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.time-scale-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-scale-bits {
+  font-size: 0.75rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.time-scale-time {
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.time-scale-desc {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Network Trace */
+.trace-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.trace-title {
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+}
+
+.trace-icon {
+  font-size: 2rem;
+}
+
+.trace-description {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  max-width: 700px;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.trace-btn {
+  background: var(--accent-green);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+[data-theme="light"] .trace-btn {
+  background: #008a20;
+  color: #fff;
+}
+
+.trace-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.trace-error {
+  padding: 15px;
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+  border-radius: 6px;
+  color: #ff4d4d;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.trace-error-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.trace-simulate-btn {
+  background: transparent;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.trace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+  gap: 20px;
+}
+
+.trace-item {
+  padding: 15px;
+  background: var(--bg-black);
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  min-width: 0;
+}
+
+.trace-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.trace-item-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.trace-item-value {
+  font-size: 1.1rem;
+  font-family: monospace;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.trace-idle {
+  text-align: center;
+  padding: 40px;
+  border: 1px dashed var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+/* Awareness Footer */
+.awareness-footer {
+  margin-top: 80px;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  padding-top: 40px;
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  opacity: 0.3;
+}
