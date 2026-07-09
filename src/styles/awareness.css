@@ -152,6 +152,12 @@
   font-size: 1.3rem;
   font-family: monospace;
   outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.password-input:focus {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 10px rgba(0, 242, 255, 0.25);
 }
 
 .entropy-strength-row {
