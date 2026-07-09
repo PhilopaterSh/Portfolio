@@ -208,6 +208,14 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.8 SEO, Resilience & Performance Hardening (July 2026)
+- **Security:** Resolved all 10 `npm audit` findings (5 high-severity, in `react-router`/`react-router-dom`/`vite`) via non-breaking `npm audit fix`.
+- **SEO:** Added meta description, Open Graph, Twitter Card, canonical URL, and a JSON-LD `Person` schema to `index.html`; added `public/robots.txt` and `public/sitemap.xml`.
+- **Branding:** Replaced the default Vite favicon with a custom terminal-icon SVG (`public/favicon.svg`) matching the site's neon-cyan cyber aesthetic; added `public/og-image.jpg` for social share previews.
+- **Performance:** `CybersecurityAwareness` and `Resume` pages are now lazy-loaded via `React.lazy`/`Suspense` in `App.tsx`, splitting them out of the main bundle (each now a separate ~10KB chunk instead of bundled into the ~415KB main chunk visitors get on `/`).
+- **Resilience:** Added `ErrorBoundary` (`src/components/ErrorBoundary.tsx`) wrapping the app, so a component crash shows a fallback screen instead of a blank page. Covered by tests.
+- **Cleanup:** Removed the unused `serve` devDependency (the PDF generation script actually uses `vite preview`).
+
 ### 5.7 Tooling: Git, Tests, CI, Spec Kit (July 2026)
 - **Version control:** Initialized the git repository (it previously had no `.git` history despite README instructions referencing `git clone`).
 - **Duplicate cleanup:** Removed a fully duplicated `Portfolio-main/Portfolio-main/` directory (a zip-extraction artifact) that mirrored the entire project.
