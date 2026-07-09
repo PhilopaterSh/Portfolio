@@ -15,10 +15,7 @@ const SecurityChecklist = ({ criteria, isComplete }: SecurityChecklistProps) => 
       <h3 className="checklist-title">SECURITY_CHECKLIST</h3>
       <div className="checklist-container">
         {criteria.map((item, i) => (
-          <div
-            key={i}
-            className={`checklist-item ${item.met ? "met" : ""}`}
-          >
+          <div key={i} className={`checklist-item ${item.met ? "met" : ""}`}>
             <div className="checklist-item-inner">
               <div
                 className="checklist-dot"
@@ -36,17 +33,11 @@ const SecurityChecklist = ({ criteria, isComplete }: SecurityChecklistProps) => 
                 {item.label}
               </span>
             </div>
-            {!item.met && (
-              <span className="checklist-gain">{item.gain}</span>
-            )}
+            {!item.met && <span className="checklist-gain">{item.gain}</span>}
           </div>
         ))}
       </div>
-      {isComplete && (
-        <div className="checklist-optimized">
-          [ SYSTEM_STATUS: FULLY_OPTIMIZED ]
-        </div>
-      )}
+      {isComplete && <div className="checklist-optimized">[ SYSTEM_STATUS: FULLY_OPTIMIZED ]</div>}
     </div>
   );
 };

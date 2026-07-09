@@ -67,13 +67,13 @@ const PasswordEntropyLab = ({ password, setPassword }: PasswordEntropyLabProps) 
     <div className="awareness-card">
       <div className="entropy-header">
         <h2 className="entropy-title">
-          <span className="entropy-icon" aria-hidden="true">🛡️</span> Password Entropy
+          <span className="entropy-icon" aria-hidden="true">
+            🛡️
+          </span>{" "}
+          Password Entropy
         </h2>
         <div className="entropy-actions">
-          <button
-            onClick={generateSecurePassword}
-            className="entropy-btn entropy-btn--generate"
-          >
+          <button onClick={generateSecurePassword} className="entropy-btn entropy-btn--generate">
             GENERATE
           </button>
           <button

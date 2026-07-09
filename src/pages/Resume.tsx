@@ -29,9 +29,13 @@ const Resume = () => {
             <span className="ats-cv__sep">|</span>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
             <span className="ats-cv__sep">|</span>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer">linkedin.com/in/philopater-shenouda</a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer">
+              linkedin.com/in/philopater-shenouda
+            </a>
             <span className="ats-cv__sep">|</span>
-            <a href={contact.github} target="_blank" rel="noreferrer">github.com/PhilopaterSh</a>
+            <a href={contact.github} target="_blank" rel="noreferrer">
+              github.com/PhilopaterSh
+            </a>
             <span className="ats-cv__sep">|</span>
             <span>{contact.location}</span>
           </div>
@@ -47,11 +51,15 @@ const Resume = () => {
           <div className="ats-cv__competencies">
             {technicalSkills.flatMap((cat) =>
               cat.items.map((skill, i) => (
-                <span key={`${cat.category}-${i}`} className="ats-cv__tag">{skill}</span>
-              ))
+                <span key={`${cat.category}-${i}`} className="ats-cv__tag">
+                  {skill}
+                </span>
+              )),
             )}
             {softSkills.map((s, i) => (
-              <span key={`soft-${i}`} className="ats-cv__tag">{s}</span>
+              <span key={`soft-${i}`} className="ats-cv__tag">
+                {s}
+              </span>
             ))}
           </div>
         </section>
@@ -76,17 +84,25 @@ const Resume = () => {
 
         <section className="ats-cv__section">
           <h2 className="ats-cv__section-title">Key Projects</h2>
-          {projects.filter(p => p.isMajor).map((proj, i) => (
-            <div key={i} className="ats-cv__project">
-              <div className="ats-cv__project-header">
-                <span className="ats-cv__project-title">{proj.title}</span>
-                <span className="ats-cv__project-badge">{proj.tag}</span>
+          {projects
+            .filter((p) => p.isMajor)
+            .map((proj, i) => (
+              <div key={i} className="ats-cv__project">
+                <div className="ats-cv__project-header">
+                  <span className="ats-cv__project-title">{proj.title}</span>
+                  <span className="ats-cv__project-badge">{proj.tag}</span>
+                </div>
+                <p className="ats-cv__project-desc">
+                  <strong>Problem:</strong> {proj.problem}
+                </p>
+                <p className="ats-cv__project-desc">
+                  <strong>Solution:</strong> {proj.solution}
+                </p>
+                <p className="ats-cv__project-desc">
+                  <strong>Outcome:</strong> {proj.outcome}
+                </p>
               </div>
-              <p className="ats-cv__project-desc"><strong>Problem:</strong> {proj.problem}</p>
-              <p className="ats-cv__project-desc"><strong>Solution:</strong> {proj.solution}</p>
-              <p className="ats-cv__project-desc"><strong>Outcome:</strong> {proj.outcome}</p>
-            </div>
-          ))}
+            ))}
         </section>
 
         <section className="ats-cv__section">
@@ -112,9 +128,7 @@ const Resume = () => {
             ))}
           </div>
           {certs.length > featuredCerts.length && (
-            <p className="ats-cv__cert-note">
-              Additional certifications available on portfolio.
-            </p>
+            <p className="ats-cv__cert-note">Additional certifications available on portfolio.</p>
           )}
         </section>
 
@@ -122,7 +136,9 @@ const Resume = () => {
           <h2 className="ats-cv__section-title">Languages</h2>
           <div className="ats-cv__langs">
             {languages.map((lang, i) => (
-              <span key={i} className="ats-cv__lang"><strong>{lang.name}</strong> — {lang.level}</span>
+              <span key={i} className="ats-cv__lang">
+                <strong>{lang.name}</strong> — {lang.level}
+              </span>
             ))}
           </div>
         </section>

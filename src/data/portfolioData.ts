@@ -24,19 +24,7 @@ import {
 
 export { hackeroneLogo, bugcrowdLogo };
 
-export const testimonialImages = [
-  img3,
-  img4,
-  ss1,
-  ss2,
-  ss3,
-  ss4,
-  sc1,
-  sc2,
-  sc3,
-  sc4,
-  sc5,
-];
+export const testimonialImages = [img3, img4, ss1, ss2, ss3, ss4, sc1, sc2, sc3, sc4, sc5];
 
 export interface Experience {
   company: string;

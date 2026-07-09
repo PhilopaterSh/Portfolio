@@ -6,9 +6,7 @@ import { contact } from "../data/portfolioData";
 
 const ContactFooter = () => {
   const formRef = useRef<HTMLFormElement>(null);
-  const [formStatus, setFormStatus] = useState<
-    "idle" | "sending" | "success" | "error"
-  >("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [formError, setFormError] = useState("");
 
   const sendEmail = (e: React.FormEvent) => {
@@ -29,20 +27,19 @@ const ContactFooter = () => {
     setFormStatus("sending");
     setFormError("");
 
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then(
-        () => {
-          setFormStatus("success");
-          if (formRef.current) formRef.current.reset();
-          setTimeout(() => setFormStatus("idle"), 5000);
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          setFormStatus("error");
-          setFormError("CONNECTION_FAILED: UNABLE TO TRANSMIT DATA.");
-          setTimeout(() => setFormStatus("idle"), 5000);
-        },
-      );
+    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey).then(
+      () => {
+        setFormStatus("success");
+        if (formRef.current) formRef.current.reset();
+        setTimeout(() => setFormStatus("idle"), 5000);
+      },
+      (error) => {
+        console.error("EmailJS Error:", error);
+        setFormStatus("error");
+        setFormError("CONNECTION_FAILED: UNABLE TO TRANSMIT DATA.");
+        setTimeout(() => setFormStatus("idle"), 5000);
+      },
+    );
   };
 
   return (
@@ -51,12 +48,7 @@ const ContactFooter = () => {
         <SectionHeader num="10" title="Initiate Secure Connection" />
         <p className="contact-info-text">
           Cairo, Egypt |{" "}
-          <a
-            href={contact.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="wa-link"
-          >
+          <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="wa-link">
             WhatsApp
           </a>
         </p>
@@ -107,11 +99,7 @@ const ContactFooter = () => {
           </div>
 
           <div className="form-actions">
-            <button
-              type="submit"
-              className="main-cta send-btn"
-              disabled={formStatus === "sending"}
-            >
+            <button type="submit" className="main-cta send-btn" disabled={formStatus === "sending"}>
               {formStatus === "idle" && "SEND_MESSAGE"}
               {formStatus === "sending" && "ENCRYPTING & SENDING..."}
               {formStatus === "success" && "MESSAGE_SENT_SUCCESSFULLY"}
@@ -143,9 +131,7 @@ const ContactFooter = () => {
           </AnimatePresence>
         </form>
       </div>
-      <p className="copyright">
-        © 2026 PHILOPATER SHENOUDA SEDKIY. ALL SYSTEMS SECURE.
-      </p>
+      <p className="copyright">© 2026 PHILOPATER SHENOUDA SEDKIY. ALL SYSTEMS SECURE.</p>
     </footer>
   );
 };
