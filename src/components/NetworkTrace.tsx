@@ -73,18 +73,16 @@ const NetworkTrace = () => {
       <div className="trace-header">
         <div>
           <h2 className="trace-title">
-            <span className="trace-icon" aria-hidden="true">🌐</span> Network Identity Trace
+            <span className="trace-icon" aria-hidden="true">
+              🌐
+            </span>{" "}
+            Network Identity Trace
           </h2>
           <p className="trace-description">
-            Analyze your digital exposure. This module evaluates your
-            browser's privacy resilience.
+            Analyze your digital exposure. This module evaluates your browser's privacy resilience.
           </p>
         </div>
-        <button
-          onClick={fetchLocation}
-          disabled={loadingLocation}
-          className="trace-btn"
-        >
+        <button onClick={fetchLocation} disabled={loadingLocation} className="trace-btn">
           {loadingLocation ? "SCANNING..." : "TRACE LOCATION"}
         </button>
       </div>
@@ -106,26 +104,27 @@ const NetworkTrace = () => {
             { label: "PUBLIC_IP", value: locationData.ip, color: "var(--accent-green)" },
             { label: "CITY", value: locationData.city },
             { label: "REGION", value: locationData.region },
-            { label: "COUNTRY", value: `${locationData.country_name} (${locationData.country_code})` },
+            {
+              label: "COUNTRY",
+              value: `${locationData.country_name} (${locationData.country_code})`,
+            },
             { label: "POSTAL", value: locationData.postal },
             { label: "TIMEZONE", value: locationData.timezone },
             { label: "ISP", value: locationData.org, fullWidth: true },
           ].map((item, idx) => (
-            <div
-              key={idx}
-              className={`trace-item ${item.fullWidth ? "full-width" : ""}`}
-            >
+            <div key={idx} className={`trace-item ${item.fullWidth ? "full-width" : ""}`}>
               <div className="trace-item-label">{item.label}</div>
-              <div className="trace-item-value" style={{ color: item.color || "var(--text-primary)" }}>
+              <div
+                className="trace-item-value"
+                style={{ color: item.color || "var(--text-primary)" }}
+              >
                 {item.value || "N/A"}
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="trace-idle">
-          System idle. Press TRACE to begin network reconnaissance.
-        </div>
+        <div className="trace-idle">System idle. Press TRACE to begin network reconnaissance.</div>
       )}
     </div>
   );

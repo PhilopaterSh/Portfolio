@@ -32,16 +32,20 @@ const TimeToCrack = ({ timeScale, entropy, password }: TimeToCrackProps) => {
               }}
             >
               <div className="time-scale-row-header">
-                <span className="time-scale-bits" style={{ color: isActive ? row.color : "var(--text-secondary)" }}>
+                <span
+                  className="time-scale-bits"
+                  style={{ color: isActive ? row.color : "var(--text-secondary)" }}
+                >
                   {row.bits} BIT
                 </span>
-                <span className="time-scale-time" style={{ color: isActive ? "var(--text-primary)" : "var(--text-secondary)" }}>
+                <span
+                  className="time-scale-time"
+                  style={{ color: isActive ? "var(--text-primary)" : "var(--text-secondary)" }}
+                >
                   {row.time}
                 </span>
               </div>
-              {isActive && (
-                <div className="time-scale-desc">{row.desc}</div>
-              )}
+              {isActive && <div className="time-scale-desc">{row.desc}</div>}
             </div>
           );
         })}

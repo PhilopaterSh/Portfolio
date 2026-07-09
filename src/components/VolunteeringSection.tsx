@@ -17,11 +17,7 @@ const itemVariants = {
 };
 
 const VolunteeringCard = ({ v }: { v: Volunteering }) => (
-  <motion.div
-    className="exp-card"
-    variants={itemVariants}
-    whileHover={{ y: -5 }}
-  >
+  <motion.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
     <div className="exp-sidebar">
       <span className="exp-year">{v.period}</span>
       {v.image && (

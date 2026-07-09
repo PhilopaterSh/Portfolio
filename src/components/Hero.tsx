@@ -22,11 +22,10 @@ const Hero = () => {
             <span> Shenouda</span>
           </h1>
           <p className="hero-description">
-            Information Technology graduate and{" "}
-            <strong>Junior Penetration Tester</strong> with hands-on
-            experience in vulnerability assessment and CTF solving. Passionate
-            about <strong>Red Teaming</strong>, identifying security
-            weaknesses, and delivering actionable remediation insights.
+            Information Technology graduate and <strong>Junior Penetration Tester</strong> with
+            hands-on experience in vulnerability assessment and CTF solving. Passionate about{" "}
+            <strong>Red Teaming</strong>, identifying security weaknesses, and delivering actionable
+            remediation insights.
           </p>
           <div className="social-pill-container">
             <a
@@ -53,12 +52,7 @@ const Hero = () => {
             >
               TryHackMe
             </a>
-            <a
-              href={contact.x}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-pill"
-            >
+            <a href={contact.x} target="_blank" rel="noopener noreferrer" className="social-pill">
               X{" "}
             </a>
             <a

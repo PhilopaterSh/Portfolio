@@ -1,0 +1,7 @@
+dist
+node_modules
+package-lock.json
+
+# Spec Kit scaffolding/templates — not project source, left as the tool generates them
+.specify/
+.claude/skills/

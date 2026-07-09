@@ -8,9 +8,8 @@ const FormulaCard = () => {
         E = log₂ (R<sup>L</sup>)
       </div>
       <p className="formula-description">
-        Entropy (E) is calculated based on the character pool size (R) and
-        the password length (L). Higher entropy means higher resistance to
-        brute-force attacks.
+        Entropy (E) is calculated based on the character pool size (R) and the password length (L).
+        Higher entropy means higher resistance to brute-force attacks.
       </p>
     </div>
   );

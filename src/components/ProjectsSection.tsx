@@ -26,8 +26,7 @@ const ProjectCard = ({ p }: { p: Project }) => (
     }}
   >
     <div className="project-tag">
-      {p.tag}{" "}
-      {p.isMajor && <span className="featured-badge">Major Project</span>}
+      {p.tag} {p.isMajor && <span className="featured-badge">Major Project</span>}
     </div>
     <h3>{p.title}</h3>
     <p className="project-desc">{p.desc}</p>
@@ -55,12 +54,7 @@ const ProjectCard = ({ p }: { p: Project }) => (
     </div>
 
     {p.link !== "#" && (
-      <a
-        href={p.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="project-link"
-      >
+      <a href={p.link} target="_blank" rel="noopener noreferrer" className="project-link">
         View Repository →
       </a>
     )}

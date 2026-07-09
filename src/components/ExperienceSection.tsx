@@ -18,11 +18,7 @@ const itemVariants = {
 };
 
 const ExperienceCard = ({ exp }: { exp: Experience }) => (
-  <motion.div
-    className="exp-card"
-    variants={itemVariants}
-    whileHover={{ y: -5 }}
-  >
+  <motion.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
     <div className="exp-sidebar">
       <span className="exp-year">{exp.period}</span>
       <div className="company-logos-container">

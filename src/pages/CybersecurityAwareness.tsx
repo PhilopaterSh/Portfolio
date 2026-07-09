@@ -15,10 +15,38 @@ const criteria = [
 ];
 
 const timeScale = [
-  { min: 0, max: 27.99, bits: "< 28", time: "Instant", color: "#ff4d4d", desc: "Instantly crackable via basic brute-force." },
-  { min: 28, max: 59.99, bits: "28 - 59", time: "Minutes to Years", color: "#ffff00", desc: "Vulnerable to specialized hardware attacks." },
-  { min: 60, max: 127.99, bits: "60 - 127", time: "Centuries", color: "#00ff41", desc: "Secure against modern supercomputing." },
-  { min: 128, max: Infinity, bits: "128+", time: "Infinite", color: "#00d4ff", desc: "Mathematically resilient to all known attacks." },
+  {
+    min: 0,
+    max: 27.99,
+    bits: "< 28",
+    time: "Instant",
+    color: "#ff4d4d",
+    desc: "Instantly crackable via basic brute-force.",
+  },
+  {
+    min: 28,
+    max: 59.99,
+    bits: "28 - 59",
+    time: "Minutes to Years",
+    color: "#ffff00",
+    desc: "Vulnerable to specialized hardware attacks.",
+  },
+  {
+    min: 60,
+    max: 127.99,
+    bits: "60 - 127",
+    time: "Centuries",
+    color: "#00ff41",
+    desc: "Secure against modern supercomputing.",
+  },
+  {
+    min: 128,
+    max: Infinity,
+    bits: "128+",
+    time: "Infinite",
+    color: "#00d4ff",
+    desc: "Mathematically resilient to all known attacks.",
+  },
 ];
 
 const CybersecurityAwareness = () => {
@@ -55,9 +83,8 @@ const CybersecurityAwareness = () => {
       <header className="awareness-header">
         <h1>Cybersecurity Awareness</h1>
         <p>
-          Interactive analysis tool for measuring cryptographic resilience.
-          Understand how mathematical entropy defines the boundary between
-          secure access and system vulnerability.
+          Interactive analysis tool for measuring cryptographic resilience. Understand how
+          mathematical entropy defines the boundary between secure access and system vulnerability.
         </p>
       </header>
 
@@ -68,7 +95,22 @@ const CybersecurityAwareness = () => {
 
       <div className="awareness-grid-secondary">
         <FormulaCard />
-        <BruteForceAnalysis entropy={entropy} color={entropy >= 128 ? "#00d4ff" : entropy >= 60 ? "#00ff41" : entropy >= 36 ? "#ffff00" : entropy >= 28 ? "#ffa500" : entropy > 0 ? "#ff4d4d" : "#555"} />
+        <BruteForceAnalysis
+          entropy={entropy}
+          color={
+            entropy >= 128
+              ? "#00d4ff"
+              : entropy >= 60
+                ? "#00ff41"
+                : entropy >= 36
+                  ? "#ffff00"
+                  : entropy >= 28
+                    ? "#ffa500"
+                    : entropy > 0
+                      ? "#ff4d4d"
+                      : "#555"
+          }
+        />
         <TimeToCrack timeScale={timeScale} entropy={entropy} password={password} />
       </div>
 
@@ -76,9 +118,7 @@ const CybersecurityAwareness = () => {
         <NetworkTrace />
       </div>
 
-      <footer className="awareness-footer">
-        // ENCRYPTION_REQUIRED // SYSTEM_SECURE //
-      </footer>
+      <footer className="awareness-footer">// ENCRYPTION_REQUIRED // SYSTEM_SECURE //</footer>
     </div>
   );
 };

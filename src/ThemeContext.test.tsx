@@ -28,7 +28,7 @@ describe("ThemeContext", () => {
     render(
       <ThemeProvider>
         <Consumer />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
     expect(screen.getByTestId("theme")).toHaveTextContent("system");
   });
@@ -38,7 +38,7 @@ describe("ThemeContext", () => {
     render(
       <ThemeProvider>
         <Consumer />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
     expect(screen.getByTestId("theme")).toHaveTextContent("dark");
     expect(screen.getByTestId("resolved")).toHaveTextContent("dark");
@@ -49,7 +49,7 @@ describe("ThemeContext", () => {
     render(
       <ThemeProvider>
         <Consumer />
-      </ThemeProvider>
+      </ThemeProvider>,
     );
 
     act(() => {

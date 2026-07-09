@@ -36,10 +36,7 @@ function App() {
           <Suspense fallback={<RouteLoadingFallback />}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route
-                path="/Cybersecurity_Awareness"
-                element={<CybersecurityAwareness />}
-              />
+              <Route path="/Cybersecurity_Awareness" element={<CybersecurityAwareness />} />
               <Route path="/Resume" element={<Resume />} />
             </Routes>
           </Suspense>

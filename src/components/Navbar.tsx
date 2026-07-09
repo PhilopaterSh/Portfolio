@@ -60,11 +60,7 @@ const Navbar = () => {
 
       <div className="nav-actions">
         <div className="topbar-status">
-          <div
-            className="topbar-theme-mode"
-            role="group"
-            aria-label="Color mode"
-          >
+          <div className="topbar-theme-mode" role="group" aria-label="Color mode">
             <button
               type="button"
               className={`topbar-theme-mode__btn ${theme === "system" ? "topbar-theme-mode__btn--active" : ""}`}

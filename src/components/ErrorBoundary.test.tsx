@@ -11,7 +11,7 @@ describe("ErrorBoundary", () => {
     render(
       <ErrorBoundary>
         <div>safe content</div>
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
     expect(screen.getByText("safe content")).toBeInTheDocument();
   });
@@ -21,7 +21,7 @@ describe("ErrorBoundary", () => {
     render(
       <ErrorBoundary>
         <Bomb />
-      </ErrorBoundary>
+      </ErrorBoundary>,
     );
     expect(screen.getByText(/SYSTEM_ERROR/)).toBeInTheDocument();
     vi.restoreAllMocks();
