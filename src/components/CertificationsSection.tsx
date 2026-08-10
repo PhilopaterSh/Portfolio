@@ -39,6 +39,12 @@ const CertificationsSection = () => {
           data-share-badge-id="c6090422-235d-46c0-afa1-c4e883cdd29c"
           data-share-badge-host="https://www.credly.com"
         ></div>
+        <div
+          data-iframe-width="150"
+          data-iframe-height="270"
+          data-share-badge-id="a0f914de-2c44-441c-a89b-c8ea3145f37a"
+          data-share-badge-host="https://www.credly.com"
+        ></div>
       </div>
 
       <div className="certs-grid">
