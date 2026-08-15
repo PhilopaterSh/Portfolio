@@ -177,35 +177,93 @@ Passionate about ethical hacking, network security, and building tools that make
 
 > **تاريخ التنفيذ:** 15 أغسطس 2026
 
-### ما تم إضافته في `index.html`
+---
 
-| الـ Tag | الغرض |
-|---------|--------|
-| `<meta name="keywords">` | كلمات مفتاحية تشمل `PhilopaterSh`, `Penetration Tester`, `Bug Bounty Hunter` وغيرها |
+### 📄 ما تم إضافته وتحسينه في `index.html`
+
+#### Meta Tags الأساسية
+
+| الـ Tag | القيمة / الغرض |
+|---------|----------------|
+| `<meta name="keywords">` | `PhilopaterSh, Philopater Shenouda, Junior Penetration Tester, Bug Bounty Hunter, Cybersecurity...` |
 | `<meta name="robots" content="index, follow">` | السماح لجميع محركات البحث بالفهرسة والتتبع |
 | `<meta name="google-site-verification">` | التحقق من ملكية الموقع على **Google Search Console** |
 | `<meta name="msvalidate.01">` | التحقق من ملكية الموقع على **Bing Webmaster Tools** |
 
-### ما تم تحديثه في `public/sitemap.xml`
+#### Meta Description (محسّن)
+
+```
+قبل:
+"Information Technology graduate and Junior Penetration Tester specializing
+ in offensive security, vulnerability management, and risk analysis."
+
+بعد:
+"Philopater Shenouda (PhilopaterSh) — Junior Penetration Tester & Bug Bounty Hunter.
+ CEH & eJPT certified. Specializing in web application security, network penetration
+ testing, vulnerability assessment, and offensive security research.
+ Active on Bugcrowd and HackerOne."
+```
+
+#### Open Graph & Twitter Cards (محسّنة)
+
+| الـ Tag | الإضافة |
+|---------|---------|
+| `og:description` | تم تحديثه بنفس الـ description المحسّن |
+| `og:image:width` | `1376` |
+| `og:image:height` | `768` |
+| `og:image:alt` | `Philopater Shenouda - Junior Penetration Tester` |
+| `twitter:description` | تم تحديثه بمحتوى أقوى وأكثر تفصيلاً |
+
+---
+
+### 🗂️ ما تم تحديثه في `public/sitemap.xml`
 
 - إضافة `<lastmod>` لكل صفحة لإعلام محركات البحث بتاريخ آخر تحديث.
 
-### خطوات التسجيل المنجزة
+---
+
+### 🧠 Schema.org Structured Data (محسّن)
+
+تم ترقية الـ Schema من `Person` بسيط إلى `@graph` كامل يحتوي على:
+
+| النوع | الغرض |
+|-------|--------|
+| `Person` (محسّن) | يحتوي على `alternateName: PhilopaterSh` + `knowsAbout` + `hasCredential` (CEH, eJPT) + Bugcrowd/HackerOne في `sameAs` |
+| `WebSite` (جديد) | يُعرّف الموقع كـ entity مستقلة لدى Google |
+| `WebPage` (جديد) | تفاصيل الصفحة بـ `datePublished` و`dateModified` |
+| `BreadcrumbList` (جديد) | يُنشئ breadcrumb تحت رابط نتيجة البحث |
+| `ProfilePage` (جديد) | صفحة بروفايل شخصي — مؤهلة لظهور **Google Rich Results** |
+
+---
+
+### 🖼️ OG Image (مُستبدلة)
+
+| | قبل | بعد |
+|-|-----|-----|
+| **الحجم** | 900×1260 px (portrait) | 1376×768 px (landscape) |
+| **الشكل** | صورة شخصية بيضاء فقط | صورة + اسم + Job Title + Certifications + رابط الموقع |
+| **الاستخدام** | sharing preview ضعيف | preview احترافي على LinkedIn, Twitter, WhatsApp |
+
+---
+
+### ✅ خطوات التسجيل المنجزة على محركات البحث
 
 1. ✅ **Google Search Console**
-   - تم التحقق من الموقع (Verified)
-   - تم تقديم الـ Sitemap
+   - تم التحقق من ملكية الموقع (Verified)
+   - تم تقديم الـ Sitemap: `sitemap.xml`
    - تم طلب الفهرسة الفورية (Request Indexing → Priority Queue)
 
 2. ✅ **Bing Webmaster Tools**
-   - تم التحقق من الموقع (Verified)
+   - تم التحقق من ملكية الموقع (Verified)
    - تم تقديم الـ URL للفهرسة (URL Submitted Successfully)
 
-### النتيجة
+---
 
-- الموقع مسجل ومُفهرَس على **Google** و **Bing**
-- يظهر اسم `PhilopaterSh` في نتائج البحث عبر: GitHub, Medium, LinkedIn
-- البورتفوليو في انتظار الظهور خلال **24 - 72 ساعة** على Google
+### 📊 نتائج البحث المرصودة
+
+- ✅ عند البحث عن `PhilopaterSh`: يظهر عبر GitHub, Medium, LinkedIn, Freelancer platforms
+- ✅ عند البحث عن `site:philopatersh.github.io` على **Bing**: يظهر البورتفوليو بالعنوان والـ description الصح
+- 🔄 **Google**: في انتظار الفهرسة — متوقع الظهور خلال **24 - 72 ساعة**
 
 ---
 
