@@ -278,4 +278,29 @@ A dedicated technical publication hub showcasing real-world penetration testing 
 
 ---
 
+## 🗺️ Strategic Roadmap & Future Expansion (خطة التوسع المستقبلية)
+
+خطة استراتيجية لتعزيز الـ Authority الأمني وزيادة قوة الـ SEO لاسم **PhilopaterSh** عبر منصات إضافية:
+
+### 1. 📘 GitBook: Offensive Security & Penetration Testing Playbook
+* **الهدف:** بناء قاعدة معرفية ومنهجية اختبار اختراق عامة موثقة (Public Security Wiki).
+* **المحتوى المستهدف:**
+  * خطوات الـ Reconnaissance والـ Web App Security Testing بتفصيل عملي.
+  * أوامر الـ One-Liners والـ Payloads الخاصة بـ Active Directory و Privilege Escalation.
+  * مزامنة آلية لملاحظات الـ Security المنظمة من Obsidian.
+* **الأثر على الـ SEO والملف:**
+  * الحصول على Backlink عالي الثقة من نطاق `gitbook.io`.
+  * إبراز منهجية منظمة (Systematic Mindset) أمام مدراء التوظيف والفرق الأمنية.
+
+### 2. 🦊 GitLab: DevSecOps & Security Automation Hub
+* **الهدف:** إبراز الخبرة في أتمتة الأمن ودمج الفحص الأمني داخل الـ CI/CD Pipelines.
+* **المحتوى المستهدف:**
+  * بناء مستودعات تجريبية تطبق الـ SAST (مثل Semgrep/Trivy) والـ DAST (مثل OWASP ZAP) في خطوط الأنابيب التلقائية.
+  * ربط أدوات Go (`Ph.Sh_url` و `Ph.Sh-Subdomain`) بـ Multi-Platform Build Pipelines (Linux, Windows, macOS).
+* **الأثر على الـ SEO والملف:**
+  * إثبات فهم البيئات المؤسسية (Enterprise DevOps Environments).
+  * تعزيز شبكة الروابط الخارجية الموثوقة لربط كافة الحسابات التقنية بالبورتفوليو.
+
+---
+
 © 2026 PHILOPATER SHENOUDA SEDKIY. ALL SYSTEMS SECURE.
