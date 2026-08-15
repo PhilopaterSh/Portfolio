@@ -48,7 +48,7 @@ const VolunteeringSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <SectionHeader num="07" title="Volunteering" />
+      <SectionHeader num="08" title="Volunteering" />
       <div className="exp-list">
         {volunteering.map((v: Volunteering, i) => (
           <VolunteeringCard key={i} v={v} />

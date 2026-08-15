@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={itemVariants}
     >
-      <SectionHeader num="05" title="Testimonials" />
+      <SectionHeader num="06" title="Testimonials" />
       <div className="testimonial-slider-container">
         <div
           className="slider-track"
@@ -38,7 +38,7 @@ const TestimonialsSection = () => {
             <div key={i} className="slider-item">
               <img
                 src={img}
-                alt={`Testimonial ${i + 1}`}
+                alt={`Philopater Shenouda (PhilopaterSh) - Professional Testimonial & Security Assessment Recommendation ${i + 1}`}
                 className="slider-img"
                 loading={i === 0 ? "eager" : "lazy"}
                 decoding="async"

@@ -13,7 +13,7 @@ import {
 
 const Resume = () => {
   useEffect(() => {
-    document.title = "CV - Philopater Shenouda";
+    document.title = "Philopater Shenouda (PhilopaterSh) | Resume & Penetration Testing Credentials";
   }, []);
 
   const featuredCerts = certs.slice(0, 10);

@@ -30,7 +30,7 @@ const CertificationsSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={itemVariants}
     >
-      <SectionHeader num="06" title="Certifications" />
+      <SectionHeader num="07" title="Certifications" />
 
       <div className="credly-badges-container">
         <div

@@ -29,14 +29,23 @@
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
   line-height: 1.1;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   font-weight: 800;
   background: var(--title-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   overflow-wrap: anywhere;
+}
+
+.hero-alias {
+  font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+  font-weight: 600;
+  color: var(--accent-green);
+  -webkit-text-fill-color: var(--accent-green);
+  opacity: 0.95;
+  letter-spacing: 0.5px;
 }
 
 .hero-subtitle {

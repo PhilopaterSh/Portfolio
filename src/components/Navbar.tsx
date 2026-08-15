@@ -6,6 +6,7 @@ const navLinks = [
   { label: "ABOUT", hash: "#about" },
   { label: "EXPERIENCE", hash: "#experience" },
   { label: "PROJECTS", hash: "#projects" },
+  { label: "WRITEUPS", hash: "#writeups" },
   { label: "TESTIMONIALS", hash: "#testimonials" },
   { label: "SKILLS", hash: "#skills" },
 ];

@@ -417,6 +417,135 @@
   background: rgba(0, 212, 255, 0.05);
 }
 
+/* Security Writeups & Research */
+.section-subtitle-text {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 850px;
+  margin-top: -30px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.writeups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+  gap: 25px;
+}
+
+.writeup-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.writeup-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background: var(--accent-green);
+  transition: height 0.3s;
+}
+
+.writeup-card:hover::before {
+  height: 100%;
+}
+
+.writeup-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.writeup-badge {
+  background: rgba(0, 242, 255, 0.1);
+  color: var(--accent-green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 242, 255, 0.25);
+}
+
+[data-theme="light"] .writeup-badge {
+  background: rgba(3, 105, 161, 0.1);
+  color: var(--accent-green);
+  border-color: rgba(3, 105, 161, 0.3);
+}
+
+.writeup-platform-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.writeup-dot {
+  opacity: 0.6;
+}
+
+.writeup-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.writeup-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.writeup-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.writeup-footer {
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.writeup-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.writeup-action-link:hover {
+  color: var(--accent-blue);
+  transform: translateX(4px);
+}
+
 /* Certs */
 .certs-grid {
   display: grid;

@@ -48,6 +48,17 @@ export interface Project {
   isMajor?: boolean;
 }
 
+export interface Writeup {
+  title: string;
+  platform: string;
+  badge: string;
+  readTime: string;
+  desc: string;
+  tags: string[];
+  link: string;
+  featured?: boolean;
+}
+
 export interface Volunteering {
   role: string;
   organization: string;
@@ -199,6 +210,49 @@ export const projects: Project[] = [
       "Streamlined the discovery phase, providing a 40% more comprehensive view of target infrastructures compared to traditional single-source tools.",
     link: "https://github.com/PhilopaterSh/Ph.Sh-Subdomain",
     isMajor: false,
+  },
+];
+
+export const writeups: Writeup[] = [
+  {
+    title: "TryHackMe: Blue (MS17-010 EternalBlue) Walkthrough",
+    platform: "TryHackMe / Medium",
+    badge: "CTF Walkthrough",
+    readTime: "5 min read",
+    desc: "Complete exploitation lifecycle of the classic MS17-010 SMB vulnerability (EternalBlue). Details reconnaissance with Nmap, weaponization using Metasploit, password hash extraction, and privilege escalation to NT AUTHORITY\\SYSTEM.",
+    tags: ["MS17-010", "EternalBlue", "Metasploit", "Privilege Escalation", "TryHackMe"],
+    link: "https://medium.com/@PhilopaterSh",
+    featured: true,
+  },
+  {
+    title: "TryHackMe: Basic Pentesting Methodology & Attack Vectors",
+    platform: "TryHackMe / Medium",
+    badge: "Hands-on Pentest",
+    readTime: "7 min read",
+    desc: "End-to-end walkthrough covering web application reconnaissance, brute-forcing administrative logins via Hydra, cracking password hashes with John the Ripper, and leveraging cracked SSH private keys to gain root privilege.",
+    tags: ["Web Recon", "Hydra", "John the Ripper", "SSH Key Cracking", "Linux Pentesting"],
+    link: "https://medium.com/@PhilopaterSh",
+    featured: true,
+  },
+  {
+    title: "Ph.Sh_URL: High-Speed Go URL Discovery for Security Researchers",
+    platform: "Medium / GitHub / Go.dev",
+    badge: "Tool Breakdown",
+    readTime: "6 min read",
+    desc: "Technical deep-dive into developing an OSINT URL discovery tool in Golang. Covers concurrent HTTP fetching, multiple passive threat intelligence feeds integration, smart deduplication, and endpoint filtering for bug bounty workflows.",
+    tags: ["Golang", "OSINT", "Automation", "Reconnaissance", "Bug Bounty"],
+    link: "https://github.com/PhilopaterSh/Ph.Sh_url",
+    featured: true,
+  },
+  {
+    title: "Linux Administration & Access Control Fundamentals for Ethical Hackers",
+    platform: "Medium",
+    badge: "Security Guide",
+    readTime: "5 min read",
+    desc: "Comprehensive guide detailing Linux user and group management, POSIX permissions, SUID/SGID special bits, and access control list (ACL) auditing from both offensive exploitation and defensive system hardening perspectives.",
+    tags: ["Linux Hardening", "Access Control", "File Permissions", "System Administration", "Security"],
+    link: "https://medium.com/@PhilopaterSh",
+    featured: false,
   },
 ];
 
