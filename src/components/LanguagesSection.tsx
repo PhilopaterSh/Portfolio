@@ -16,7 +16,7 @@ const LanguagesSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={itemVariants}
     >
-      <SectionHeader num="09" title="Languages" />
+      <SectionHeader num="10" title="Languages" />
       <div className="languages-container">
         <div className="lang-card">
           <div className="lang-info">

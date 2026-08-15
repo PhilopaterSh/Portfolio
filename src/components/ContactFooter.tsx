@@ -45,7 +45,7 @@ const ContactFooter = () => {
   return (
     <footer id="contact" className="footer-section">
       <div className="contact-box">
-        <SectionHeader num="10" title="Initiate Secure Connection" />
+        <SectionHeader num="11" title="Initiate Secure Connection" />
         <p className="contact-info-text">
           Cairo, Egypt |{" "}
           <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="wa-link">

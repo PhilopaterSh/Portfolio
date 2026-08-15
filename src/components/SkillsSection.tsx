@@ -17,7 +17,7 @@ const SkillsSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={itemVariants}
     >
-      <SectionHeader num="08" title="Skills" />
+      <SectionHeader num="09" title="Skills" />
 
       <div className="skills-wrapper">
         <div className="skills-column">

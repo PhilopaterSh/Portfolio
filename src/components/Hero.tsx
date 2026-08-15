@@ -14,18 +14,18 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="hero-subtitle">
-            <Typewriter text="Junior Penetration Tester" delay={80} />
-          </h2>
           <h1 className="hero-title">
             <span>Philopater</span>
             <span> Shenouda</span>
+            <span className="hero-alias"> (PhilopaterSh)</span>
           </h1>
+          <h2 className="hero-subtitle">
+            <Typewriter text="Junior Penetration Tester" delay={80} />
+          </h2>
           <p className="hero-description">
-            Information Technology graduate and <strong>Junior Penetration Tester</strong> with
-            hands-on experience in vulnerability assessment and CTF solving. Passionate about{" "}
-            <strong>Red Teaming</strong>, identifying security weaknesses, and delivering actionable
-            remediation insights.
+            Information Technology graduate and <strong>Junior Penetration Tester (PhilopaterSh)</strong> specializing
+            in offensive security, web & network vulnerability assessment, and security automation.
+            Passionate about <strong>Red Teaming</strong>, ethical hacking, and bug bounty hunting.
           </p>
           <div className="social-pill-container">
             <a
@@ -91,7 +91,7 @@ const Hero = () => {
           <div className="hero-image-wrapper">
             <img
               src={profileImg}
-              alt="Philopater Shenouda"
+              alt="Philopater Shenouda (PhilopaterSh) - Junior Penetration Tester"
               className="hero-image"
               width="600"
               height="600"

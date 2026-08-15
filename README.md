@@ -222,6 +222,16 @@ Passionate about ethical hacking, network security, and building tools that make
 
 ---
 
+### 📝 Security Writeups & Research Section
+
+A dedicated technical publication hub showcasing real-world penetration testing and tool research:
+- **TryHackMe Walkthroughs:** MS17-010 EternalBlue exploitation and Basic Pentesting machine guides.
+- **Tool Architecture Breakdowns:** In-depth engineering analysis of `Ph.Sh_url` and `Ph.Sh-Subdomain`.
+- **Security Engineering Guides:** Linux administration, privilege auditing, and POSIX permissions.
+- **Direct Platform Links:** Integrated badges linking directly to published writeups on Medium, GitHub, and Go.dev.
+
+---
+
 ### 🧠 Schema.org Structured Data (محسّن)
 
 تم ترقية الـ Schema من `Person` بسيط إلى `@graph` كامل يحتوي على:
@@ -230,8 +240,9 @@ Passionate about ethical hacking, network security, and building tools that make
 |-------|--------|
 | `Person` (محسّن) | يحتوي على `alternateName: PhilopaterSh` + `knowsAbout` + `hasCredential` (CEH, eJPT) + Bugcrowd/HackerOne في `sameAs` |
 | `WebSite` (جديد) | يُعرّف الموقع كـ entity مستقلة لدى Google |
+| `SoftwareSourceCode` (جديد) | يوثق الأدوات البرمجية `Ph.Sh_url` و `Ph.Sh-Subdomain` بلغة Go |
 | `WebPage` (جديد) | تفاصيل الصفحة بـ `datePublished` و`dateModified` |
-| `BreadcrumbList` (جديد) | يُنشئ breadcrumb تحت رابط نتيجة البحث |
+| `BreadcrumbList` (جديد) | يُنشئ breadcrumb تحت رابط نتيجة البحث (Home, Awareness, Resume) |
 | `ProfilePage` (جديد) | صفحة بروفايل شخصي — مؤهلة لظهور **Google Rich Results** |
 
 ---
@@ -250,12 +261,12 @@ Passionate about ethical hacking, network security, and building tools that make
 
 1. ✅ **Google Search Console**
    - تم التحقق من ملكية الموقع (Verified)
-   - تم تقديم الـ Sitemap: `sitemap.xml`
+   - تم تقديم الـ Sitemap: `sitemap.xml` (تشمل Home, Resume, Cybersecurity Awareness)
    - تم طلب الفهرسة الفورية (Request Indexing → Priority Queue)
 
 2. ✅ **Bing Webmaster Tools**
    - تم التحقق من ملكية الموقع (Verified)
-   - تم تقديم الـ URL للفهرسة (URL Submitted Successfully)
+   - تم تقديم الـ URL والـ Sitemap للفهرسة (URL Submitted Successfully)
 
 ---
 
