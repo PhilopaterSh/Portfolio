@@ -173,4 +173,40 @@ Passionate about ethical hacking, network security, and building tools that make
 
 ---
 
+## 🔍 SEO & Search Engine Indexing
+
+> **تاريخ التنفيذ:** 15 أغسطس 2026
+
+### ما تم إضافته في `index.html`
+
+| الـ Tag | الغرض |
+|---------|--------|
+| `<meta name="keywords">` | كلمات مفتاحية تشمل `PhilopaterSh`, `Penetration Tester`, `Bug Bounty Hunter` وغيرها |
+| `<meta name="robots" content="index, follow">` | السماح لجميع محركات البحث بالفهرسة والتتبع |
+| `<meta name="google-site-verification">` | التحقق من ملكية الموقع على **Google Search Console** |
+| `<meta name="msvalidate.01">` | التحقق من ملكية الموقع على **Bing Webmaster Tools** |
+
+### ما تم تحديثه في `public/sitemap.xml`
+
+- إضافة `<lastmod>` لكل صفحة لإعلام محركات البحث بتاريخ آخر تحديث.
+
+### خطوات التسجيل المنجزة
+
+1. ✅ **Google Search Console**
+   - تم التحقق من الموقع (Verified)
+   - تم تقديم الـ Sitemap
+   - تم طلب الفهرسة الفورية (Request Indexing → Priority Queue)
+
+2. ✅ **Bing Webmaster Tools**
+   - تم التحقق من الموقع (Verified)
+   - تم تقديم الـ URL للفهرسة (URL Submitted Successfully)
+
+### النتيجة
+
+- الموقع مسجل ومُفهرَس على **Google** و **Bing**
+- يظهر اسم `PhilopaterSh` في نتائج البحث عبر: GitHub, Medium, LinkedIn
+- البورتفوليو في انتظار الظهور خلال **24 - 72 ساعة** على Google
+
+---
+
 © 2026 PHILOPATER SHENOUDA SEDKIY. ALL SYSTEMS SECURE.
