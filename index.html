@@ -40,17 +40,66 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Philopater Shenouda",
-        "jobTitle": "Junior Penetration Tester",
-        "url": "https://philopatersh.github.io/Portfolio/",
-        "image": "https://philopatersh.github.io/Portfolio/og-image.jpg",
-        "sameAs": [
-          "https://github.com/PhilopaterSh",
-          "https://linkedin.com/in/philopater-shenouda",
-          "https://x.com/PhilopaterSh",
-          "https://medium.com/@PhilopaterSh",
-          "https://tryhackme.com/p/PhilopaterSh"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://philopatersh.github.io/Portfolio/#person",
+            "name": "Philopater Shenouda",
+            "alternateName": "PhilopaterSh",
+            "jobTitle": "Junior Penetration Tester",
+            "description": "Information Technology graduate and Junior Penetration Tester specializing in offensive security, vulnerability management, and risk analysis. Bug Bounty Hunter on Bugcrowd and HackerOne.",
+            "url": "https://philopatersh.github.io/Portfolio/",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://philopatersh.github.io/Portfolio/og-image.jpg",
+              "width": 1200,
+              "height": 630
+            },
+            "knowsAbout": [
+              "Penetration Testing",
+              "Offensive Security",
+              "Vulnerability Assessment",
+              "Bug Bounty Hunting",
+              "Web Application Security",
+              "Network Security",
+              "CTF Challenges"
+            ],
+            "hasCredential": [
+              { "@type": "EducationalOccupationalCredential", "name": "CEH - Certified Ethical Hacker" },
+              { "@type": "EducationalOccupationalCredential", "name": "eJPT v1" }
+            ],
+            "sameAs": [
+              "https://github.com/PhilopaterSh",
+              "https://linkedin.com/in/philopater-shenouda",
+              "https://x.com/PhilopaterSh",
+              "https://medium.com/@PhilopaterSh",
+              "https://tryhackme.com/p/PhilopaterSh",
+              "https://bugcrowd.com/PhilopaterSh",
+              "https://hackerone.com/PhilopaterSh"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://philopatersh.github.io/Portfolio/#website",
+            "name": "Philopater Shenouda — Cybersecurity Portfolio",
+            "alternateName": "PhilopaterSh Portfolio",
+            "url": "https://philopatersh.github.io/Portfolio/",
+            "description": "Official cybersecurity portfolio of Philopater Shenouda (PhilopaterSh), Junior Penetration Tester and Bug Bounty Hunter.",
+            "author": { "@id": "https://philopatersh.github.io/Portfolio/#person" },
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://philopatersh.github.io/Portfolio/#webpage",
+            "url": "https://philopatersh.github.io/Portfolio/",
+            "name": "Philopater Shenouda | Junior Penetration Tester",
+            "description": "Information Technology graduate and Junior Penetration Tester specializing in offensive security, vulnerability management, and risk analysis. Bug Bounty Hunter on Bugcrowd and HackerOne.",
+            "isPartOf": { "@id": "https://philopatersh.github.io/Portfolio/#website" },
+            "about": { "@id": "https://philopatersh.github.io/Portfolio/#person" },
+            "datePublished": "2024-01-01",
+            "dateModified": "2026-08-15",
+            "inLanguage": "en-US"
+          }
         ]
       }
     </script>
