@@ -43,7 +43,7 @@ const path = require("path");
     await page.waitForSelector(".ats-cv", { timeout: 15000 });
 
     const isResumePage = await page.evaluate(() => {
-      return Boolean(document.querySelector(".ats-cv")) && document.title.includes("CV");
+      return Boolean(document.querySelector(".ats-cv")) && (document.title.includes("CV") || document.title.includes("Resume"));
     });
 
     if (!isResumePage) {
