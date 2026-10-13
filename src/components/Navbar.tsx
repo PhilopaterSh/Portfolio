@@ -33,7 +33,7 @@ const Navbar = () => {
           PhilopaterSh<span className="cursor">_</span>
         </Link>
       </div>
-      <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+      <div id="primary-navigation" className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         {navLinks.map((link) => (
           <a
             key={link.hash}
@@ -44,7 +44,7 @@ const Navbar = () => {
           </a>
         ))}
         <Link
-          to="/Cybersecurity_Awareness"
+          to="/Cybersecurity_Awareness/"
           className={isAwareness ? "nav-cta active" : "nav-cta-link"}
           onClick={closeMenu}
         >
@@ -108,9 +108,12 @@ const Navbar = () => {
           </div>
         </div>
         <button
+          type="button"
           className={`nav-toggle ${isMenuOpen ? "active" : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen}
         >
           <span></span>
           <span></span>

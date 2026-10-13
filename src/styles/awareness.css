@@ -133,8 +133,8 @@
 
 .entropy-btn--copy-failed {
   background: rgba(255, 77, 77, 0.1);
-  border-color: #ff4d4d;
-  color: #ff4d4d;
+  border-color: var(--error-color);
+  color: var(--error-color);
 }
 
 .password-input-wrapper {
@@ -157,7 +157,9 @@
     box-shadow 0.3s;
 }
 
-.password-input:focus {
+.password-input:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
   border-color: var(--accent-green);
   box-shadow: 0 0 10px rgba(0, 242, 255, 0.25);
 }
@@ -383,6 +385,13 @@
   gap: 20px;
 }
 
+.trace-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
 .trace-title {
   color: var(--accent-blue);
   display: flex;
@@ -428,15 +437,30 @@
 .trace-error {
   padding: 15px;
   background-color: rgba(255, 77, 77, 0.1);
-  border: 1px solid #ff4d4d;
+  border: 1px solid var(--error-color);
   border-radius: 6px;
-  color: #ff4d4d;
+  color: var(--error-color);
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.trace-status {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.trace-simulated-label {
+  color: var(--accent-blue);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
 }
 
 .trace-error-content {
@@ -448,13 +472,23 @@
 
 .trace-simulate-btn {
   background: transparent;
-  border: 1px solid #ff4d4d;
-  color: #ff4d4d;
-  padding: 5px 10px;
+  border: 1px solid var(--accent-blue);
+  color: var(--accent-blue);
+  padding: 10px 14px;
   border-radius: 4px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   cursor: pointer;
   font-weight: bold;
+}
+
+.trace-actions button:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+.trace-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
 }
 
 .trace-grid {

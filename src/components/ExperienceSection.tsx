@@ -3,6 +3,7 @@ import SectionHeader from "./SectionHeader";
 import { experiences } from "../data/portfolioData";
 import type { Experience } from "../data/portfolioData";
 import { hackeroneLogo, bugcrowdLogo } from "../data/portfolioData";
+import { imageDimensions } from "../assets";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -25,6 +26,8 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
         {exp.image && (
           <img
             src={exp.image}
+            width={imageDimensions[exp.image]?.width}
+            height={imageDimensions[exp.image]?.height}
             alt={`${exp.company} logo`}
             className="company-logo company-logo--compact"
             loading="lazy"
@@ -36,6 +39,8 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
             <div key={idx} className="company-logo-row">
               <img
                 src={img}
+                width={imageDimensions[img]?.width}
+                height={imageDimensions[img]?.height}
                 alt={`${exp.company} logo ${idx + 1}`}
                 className={`company-logo company-logo--compact logo-visibility-fix ${img === hackeroneLogo ? "logo-visibility-fix-hackerone" : ""}`}
                 loading="lazy"

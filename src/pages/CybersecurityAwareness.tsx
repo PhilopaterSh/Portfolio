@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import PasswordEntropyLab from "../components/PasswordEntropyLab";
 import SecurityChecklist from "../components/SecurityChecklist";
@@ -51,10 +51,6 @@ const timeScale = [
 
 const CybersecurityAwareness = () => {
   const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    document.title = "Cybersecurity Awareness & Cryptographic Entropy Lab | PhilopaterSh";
-  }, []);
 
   const entropy = password
     ? (() => {

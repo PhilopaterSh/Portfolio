@@ -1,49 +1,79 @@
 const puppeteer = require("puppeteer");
 const { spawn } = require("child_process");
+const { createServer } = require("net");
 const path = require("path");
 
-(async () => {
-  console.log("Starting Vite preview server...");
-  const preview = spawn("npx", ["vite", "preview", "--host", "127.0.0.1", "--port", "4173"], {
-    shell: true,
-    stdio: "inherit",
+function findFreePort() {
+  return new Promise((resolve, reject) => {
+    const server = createServer();
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      if (!address || typeof address === "string") {
+        server.close();
+        reject(new Error("Could not determine an available preview port."));
+        return;
+      }
+      server.close((error) => (error ? reject(error) : resolve(address.port)));
+    });
   });
+}
 
-  console.log("Waiting for server to be ready...");
-  const baseUrl = "http://127.0.0.1:4173/Portfolio/";
+async function waitForPreview(url, processHandle) {
   const startedAt = Date.now();
   while (Date.now() - startedAt < 30000) {
+    if (processHandle.exitCode !== null) {
+      throw new Error(`Vite preview exited early with code ${processHandle.exitCode}.`);
+    }
     try {
-      const response = await fetch(baseUrl);
-      if (response.ok) break;
+      const response = await fetch(url, { signal: AbortSignal.timeout(1000) });
+      if (response.ok) return;
     } catch {
       // The preview server is still starting.
     }
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 250));
   }
+  throw new Error("Vite preview did not become ready within 30 seconds.");
+}
 
-  console.log("Launching browser...");
-  const browser = await puppeteer.launch({
-    headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+async function stopPreview(processHandle) {
+  if (processHandle.exitCode !== null) return;
+  const stopped = new Promise((resolve) => processHandle.once("close", resolve));
+  processHandle.kill();
+  await Promise.race([stopped, new Promise((resolve) => setTimeout(resolve, 3000))]);
+}
 
-  const page = await browser.newPage();
+async function generatePdf() {
+  const port = await findFreePort();
+  const baseUrl = `http://127.0.0.1:${port}/Portfolio/`;
+  const viteCli = path.resolve(__dirname, "../node_modules/vite/bin/vite.js");
+  const preview = spawn(
+    process.execPath,
+    [viteCli, "preview", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
+    { stdio: "ignore" },
+  );
+  let browser;
 
-  const url = `${baseUrl}Resume`;
-
-  console.log(`Navigating to: ${url}`);
   try {
-    await page.goto(url, {
-      waitUntil: "networkidle0",
-      timeout: 60000,
+    console.log("Waiting for Vite preview server...");
+    await waitForPreview(baseUrl, preview);
+
+    console.log("Launching browser...");
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 
+    const page = await browser.newPage();
     await page.setViewport({ width: 794, height: 1123 });
+    const url = `${baseUrl}Resume/`;
+
+    console.log(`Navigating to: ${url}`);
+    await page.goto(url, { waitUntil: "networkidle0", timeout: 60000 });
     await page.waitForSelector(".ats-cv", { timeout: 15000 });
 
     const isResumePage = await page.evaluate(() => {
-      return Boolean(document.querySelector(".ats-cv")) && (document.title.includes("CV") || document.title.includes("Resume"));
+      return Boolean(document.querySelector(".ats-cv")) && document.title.includes("Resume");
     });
 
     if (!isResumePage) {
@@ -57,15 +87,14 @@ const path = require("path");
       printBackground: true,
       margin: { top: "0", right: "0", bottom: "0", left: "0" },
     });
-
     console.log("PDF generated successfully at dist/CV_Philopater.pdf");
-  } catch (error) {
-    console.error("Error during PDF generation:", error);
-    process.exit(1);
   } finally {
-    await browser.close();
-    preview.kill();
-    // Force exit to ensure the preview server is closed
-    setTimeout(() => process.exit(0), 1000);
+    if (browser) await browser.close();
+    await stopPreview(preview);
   }
-})();
+}
+
+generatePdf().catch((error) => {
+  console.error("Error during PDF generation:", error);
+  process.exitCode = 1;
+});

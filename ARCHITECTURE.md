@@ -225,6 +225,15 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.8 Privacy, Route Metadata, Accessibility, and Delivery (October 2026)
+
+- **Network trace:** Added a pre-action disclosure for the ipify/ipapi request flow, an offline local demo, provider response validation, partial-data handling, and neutral status/error feedback. No request runs until the visitor chooses the live trace.
+- **Route metadata:** Added a shared route manifest and build-time generation of route documents for Resume and Cybersecurity Awareness. The React application remains client-rendered; generated documents provide route-specific head metadata while keeping the existing GitHub Pages base and SPA behavior.
+- **Site identity and sitemap:** Corrected the favicon filename and made its Vite URL base-aware. The sitemap is generated from canonical route metadata and omits unsupported modification dates.
+- **Accessibility and layout stability:** Added visible focus styles, accessible mobile-menu state and form feedback, reduced-motion handling and pause controls for testimonial rotation, and intrinsic dimensions for portfolio images.
+- **Delivery:** Consolidated verification and GitHub Pages deployment into one gated workflow. Pull requests verify without deploying; main deployment consumes the artifact produced after lint, formatting, type, test, build, and PDF steps.
+- **Validation:** Added route manifest, route resolution, and network trace tests. Local production preview verified supported route metadata, the unknown-route noindex behavior, demo mode without provider requests, and a 360 px viewport. The PDF was generated successfully after installing the pinned Puppeteer Chrome browser. Full Lighthouse and assistive-technology checks remain outstanding.
+
 ### 5.8 SEO, Resilience & Performance Hardening (July 2026)
 
 - **Security:** Resolved all 10 `npm audit` findings (5 high-severity, in `react-router`/`react-router-dom`/`vite`) via non-breaking `npm audit fix`.
@@ -242,7 +251,7 @@ deployment
 - **Refactor:** `PasswordEntropyLab.tsx` derives entropy/strength/color via `useMemo` instead of `useState` + `useEffect`, fixing a `react-hooks/set-state-in-effect` lint error and removing an unnecessary render pass.
 - **Lint fixes:** Removed dead `useTheme()` calls in `NetworkTrace.tsx` and `PasswordEntropyLab.tsx` (destructured `theme` was never used).
 - **CI:** Added `.github/workflows/ci.yml` running lint, typecheck, test, and build on every push/PR to `main`.
-- **EmailJS secrets:** `deploy.yml` now injects `VITE_EMAILJS_*` from GitHub Actions repository secrets at build time. The hardcoded fallback values in `ContactFooter.tsx` remain as a legacy gap — see Section 4 risks.
+- **EmailJS configuration:** The main-branch verification build injects `VITE_EMAILJS_*` from GitHub Actions repository secrets before creating the artifact. Pull request builds use no production secrets. The hardcoded fallback values in `ContactFooter.tsx` remain as a legacy gap — see Section 4 risks.
 - **Spec Kit:** Initialized GitHub Spec Kit (`.specify/`, `.claude/skills/speckit-*`) with a `constitution.md` authored from this document's Quality Goals and Cross-cutting Concerns sections. Future features should flow through `/speckit-specify` → `/speckit-plan` → `/speckit-tasks` → `/speckit-implement`.
 
 ### 5.6 Component Refactoring & CSS Split (July 2026)

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { education } from "../data/portfolioData";
+import { imageDimensions } from "../assets";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -24,6 +25,8 @@ const EducationSection = () => {
             <span className="exp-year">{education.period}</span>
             <img
               src={education.logo}
+              width={imageDimensions[education.logo]?.width}
+              height={imageDimensions[education.logo]?.height}
               alt={`${education.university} logo`}
               className="company-logo"
               loading="lazy"

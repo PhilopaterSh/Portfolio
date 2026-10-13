@@ -123,9 +123,10 @@ export const experiences: Experience[] = [
     role: "Cybersecurity Participant (Diploma)",
     image: digiliansLogo,
     highlights: [
-      "Selected for a prestigious national scholarship in collaboration with the Egyptian Military Academy and global tech leaders (Google, AWS, Palo Alto, Fortinet).",
-      "Developed practical expertise in VAPT, system hardening, and security frameworks through an intensive industry-aligned curriculum.",
-      "Applied Agile methodologies and SMART goals within cross-functional teams to manage project deliverables using Notion and Excel.",
+      "Selected for an intensive residential scholarship hosted at the Egyptian Military Academy in partnership with NTI, Military Technical College, and global tech leaders (Google, AWS, Palo Alto, Fortinet).",
+      "Completed 1,330 total accredited hours: 750h technical/practical skills, 300h leadership/business/freelancing, 220h capstone project & field training, and 60h agentic AI.",
+      "Configured enterprise routing, switching, and firewall security policies using Huawei HCIA-Datacom standards and Fortinet (FortiOS 7.6) Next-Gen Firewalls.",
+      "Graduation Project: Led a technical team developing 'Argus', an autonomous AI framework automating end-to-end pentesting in air-gapped environments.",
     ],
   },
   {
@@ -193,7 +194,7 @@ export const projects: Project[] = [
       "Developed a high-performance, concurrent tool in Go that aggregates data from multiple passive sources and applies intelligent filtering to extract unique URLs efficiently.",
     tools: ["Go (Golang)", "Concurrency", "HTTP APIs", "Regex"],
     outcome:
-      "Achieved a 60% reduction in recon time and improved the discovery of sensitive endpoints by 25% in various testing scenarios.",
+      "Aggregates URLs from multiple passive sources and filters unique endpoints to support reconnaissance workflows.",
     link: "https://github.com/PhilopaterSh/Ph.Sh_url",
     isMajor: true,
   },
@@ -207,7 +208,7 @@ export const projects: Project[] = [
       "Built a Go-based tool that integrates various passive API sources with active concurrent discovery to provide a comprehensive and accurate list of subdomains.",
     tools: ["Go", "JSON APIs", "Parallel Processing", "DNS Recon"],
     outcome:
-      "Streamlined the discovery phase, providing a 40% more comprehensive view of target infrastructures compared to traditional single-source tools.",
+      "Combines passive sources and concurrent discovery to help map a broader view of a target's subdomains.",
     link: "https://github.com/PhilopaterSh/Ph.Sh-Subdomain",
     isMajor: false,
   },

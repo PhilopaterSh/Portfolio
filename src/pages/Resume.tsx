@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   about,
   experiences,
@@ -12,10 +11,6 @@ import {
 } from "../data/portfolioData";
 
 const Resume = () => {
-  useEffect(() => {
-    document.title = "CV & Resume | Philopater Shenouda (PhilopaterSh) - Junior Penetration Tester";
-  }, []);
-
   const featuredCerts = certs.slice(0, 10);
 
   return (

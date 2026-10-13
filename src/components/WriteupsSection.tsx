@@ -51,9 +51,15 @@ const WriteupCard = ({ w }: { w: Writeup }) => (
         target="_blank"
         rel="noopener noreferrer"
         className="project-link writeup-action-link"
-        aria-label={`Read ${w.title}`}
+        aria-label={
+          w.link === "https://medium.com/@PhilopaterSh"
+            ? `Visit the Medium profile for ${w.title}`
+            : `Read ${w.title}`
+        }
       >
-        Read Full Writeup & Research →
+        {w.link === "https://medium.com/@PhilopaterSh"
+          ? "Visit Medium Profile →"
+          : "Read Full Writeup & Research →"}
       </a>
     </div>
   </motion.article>

@@ -1,72 +1,70 @@
 import { useState } from "react";
+import { fetchNetworkTrace, type NetworkTraceData } from "../utils/networkTrace";
 
-interface LocationData {
-  ip: string;
-  city: string;
-  region: string;
-  country_name: string;
-  country_code: string;
-  postal: string;
-  timezone: string;
-  org: string;
-}
+type TraceStatus =
+  "idle" | "live-loading" | "demo-loading" | "live-success" | "demo-success" | "error";
 
+const demoData: NetworkTraceData = {
+  ip: "192.0.2.24",
+  city: "Example City",
+  region: "Example Region",
+  country_name: "Example Country",
+  country_code: "EX",
+  postal: "00000",
+  timezone: "UTC",
+  org: "Example Network",
+  simulated: true,
+};
+
+/** Displays the privacy disclosure and optional live or local network trace. */
 const NetworkTrace = () => {
-  const [locationData, setLocationData] = useState<LocationData | null>(null);
-  const [loadingLocation, setLoadingLocation] = useState(false);
-  const [locationError, setLocationError] = useState<string | null>(null);
+  const [locationData, setLocationData] = useState<NetworkTraceData | null>(null);
+  const [status, setStatus] = useState<TraceStatus>("idle");
 
-  const fetchLocation = async () => {
-    setLoadingLocation(true);
-    setLocationError(null);
+  const runLiveTrace = async () => {
+    setStatus("live-loading");
+    setLocationData(null);
     try {
-      const ipResponse = await fetch("https://api.ipify.org?format=json");
-      if (!ipResponse.ok) throw new Error("Could not retrieve IP address.");
-      const { ip } = await ipResponse.json();
-
-      const geoResponse = await fetch(`https://ipapi.co/${ip}/json/`);
-      if (!geoResponse.ok) throw new Error("Could not retrieve geographical info.");
-      const data = await geoResponse.json();
-
-      if (data.error) throw new Error(data.reason || "Provider error");
-
-      setLocationData({
-        ip: data.ip,
-        city: data.city,
-        region: data.region,
-        country_name: data.country_name,
-        country_code: data.country_code,
-        postal: data.postal,
-        timezone: data.timezone,
-        org: data.org,
-      });
-    } catch (error) {
-      console.error("Trace Error:", error);
-      setLocationError(
-        "SECURITY_BLOCK: Your browser or Ad-Blocker is preventing the connection to ipify/ipapi. Disable extensions to see your real network identity.",
-      );
-    } finally {
-      setLoadingLocation(false);
+      setLocationData(await fetchNetworkTrace());
+      setStatus("live-success");
+    } catch {
+      setStatus("error");
     }
   };
 
-  const handleSimulate = () => {
-    setLocationError(null);
-    setLoadingLocation(true);
-    setTimeout(() => {
-      setLocationData({
-        ip: "192.168.1.254 [SIMULATED]",
-        city: "Cyber City",
-        region: "Secure Zone",
-        country_name: "The Web",
-        country_code: "WW",
-        postal: "00000",
-        timezone: "GMT/UTC",
-        org: "Shadow Network Solutions Inc.",
-      });
-      setLoadingLocation(false);
-    }, 800);
+  const runDemo = () => {
+    setStatus("demo-loading");
+    setLocationData(null);
+    window.setTimeout(() => {
+      setLocationData(demoData);
+      setStatus("demo-success");
+    }, 350);
   };
+
+  const isLoading = status === "live-loading" || status === "demo-loading";
+  const statusMessage = {
+    idle: "No trace has been run. Choose live trace or local demo.",
+    "live-loading": "Live trace is running.",
+    "demo-loading": "Preparing local simulated data.",
+    "live-success": "Live trace completed.",
+    "demo-success": "Local demo completed. All displayed values are simulated.",
+    error: "The lookup could not be completed. You can retry or use the local demo.",
+  }[status];
+
+  const fields = locationData
+    ? [
+        { label: "PUBLIC_IP", value: locationData.ip, color: "var(--accent-green)" },
+        { label: "CITY", value: locationData.city },
+        { label: "REGION", value: locationData.region },
+        {
+          label: "COUNTRY",
+          value: `${locationData.country_name} (${locationData.country_code})`,
+        },
+        { label: "POSTAL", value: locationData.postal },
+        { label: "TIMEZONE", value: locationData.timezone },
+        { label: "ISP", value: locationData.org, fullWidth: true },
+      ]
+    : [];
 
   return (
     <div className="awareness-card">
@@ -79,52 +77,56 @@ const NetworkTrace = () => {
             Network Identity Trace
           </h2>
           <p className="trace-description">
-            Analyze your digital exposure. This module evaluates your browser's privacy resilience.
+            This optional live lookup sends a request to ipify to obtain your public IP address,
+            then sends that address to ipapi for approximate network and location details. Results
+            may include city, region, country, postal code, timezone, and network provider. Review
+            each provider&apos;s privacy information before choosing a live trace. The local demo
+            makes no network requests.
           </p>
         </div>
-        <button onClick={fetchLocation} disabled={loadingLocation} className="trace-btn">
-          {loadingLocation ? "SCANNING..." : "TRACE LOCATION"}
-        </button>
+        <div className="trace-actions">
+          <button onClick={runLiveTrace} disabled={isLoading} className="trace-btn">
+            {status === "live-loading" ? "SCANNING..." : "RUN LIVE TRACE"}
+          </button>
+          <button onClick={runDemo} disabled={isLoading} className="trace-simulate-btn">
+            RUN LOCAL DEMO
+          </button>
+        </div>
       </div>
 
-      {locationError && (
-        <div className="trace-error">
-          <div className="trace-error-content">
-            <span aria-hidden="true">⚠️</span> {locationError}
-          </div>
-          <button onClick={handleSimulate} className="trace-simulate-btn">
-            SIMULATE TRACE (DEMO)
-          </button>
+      <p className="trace-status" role="status" aria-live="polite" aria-atomic="true">
+        {statusMessage}
+      </p>
+
+      {status === "error" && (
+        <div className="trace-error" role="alert">
+          <span>The providers may be unavailable or the request may have been blocked.</span>
+          <span>Retry the live lookup or use the local demo.</span>
         </div>
       )}
 
       {locationData ? (
-        <div className="trace-grid">
-          {[
-            { label: "PUBLIC_IP", value: locationData.ip, color: "var(--accent-green)" },
-            { label: "CITY", value: locationData.city },
-            { label: "REGION", value: locationData.region },
-            {
-              label: "COUNTRY",
-              value: `${locationData.country_name} (${locationData.country_code})`,
-            },
-            { label: "POSTAL", value: locationData.postal },
-            { label: "TIMEZONE", value: locationData.timezone },
-            { label: "ISP", value: locationData.org, fullWidth: true },
-          ].map((item, idx) => (
-            <div key={idx} className={`trace-item ${item.fullWidth ? "full-width" : ""}`}>
-              <div className="trace-item-label">{item.label}</div>
-              <div
-                className="trace-item-value"
-                style={{ color: item.color || "var(--text-primary)" }}
-              >
-                {item.value || "N/A"}
+        <>
+          {locationData.simulated && <p className="trace-simulated-label">SIMULATED DEMO DATA</p>}
+          <div className="trace-grid">
+            {fields.map((item) => (
+              <div key={item.label} className={`trace-item ${item.fullWidth ? "full-width" : ""}`}>
+                <div className="trace-item-label">{item.label}</div>
+                <div
+                  className="trace-item-value"
+                  style={{ color: item.color || "var(--text-primary)" }}
+                >
+                  {item.value}
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </>
       ) : (
-        <div className="trace-idle">System idle. Press TRACE to begin network reconnaissance.</div>
+        <div className="trace-idle">
+          No lookup starts automatically. Choose live trace only after reviewing the disclosure, or
+          try the local demo.
+        </div>
       )}
     </div>
   );

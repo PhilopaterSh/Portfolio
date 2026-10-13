@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { volunteering } from "../data/portfolioData";
 import type { Volunteering } from "../data/portfolioData";
+import { imageDimensions } from "../assets";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -23,6 +24,8 @@ const VolunteeringCard = ({ v }: { v: Volunteering }) => (
       {v.image && (
         <img
           src={v.image}
+          width={imageDimensions[v.image]?.width}
+          height={imageDimensions[v.image]?.height}
           alt={`${v.organization} logo`}
           className="company-logo company-logo--compact company-logo--spaced"
           loading="lazy"

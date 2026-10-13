@@ -23,9 +23,10 @@ const Hero = () => {
             <Typewriter text="Junior Penetration Tester" delay={80} />
           </h2>
           <p className="hero-description">
-            Information Technology graduate and <strong>Junior Penetration Tester (PhilopaterSh)</strong> specializing
-            in offensive security, web & network vulnerability assessment, and security automation.
-            Passionate about <strong>Red Teaming</strong>, ethical hacking, and bug bounty hunting.
+            Information Technology graduate and{" "}
+            <strong>Junior Penetration Tester (PhilopaterSh)</strong> specializing in offensive
+            security, web & network vulnerability assessment, and security automation. Passionate
+            about <strong>Red Teaming</strong>, ethical hacking, and bug bounty hunting.
           </p>
           <div className="social-pill-container">
             <a
@@ -76,7 +77,7 @@ const Hero = () => {
             >
               Download CV
             </a>
-            <Link to="/Resume" className="secondary-cta cv-btn">
+            <Link to="/Resume/" className="secondary-cta cv-btn">
               View Resume
             </Link>
           </div>
@@ -93,8 +94,8 @@ const Hero = () => {
               src={profileImg}
               alt="Philopater Shenouda (PhilopaterSh) - Junior Penetration Tester"
               className="hero-image"
-              width="600"
-              height="600"
+              width="900"
+              height="1260"
               decoding="async"
               fetchPriority="high"
             />

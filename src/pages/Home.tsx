@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import AboutSection from "../components/AboutSection";
@@ -15,10 +14,6 @@ import ContactFooter from "../components/ContactFooter";
 import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
-  useEffect(() => {
-    document.title = "Philopater Shenouda (PhilopaterSh) | Junior Penetration Tester";
-  }, []);
-
   return (
     <div className="portfolio-root">
       <div className="background-glow"></div>

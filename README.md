@@ -175,50 +175,50 @@ Passionate about ethical hacking, network security, and building tools that make
 
 ## 🔍 SEO & Search Engine Indexing
 
-> **تاريخ التنفيذ:** 15 أغسطس 2026
+> **Implementation date:** August 15, 2026
 
 ---
 
-### 📄 ما تم إضافته وتحسينه في `index.html`
+### 📄 Updates to `index.html`
 
-#### Meta Tags الأساسية
+#### Core Meta Tags
 
-| الـ Tag | القيمة / الغرض |
+| Tag | Value / purpose |
 |---------|----------------|
 | `<meta name="keywords">` | `PhilopaterSh, Philopater Shenouda, Junior Penetration Tester, Bug Bounty Hunter, Cybersecurity...` |
-| `<meta name="robots" content="index, follow">` | السماح لجميع محركات البحث بالفهرسة والتتبع |
-| `<meta name="google-site-verification">` | التحقق من ملكية الموقع على **Google Search Console** |
-| `<meta name="msvalidate.01">` | التحقق من ملكية الموقع على **Bing Webmaster Tools** |
+| `<meta name="robots" content="index, follow">` | Allows search engines to index and follow the site |
+| `<meta name="google-site-verification">` | Verifies site ownership in **Google Search Console** |
+| `<meta name="msvalidate.01">` | Verifies site ownership in **Bing Webmaster Tools** |
 
-#### Meta Description (محسّن)
+#### Improved Meta Description
 
 ```
-قبل:
+Before:
 "Information Technology graduate and Junior Penetration Tester specializing
  in offensive security, vulnerability management, and risk analysis."
 
-بعد:
+After:
 "Philopater Shenouda (PhilopaterSh) — Junior Penetration Tester & Bug Bounty Hunter.
  CEH & eJPT certified. Specializing in web application security, network penetration
  testing, vulnerability assessment, and offensive security research.
  Active on Bugcrowd and HackerOne."
 ```
 
-#### Open Graph & Twitter Cards (محسّنة)
+#### Improved Open Graph & Twitter Cards
 
-| الـ Tag | الإضافة |
+| Tag | Update |
 |---------|---------|
-| `og:description` | تم تحديثه بنفس الـ description المحسّن |
+| `og:description` | Updated to use the improved description |
 | `og:image:width` | `1376` |
 | `og:image:height` | `768` |
 | `og:image:alt` | `Philopater Shenouda - Junior Penetration Tester` |
-| `twitter:description` | تم تحديثه بمحتوى أقوى وأكثر تفصيلاً |
+| `twitter:description` | Updated with stronger, more detailed content |
 
 ---
 
-### 🗂️ ما تم تحديثه في `public/sitemap.xml`
+### 🗂️ Updates to `public/sitemap.xml`
 
-- إضافة `<lastmod>` لكل صفحة لإعلام محركات البحث بتاريخ آخر تحديث.
+- Added `<lastmod>` to each page to indicate its latest update date to search engines.
 
 ---
 
@@ -232,74 +232,74 @@ A dedicated technical publication hub showcasing real-world penetration testing 
 
 ---
 
-### 🧠 Schema.org Structured Data (محسّن)
+### 🧠 Improved Schema.org Structured Data
 
-تم ترقية الـ Schema من `Person` بسيط إلى `@graph` كامل يحتوي على:
+The schema was expanded from a basic `Person` object to a complete `@graph` containing:
 
-| النوع | الغرض |
+| Type | Purpose |
 |-------|--------|
-| `Person` (محسّن) | يحتوي على `alternateName: PhilopaterSh` + `knowsAbout` + `hasCredential` (CEH, eJPT) + Bugcrowd/HackerOne في `sameAs` |
-| `WebSite` (جديد) | يُعرّف الموقع كـ entity مستقلة لدى Google |
-| `SoftwareSourceCode` (جديد) | يوثق الأدوات البرمجية `Ph.Sh_url` و `Ph.Sh-Subdomain` بلغة Go |
-| `WebPage` (جديد) | تفاصيل الصفحة بـ `datePublished` و`dateModified` |
-| `BreadcrumbList` (جديد) | يُنشئ breadcrumb تحت رابط نتيجة البحث (Home, Awareness, Resume) |
-| `ProfilePage` (جديد) | صفحة بروفايل شخصي — مؤهلة لظهور **Google Rich Results** |
+| `Person` (improved) | Includes `alternateName: PhilopaterSh`, `knowsAbout`, `hasCredential` (CEH, eJPT), and Bugcrowd/HackerOne in `sameAs` |
+| `WebSite` (new) | Defines the site as a separate entity for Google |
+| `SoftwareSourceCode` (new) | Documents the Go tools `Ph.Sh_url` and `Ph.Sh-Subdomain` |
+| `WebPage` (new) | Provides page details through `datePublished` and `dateModified` |
+| `BreadcrumbList` (new) | Adds search-result breadcrumbs (Home, Awareness, Resume) |
+| `ProfilePage` (new) | Defines a personal profile page eligible for **Google Rich Results** |
 
 ---
 
-### 🖼️ OG Image (مُستبدلة)
+### 🖼️ OG Image (Replaced)
 
-| | قبل | بعد |
+| | Before | After |
 |-|-----|-----|
-| **الحجم** | 900×1260 px (portrait) | 1376×768 px (landscape) |
-| **الشكل** | صورة شخصية بيضاء فقط | صورة + اسم + Job Title + Certifications + رابط الموقع |
-| **الاستخدام** | sharing preview ضعيف | preview احترافي على LinkedIn, Twitter, WhatsApp |
+| **Size** | 900×1260 px (portrait) | 1376×768 px (landscape) |
+| **Design** | White-background portrait only | Portrait, name, job title, certifications, and site URL |
+| **Use** | Basic sharing preview | Professional preview on LinkedIn, Twitter, and WhatsApp |
 
 ---
 
-### ✅ خطوات التسجيل المنجزة على محركات البحث
+### ✅ Search Engine Registration Completed
 
 1. ✅ **Google Search Console**
-   - تم التحقق من ملكية الموقع (Verified)
-   - تم تقديم الـ Sitemap: `sitemap.xml` (تشمل Home, Resume, Cybersecurity Awareness)
-   - تم طلب الفهرسة الفورية (Request Indexing → Priority Queue)
+   - Site ownership verified.
+   - Submitted `sitemap.xml`, covering Home, Resume, and Cybersecurity Awareness.
+   - Requested immediate indexing (Request Indexing → Priority Queue).
 
 2. ✅ **Bing Webmaster Tools**
-   - تم التحقق من ملكية الموقع (Verified)
-   - تم تقديم الـ URL والـ Sitemap للفهرسة (URL Submitted Successfully)
+   - Site ownership verified.
+   - Submitted the URL and sitemap for indexing successfully.
 
 ---
 
-### 📊 نتائج البحث المرصودة
+### 📊 Observed Search Results
 
-- ✅ عند البحث عن `PhilopaterSh`: يظهر عبر GitHub, Medium, LinkedIn, Freelancer platforms
-- ✅ عند البحث عن `site:philopatersh.github.io` على **Bing**: يظهر البورتفوليو بالعنوان والـ description الصح
-- 🔄 **Google**: في انتظار الفهرسة — متوقع الظهور خلال **24 - 72 ساعة**
+- ✅ A search for `PhilopaterSh` shows results across GitHub, Medium, LinkedIn, and freelancer platforms.
+- ✅ A **Bing** search for `site:philopatersh.github.io` shows the portfolio with its title and description.
+- 🔄 **Google**: Indexing is pending; appearance was expected within **24–72 hours**.
 
 ---
 
-## 🗺️ Strategic Roadmap & Future Expansion (خطة التوسع المستقبلية)
+## 🗺️ Strategic Roadmap & Future Expansion
 
-خطة استراتيجية لتعزيز الـ Authority الأمني وزيادة قوة الـ SEO لاسم **PhilopaterSh** عبر منصات إضافية:
+This roadmap outlines plans to strengthen **PhilopaterSh**'s security authority and SEO presence across additional platforms:
 
 ### 1. 📘 GitBook: Offensive Security & Penetration Testing Playbook
-* **الهدف:** بناء قاعدة معرفية ومنهجية اختبار اختراق عامة موثقة (Public Security Wiki).
-* **المحتوى المستهدف:**
-  * خطوات الـ Reconnaissance والـ Web App Security Testing بتفصيل عملي.
-  * أوامر الـ One-Liners والـ Payloads الخاصة بـ Active Directory و Privilege Escalation.
-  * مزامنة آلية لملاحظات الـ Security المنظمة من Obsidian.
-* **الأثر على الـ SEO والملف:**
-  * الحصول على Backlink عالي الثقة من نطاق `gitbook.io`.
-  * إبراز منهجية منظمة (Systematic Mindset) أمام مدراء التوظيف والفرق الأمنية.
+* **Goal:** Build a documented public security wiki and penetration testing methodology.
+* **Planned content:**
+  * Practical reconnaissance and web application security testing workflows.
+  * One-liners and payloads for Active Directory and privilege escalation.
+  * Automated publishing of organized security notes from Obsidian.
+* **SEO and portfolio impact:**
+  * Earn a trusted backlink from the `gitbook.io` domain.
+  * Show a systematic approach to hiring managers and security teams.
 
 ### 2. 🦊 GitLab: DevSecOps & Security Automation Hub
-* **الهدف:** إبراز الخبرة في أتمتة الأمن ودمج الفحص الأمني داخل الـ CI/CD Pipelines.
-* **المحتوى المستهدف:**
-  * بناء مستودعات تجريبية تطبق الـ SAST (مثل Semgrep/Trivy) والـ DAST (مثل OWASP ZAP) في خطوط الأنابيب التلقائية.
-  * ربط أدوات Go (`Ph.Sh_url` و `Ph.Sh-Subdomain`) بـ Multi-Platform Build Pipelines (Linux, Windows, macOS).
-* **الأثر على الـ SEO والملف:**
-  * إثبات فهم البيئات المؤسسية (Enterprise DevOps Environments).
-  * تعزيز شبكة الروابط الخارجية الموثوقة لربط كافة الحسابات التقنية بالبورتفوليو.
+* **Goal:** Demonstrate security automation and security testing integrated into CI/CD pipelines.
+* **Planned content:**
+  * Example repositories that run SAST (such as Semgrep/Trivy) and DAST (such as OWASP ZAP) in automated pipelines.
+  * Connect the Go tools (`Ph.Sh_url` and `Ph.Sh-Subdomain`) to multi-platform build pipelines for Linux, Windows, and macOS.
+* **SEO and portfolio impact:**
+  * Demonstrate an understanding of enterprise DevOps environments.
+  * Build trusted external links connecting technical accounts to the portfolio.
 
 ---
 

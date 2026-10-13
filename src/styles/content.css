@@ -710,7 +710,7 @@
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  padding: 20px 0 60px;
+  padding: 20px 0 12px;
 }
 
 .slider-track {
@@ -739,14 +739,42 @@
   background: var(--bg-black);
 }
 
-.slider-dots {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+.slider-controls {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
-  z-index: 5;
+  margin-top: 12px;
+}
+
+.slider-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.slider-rotation-control {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 8px 10px;
+  background: var(--bg-black);
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 40px;
+  max-width: 100%;
+}
+
+.slider-rotation-control:focus-visible,
+.slider-dots button:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slider-track {
+    transition: none;
+  }
 }
 
 .dot {
@@ -854,6 +882,12 @@
   box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
 }
 
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
 .form-actions {
   margin-top: 30px;
   text-align: center;
@@ -890,8 +924,8 @@
 
 .form-feedback.error {
   background: rgba(255, 77, 77, 0.05);
-  border: 1px solid #ff4d4d;
-  color: #ff4d4d;
+  border: 1px solid var(--error-color);
+  color: var(--error-color);
 }
 
 .copyright {

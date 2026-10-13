@@ -98,7 +98,7 @@ const ContactFooter = () => {
             </div>
           </div>
 
-          <div className="form-actions">
+          <div className="form-actions" aria-live="polite" aria-atomic="true">
             <button type="submit" className="main-cta send-btn" disabled={formStatus === "sending"}>
               {formStatus === "idle" && "SEND_MESSAGE"}
               {formStatus === "sending" && "ENCRYPTING & SENDING..."}
@@ -111,6 +111,9 @@ const ContactFooter = () => {
             {formStatus === "success" && (
               <motion.div
                 className="form-feedback success"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
@@ -121,6 +124,8 @@ const ContactFooter = () => {
             {formStatus === "error" && (
               <motion.div
                 className="form-feedback error"
+                role="alert"
+                aria-atomic="true"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
