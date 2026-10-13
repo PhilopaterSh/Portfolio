@@ -39,6 +39,17 @@ try {
   );
   assert.ok(contentLinks.length > 0);
   assert.ok(contentLinks.every(({ href }) => href.startsWith("https://")));
+  for (const articleUrl of [
+    "https://medium.com/@PhilopaterSh/basic-pentesting-walkthrough-2fdd9d0c30d6",
+    "https://medium.com/@PhilopaterSh/hackthebox-com-machines-cap-519d78712a82",
+    "https://medium.com/@PhilopaterSh/google-xss-game-6dbd1c8b3eb8",
+    "https://medium.com/@PhilopaterSh/tryhackme-blue-writeup-walkthrough-with-answers-765c273485e2",
+  ]) {
+    assert.ok(
+      contentLinks.some(({ href }) => href === articleUrl),
+      `missing article card: ${articleUrl}`,
+    );
+  }
   const projectOutcomes = await page.$$eval(".major-project .detail-item", (items) =>
     items
       .filter((item) => item.textContent?.startsWith("Outcome:"))

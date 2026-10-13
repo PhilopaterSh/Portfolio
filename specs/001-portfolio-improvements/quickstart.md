@@ -36,7 +36,7 @@ Expected result: all checks pass; build output is written to `dist/`.
 
 For automated route, metadata, no-fetch demo, and 360 px overflow smoke checks, start `npm run preview` in one terminal and run `npm run verify:preview` in another.
 
-Final smoke results (2026-10-13): supported route titles/canonicals and unknown-route `noindex` passed; six project/writeup resource links rendered with HTTPS destinations; major project outcomes matched between the portfolio and Resume; mobile navigation toggled with Enter; password entropy/checklist interaction passed; demo mode made zero provider requests; and all three routes plus project/writeup cards fit at 360 px. Screen-reader checks, 390 px manual review, full contrast review, reduced-motion/contact error-state review, and Lighthouse comparisons remain outstanding.
+Final smoke results (2026-10-13): supported route titles/canonicals and unknown-route `noindex` passed; eight project/writeup resource links rendered with HTTPS destinations, including all four supplied Medium articles; major project outcomes matched between the portfolio and Resume; mobile navigation toggled with Enter; password entropy/checklist interaction passed; demo mode made zero provider requests; and all three routes plus project/writeup cards fit at 360 px. Screen-reader checks, 390 px manual review, full contrast review, reduced-motion/contact error-state review, and Lighthouse comparisons remain outstanding.
 
 ## Visitor Trust and Trace
 
@@ -86,5 +86,5 @@ For each featured project, verify the destination link and source for any numeri
 
 - `Ph.Sh_URL` (`https://github.com/PhilopaterSh/Ph.Sh_url`): removed the unsubstantiated 60% reconnaissance-time and 25% endpoint-discovery claims; retained a qualitative description of its multi-source collection and deduplication workflow.
 - `Ph.Sh-Subdomain` (`https://github.com/PhilopaterSh/Ph.Sh-Subdomain`): removed the unsubstantiated 40% comparison; retained a qualitative description of passive-source and concurrent discovery.
-- Two Medium writeups and the Medium writeup card currently link to the author profile (`https://medium.com/@PhilopaterSh`), not a specific article. Replace with direct article destinations only after those URLs are supplied or independently verified.
+- The author supplied direct Medium articles for Basic Pentesting, TryHackMe Blue, Hack The Box Cap, and Google XSS Game. The first two existing cards now link to their article pages, and the latter two are new cards. The Linux Administration card still links to the author profile and should be replaced when its direct article URL is available.
 - Existing user-edited experience claims about the DEPI program, 1,330 hours, and Argus were preserved and now match the author-provided Obsidian career dossier. Treat that dossier as an author reference; retain primary program documentation if independent verification is required.

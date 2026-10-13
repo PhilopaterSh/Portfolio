@@ -216,23 +216,23 @@ export const projects: Project[] = [
 
 export const writeups: Writeup[] = [
   {
-    title: "TryHackMe: Blue (MS17-010 EternalBlue) Walkthrough",
+    title: "TryHackMe Blue Writeup Walkthrough with Answers",
     platform: "TryHackMe / Medium",
     badge: "CTF Walkthrough",
-    readTime: "5 min read",
-    desc: "Complete exploitation lifecycle of the classic MS17-010 SMB vulnerability (EternalBlue). Details reconnaissance with Nmap, weaponization using Metasploit, password hash extraction, and privilege escalation to NT AUTHORITY\\SYSTEM.",
+    readTime: "6 min read",
+    desc: "TryHackMe Blue walkthrough covering Nmap reconnaissance, MS17-010 EternalBlue exploitation with Metasploit, shell conversion, and privilege escalation to NT AUTHORITY\\SYSTEM.",
     tags: ["MS17-010", "EternalBlue", "Metasploit", "Privilege Escalation", "TryHackMe"],
-    link: "https://medium.com/@PhilopaterSh",
+    link: "https://medium.com/@PhilopaterSh/tryhackme-blue-writeup-walkthrough-with-answers-765c273485e2",
     featured: true,
   },
   {
-    title: "TryHackMe: Basic Pentesting Methodology & Attack Vectors",
+    title: "Basic Pentesting TryHackMe Walkthrough",
     platform: "TryHackMe / Medium",
     badge: "Hands-on Pentest",
-    readTime: "7 min read",
-    desc: "End-to-end walkthrough covering web application reconnaissance, brute-forcing administrative logins via Hydra, cracking password hashes with John the Ripper, and leveraging cracked SSH private keys to gain root privilege.",
+    readTime: "6 min read",
+    desc: "TryHackMe Basic Pentesting walkthrough covering service discovery, web and SMB enumeration, SSH access, and Linux privilege escalation.",
     tags: ["Web Recon", "Hydra", "John the Ripper", "SSH Key Cracking", "Linux Pentesting"],
-    link: "https://medium.com/@PhilopaterSh",
+    link: "https://medium.com/@PhilopaterSh/basic-pentesting-walkthrough-2fdd9d0c30d6",
     featured: true,
   },
   {
@@ -254,6 +254,26 @@ export const writeups: Writeup[] = [
     tags: ["Linux Hardening", "Access Control", "File Permissions", "System Administration", "Security"],
     link: "https://medium.com/@PhilopaterSh",
     featured: false,
+  },
+  {
+    title: "Hack The Box: Cap Walkthrough",
+    platform: "Medium / Hack The Box",
+    badge: "HTB Walkthrough",
+    readTime: "Article",
+    desc: "A walkthrough of the Hack The Box Cap machine, documenting its reconnaissance and exploitation path.",
+    tags: ["Hack The Box", "Cap", "Reconnaissance", "CTF"],
+    link: "https://medium.com/@PhilopaterSh/hackthebox-com-machines-cap-519d78712a82",
+    featured: true,
+  },
+  {
+    title: "Google XSS Game Walkthrough",
+    platform: "Medium / Google XSS Game",
+    badge: "Web Security Lab",
+    readTime: "Article",
+    desc: "A walkthrough of the Google XSS Game challenges and their cross-site scripting concepts.",
+    tags: ["XSS", "Web Security", "Google XSS Game", "CTF"],
+    link: "https://medium.com/@PhilopaterSh/google-xss-game-6dbd1c8b3eb8",
+    featured: true,
   },
 ];
 
