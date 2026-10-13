@@ -1,35 +1,35 @@
 // Profile
-import profileImg from "./profile.jpg";
+import profileImg from "./profile.webp";
 
 // Education
-import eeluLogo from "./education/eelu.png";
-import digiliansLogo from "./education/digilians.jpg";
+import eeluLogo from "./education/eelu.webp";
+import digiliansLogo from "./education/digilians.webp";
 
 // Experience
-import asorcLogo from "./experience/asorc.jpg";
-import deciLogo from "./experience/deci.png";
-import depiLogo from "./experience/depi.png";
-import fortressLogo from "./experience/digital_fortress.jpg";
-import ntiLogo from "./experience/nti.png";
-import yatLogo from "./experience/yat.png";
-import mostaqlLogo from "./experience/Mostaql-Logo.png";
-import khamsatLogo from "./experience/Khamsat-Logo.png";
+import asorcLogo from "./experience/asorc.webp";
+import deciLogo from "./experience/deci.webp";
+import depiLogo from "./experience/depi.webp";
+import fortressLogo from "./experience/digital_fortress.webp";
+import ntiLogo from "./experience/nti.webp";
+import yatLogo from "./experience/yat.webp";
+import mostaqlLogo from "./experience/Mostaql-Logo.webp";
+import khamsatLogo from "./experience/Khamsat-Logo.webp";
 import bugcrowdLogo from "./experience/BugCrowd.png";
-import hackeroneLogo from "./experience/hackerone-logo.png";
-import scoutLogo from "./Volunteering/Egyptian Air Scouts Association.jpg";
+import hackeroneLogo from "./experience/hackerone-logo.webp";
+import scoutLogo from "./Volunteering/Egyptian Air Scouts Association.webp";
 
 // Testimonials
-import img3 from "./testimonials/3.png";
-import img4 from "./testimonials/4.png";
-import ss1 from "./testimonials/ss1.png";
-import ss2 from "./testimonials/ss2.png";
-import ss3 from "./testimonials/ss3.png";
-import ss4 from "./testimonials/ss4.png";
-import sc1 from "./testimonials/Screenshot_1.png";
-import sc2 from "./testimonials/Screenshot_2.png";
-import sc3 from "./testimonials/Screenshot_3.png";
-import sc4 from "./testimonials/Screenshot_4.png";
-import sc5 from "./testimonials/Screenshot_5.png";
+import img3 from "./testimonials/3.webp";
+import img4 from "./testimonials/4.webp";
+import ss1 from "./testimonials/ss1.webp";
+import ss2 from "./testimonials/ss2.webp";
+import ss3 from "./testimonials/ss3.webp";
+import ss4 from "./testimonials/ss4.webp";
+import sc1 from "./testimonials/Screenshot_1.webp";
+import sc2 from "./testimonials/Screenshot_2.webp";
+import sc3 from "./testimonials/Screenshot_3.webp";
+import sc4 from "./testimonials/Screenshot_4.webp";
+import sc5 from "./testimonials/Screenshot_5.webp";
 
 /** Intrinsic dimensions for images rendered by portfolio sections. */
 export const imageDimensions: Record<string, { width: number; height: number }> = {
