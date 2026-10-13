@@ -80,7 +80,7 @@ const WriteupsSection = () => {
         Documenting hands-on penetration testing methodologies, CTF machine walkthroughs, exploit
         analyses, and custom security automation research.
       </p>
-      <div className="writeups-grid">
+      <div className="writeups-grid" role="region" aria-label="Security writeups">
         {writeups.map((w: Writeup, i) => (
           <WriteupCard key={i} w={w} />
         ))}

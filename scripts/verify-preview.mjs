@@ -124,15 +124,24 @@ try {
       `${route || "home"} overflows at 360px: ${JSON.stringify(dimensions)}`,
     );
     if (route === "") {
-      const cardBounds = await page.$$eval(".project-card, .writeup-card", (cards) =>
+      const projectBounds = await page.$$eval(".project-card", (cards) =>
         cards.map((card) => ({
           left: card.getBoundingClientRect().left,
           right: card.getBoundingClientRect().right,
         })),
       );
       assert.ok(
-        cardBounds.every(({ left, right }) => left >= 0 && right <= 360),
-        `project/writeup cards must fit the mobile viewport: ${JSON.stringify(cardBounds)}`,
+        projectBounds.every(({ left, right }) => left >= 0 && right <= 360),
+        `project cards must fit the mobile viewport: ${JSON.stringify(projectBounds)}`,
+      );
+      const writeupRail = await page.$eval(".writeups-grid", (rail) => ({
+        client: rail.clientWidth,
+        scroll: rail.scrollWidth,
+        overflowX: getComputedStyle(rail).overflowX,
+      }));
+      assert.ok(
+        writeupRail.scroll > writeupRail.client && writeupRail.overflowX === "auto",
+        `writeups must become a horizontal mobile rail: ${JSON.stringify(writeupRail)}`,
       );
     }
   }
@@ -147,6 +156,7 @@ try {
         demoTraceRequests: traceRequests,
         keyboardMenu: "passed",
         passwordEntropyAndChecklist: "passed",
+        writeupMobileRail: "passed",
         mobileWidth: 360,
       },
       null,
