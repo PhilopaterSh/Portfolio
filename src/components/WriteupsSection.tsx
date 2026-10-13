@@ -38,11 +38,16 @@ const WriteupCard = ({ w }: { w: Writeup }) => (
     <p className="writeup-desc">{w.desc}</p>
 
     <div className="writeup-tags">
-      {w.tags.map((tag, idx) => (
-        <span key={idx} className="tool-tag">
+      {w.tags.slice(0, 2).map((tag) => (
+        <span key={tag} className="tool-tag">
           {tag}
         </span>
       ))}
+      {w.tags.length > 2 && (
+        <span className="writeup-tag-more" aria-label={`${w.tags.length - 2} more tags`}>
+          +{w.tags.length - 2}
+        </span>
+      )}
     </div>
 
     <div className="writeup-footer">
