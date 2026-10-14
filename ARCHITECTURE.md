@@ -225,6 +225,14 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.10 WCAG 2.2 AA Contrast Compliance (October 2026)
+
+- **Audit:** Automated text-contrast audit (computed styles, translucent-background compositing, both themes, Home and Awareness) found 21 failing element groups; worst cases were hardcoded signal colors (`#ffff00`, `#ffa500`, `#ff4d4d`, `#555`) rendered on light-theme cards.
+- **Tokens:** Dark `--accent-blue` lightened `#0077ff` → `#3b82f6` (4.41 → 4.96:1 on cards); a theme-aware six-step `--entropy-*` strength palette added to `base.css` (dark keeps the original neon values, light uses darkened AA-compliant variants).
+- **Single source:** `strengthForEntropy` is now exported from `PasswordEntropyLab` and consumed by `CybersecurityAwareness`, removing the duplicated inline palette that previously bypassed the token system.
+- **Local fixes:** Typewriter cursor text contrasts its block (`var(--bg-black)`); light-theme overrides for `.featured-badge` (white on `#0369a1`) and `.time-scale-row--active` (visible tint).
+- **Validation:** Re-audit reports 0 findings on both pages in both themes; lint, types, format, 40 tests, build, and the preview smoke suite pass. Screen-reader and 390 px manual checks remain outstanding.
+
 ### 5.9 Content Accuracy, Image Performance, and Trust Primitives (October 2026)
 
 - **Content accuracy:** The Linux Administration writeup card now links to its published Medium article ("Linux User, Group & Permission Management — Practical Assignment Guide") with a matching title and description, and the published "HCIA — Routing" article joined the writeups (spec `002-p1-hardening`).

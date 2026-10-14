@@ -38,6 +38,8 @@ For automated route, metadata, no-fetch demo, and 360 px overflow smoke checks, 
 
 Final smoke results (2026-10-13): supported route titles/canonicals and unknown-route `noindex` passed; eight project/writeup resource links rendered with HTTPS destinations, including all four supplied Medium articles; major project outcomes matched between the portfolio and Resume; mobile navigation toggled with Enter; password entropy/checklist interaction passed; demo mode made zero provider requests; and all three routes plus project/writeup cards fit at 360 px. Screen-reader checks, 390 px manual review, full contrast review, reduced-motion/contact error-state review, and Lighthouse comparisons remain outstanding.
 
+Contrast review (2026-10-14, branch `002-p1-hardening`): an automated WCAG 2.2 AA text-contrast audit (computed styles with translucent-background compositing, both themes, Home and Awareness pages) found 12 dark and 9 light failures. Fixes: dark `--accent-blue` lightened `#0077ff` → `#3b82f6` (4.41 → 4.96 on card backgrounds); a theme-aware `--entropy-*` palette replaced hardcoded signal colors in `PasswordEntropyLab`, `BruteForceAnalysis`, `TimeToCrack`, `CybersecurityAwareness`, and `awareness.css` (bright yellow/orange/red failed badly in light); typewriter cursor given `color: var(--bg-black)`; light overrides added for `.featured-badge` (white text) and `.time-scale-row--active` (visible tint). Re-audit: 0 findings on both pages in both themes. Screen-reader and 390 px manual checks remain outstanding.
+
 ## Visitor Trust and Trace
 
 1. Open the canonical Cybersecurity Awareness route at `/Portfolio/Cybersecurity_Awareness/`.
