@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import PasswordEntropyLab from "../components/PasswordEntropyLab";
+import PasswordEntropyLab, { strengthForEntropy } from "../components/PasswordEntropyLab";
 import SecurityChecklist from "../components/SecurityChecklist";
 import FormulaCard from "../components/FormulaCard";
 import BruteForceAnalysis from "../components/BruteForceAnalysis";
@@ -20,7 +20,7 @@ const timeScale = [
     max: 27.99,
     bits: "< 28",
     time: "Instant",
-    color: "#ff4d4d",
+    color: "var(--entropy-very-weak)",
     desc: "Instantly crackable via basic brute-force.",
   },
   {
@@ -28,7 +28,7 @@ const timeScale = [
     max: 59.99,
     bits: "28 - 59",
     time: "Minutes to Years",
-    color: "#ffff00",
+    color: "var(--entropy-moderate)",
     desc: "Vulnerable to specialized hardware attacks.",
   },
   {
@@ -36,7 +36,7 @@ const timeScale = [
     max: 127.99,
     bits: "60 - 127",
     time: "Centuries",
-    color: "#00ff41",
+    color: "var(--entropy-strong)",
     desc: "Secure against modern supercomputing.",
   },
   {
@@ -44,7 +44,7 @@ const timeScale = [
     max: Infinity,
     bits: "128+",
     time: "Infinite",
-    color: "#00d4ff",
+    color: "var(--entropy-very-strong)",
     desc: "Mathematically resilient to all known attacks.",
   },
 ];
@@ -95,22 +95,7 @@ const CybersecurityAwareness = () => {
 
       <div className="awareness-grid-secondary">
         <FormulaCard />
-        <BruteForceAnalysis
-          entropy={entropy}
-          color={
-            entropy >= 128
-              ? "#00d4ff"
-              : entropy >= 60
-                ? "#00ff41"
-                : entropy >= 36
-                  ? "#ffff00"
-                  : entropy >= 28
-                    ? "#ffa500"
-                    : entropy > 0
-                      ? "#ff4d4d"
-                      : "#555"
-          }
-        />
+        <BruteForceAnalysis entropy={entropy} color={strengthForEntropy(entropy).color} />
         <TimeToCrack timeScale={timeScale} entropy={entropy} password={password} />
       </div>
 

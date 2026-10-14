@@ -4,7 +4,7 @@
   --hero-gradient: radial-gradient(circle at 80% 20%, #0d1b2a 0%, #02060a 100%);
   --card-bg: #0b1622;
   --accent-green: #00f2ff;
-  --accent-blue: #0077ff;
+  --accent-blue: #3b82f6;
   --error-color: #ff7373;
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
@@ -16,6 +16,13 @@
   --badge-text: #02060a;
   --social-pill-bg: #0f172a;
   --footer-bg: #02060a;
+  /* Entropy strength palette (WCAG AA on --card-bg in both themes). */
+  --entropy-empty: #94a3b8;
+  --entropy-very-weak: #ff4d4d;
+  --entropy-weak: #ffa500;
+  --entropy-moderate: #ffff00;
+  --entropy-strong: #00ff41;
+  --entropy-very-strong: #00d4ff;
 }
 
 [data-theme="light"] {
@@ -36,6 +43,13 @@
   --badge-text: #ffffff;
   --social-pill-bg: #f1f5f9;
   --footer-bg: #f1f5f9;
+  /* Darkened strength palette: bright signal colors fail AA on light cards. */
+  --entropy-empty: #475569;
+  --entropy-very-weak: #b91c1c;
+  --entropy-weak: #92400e;
+  --entropy-moderate: #a16207;
+  --entropy-strong: #15803d;
+  --entropy-very-strong: #0e7490;
 }
 
 .not-found-page {
@@ -131,6 +145,7 @@ body {
   display: inline-block;
   width: 10px;
   background-color: var(--accent-green);
+  color: var(--bg-black);
   margin-left: 5px;
   animation: blink-cursor 0.8s infinite;
 }

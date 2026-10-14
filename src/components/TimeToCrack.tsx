@@ -16,7 +16,7 @@ interface TimeToCrackProps {
 const TimeToCrack = ({ timeScale, entropy, password }: TimeToCrackProps) => {
   return (
     <div className="awareness-card awareness-card--compact">
-      <h4 className="awareness-card-label" style={{ color: "#ffa500" }}>
+      <h4 className="awareness-card-label" style={{ color: "var(--entropy-weak)" }}>
         [ TIME_TO_CRACK ]
       </h4>
       <div className="time-scale-list">

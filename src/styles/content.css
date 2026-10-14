@@ -341,6 +341,10 @@
   vertical-align: middle;
 }
 
+[data-theme="light"] .featured-badge {
+  color: #ffffff;
+}
+
 .project-tag {
   font-size: 0.7rem;
   color: var(--accent-green);

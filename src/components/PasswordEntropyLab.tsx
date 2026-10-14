@@ -6,13 +6,22 @@ interface PasswordEntropyLabProps {
   setPassword: (pwd: string) => void;
 }
 
-const strengthForEntropy = (e: number): { strength: string; color: string } => {
-  if (e === 0) return { strength: "Empty", color: "#555" };
-  if (e < 28) return { strength: "Very Weak", color: "#ff4d4d" };
-  if (e < 36) return { strength: "Weak", color: "#ffa500" };
-  if (e < 60) return { strength: "Moderate", color: "#ffff00" };
-  if (e < 128) return { strength: "Strong", color: "#00ff41" };
-  return { strength: "Very Strong", color: "#00d4ff" };
+/**
+ * Maps an entropy value in bits to a strength label and a theme-aware color token.
+ *
+ * The color is a CSS custom property (see the `--entropy-*` tokens in
+ * `base.css`) so both themes meet WCAG 2.2 AA contrast on card backgrounds.
+ *
+ * @param e - Password entropy in bits.
+ * @returns Strength label and the CSS variable reference for its color.
+ */
+export const strengthForEntropy = (e: number): { strength: string; color: string } => {
+  if (e === 0) return { strength: "Empty", color: "var(--entropy-empty)" };
+  if (e < 28) return { strength: "Very Weak", color: "var(--entropy-very-weak)" };
+  if (e < 36) return { strength: "Weak", color: "var(--entropy-weak)" };
+  if (e < 60) return { strength: "Moderate", color: "var(--entropy-moderate)" };
+  if (e < 128) return { strength: "Strong", color: "var(--entropy-strong)" };
+  return { strength: "Very Strong", color: "var(--entropy-very-strong)" };
 };
 
 const PasswordEntropyLab = ({ password, setPassword }: PasswordEntropyLabProps) => {
