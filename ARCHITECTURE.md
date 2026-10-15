@@ -225,6 +225,28 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.11 Measured Performance & Automated Accessibility Verification (October 2026)
+
+- **Performance (lab data):** Lighthouse 13.5 before/after comparison against `main` at f1a7ba8 — three runs per state per profile, medians reported, both served by local `vite preview`. Mobile: score 77 → 84, transfer 604 → 485 kB (−20 %), LCP 5.9 → 4.2 s. Desktop: score 92 → 93, transfer 652 → 525 kB, LCP 1.8 → 1.7 s. TBT stayed under the 200 ms lab threshold; CLS negligible in every run. Run-to-run spread was large (mobile LCP 2.7–5.9 s), so only medians are meaningful; no field CWV/INP claims are made. Mobile LCP above the 2.5 s good threshold identifies JavaScript slimming (framer-motion) as the next lever.
+- **Accessibility (automated portion of T009/T028):** no horizontal overflow at 360/390 px on all routes in both themes; keyboard-reachable navigation; `prefers-reduced-motion` disables slider transitions; contact empty-submit is blocked by native validation and failure feedback carries `role="alert"`; the Network Trace keyboard-driven demo at 360 px announces status via `aria-live` with zero provider requests. A human screen-reader walkthrough remains the last open item.
+
+### 5.10 WCAG 2.2 AA Contrast Compliance (October 2026)
+
+- **Audit:** Automated text-contrast audit (computed styles, translucent-background compositing, both themes, Home and Awareness) found 21 failing element groups; worst cases were hardcoded signal colors (`#ffff00`, `#ffa500`, `#ff4d4d`, `#555`) rendered on light-theme cards.
+- **Tokens:** Dark `--accent-blue` lightened `#0077ff` → `#3b82f6` (4.41 → 4.96:1 on cards); a theme-aware six-step `--entropy-*` strength palette added to `base.css` (dark keeps the original neon values, light uses darkened AA-compliant variants).
+- **Single source:** `strengthForEntropy` is now exported from `PasswordEntropyLab` and consumed by `CybersecurityAwareness`, removing the duplicated inline palette that previously bypassed the token system.
+- **Local fixes:** Typewriter cursor text contrasts its block (`var(--bg-black)`); light-theme overrides for `.featured-badge` (white on `#0369a1`) and `.time-scale-row--active` (visible tint).
+- **Validation:** Re-audit reports 0 findings on both pages in both themes; lint, types, format, 40 tests, build, and the preview smoke suite pass. Screen-reader and 390 px manual checks remain outstanding.
+
+### 5.9 Content Accuracy, Image Performance, and Trust Primitives (October 2026)
+
+- **Content accuracy:** The Linux Administration writeup card now links to its published Medium article ("Linux User, Group & Permission Management — Practical Assignment Guide") with a matching title and description, and the published "HCIA — Routing" article joined the writeups (spec `002-p1-hardening`).
+- **Structured data:** `dateModified` moved to 2026-10-13 on the `WebPage` and `ProfilePage` schema nodes, and the 2026 certifications (Cybersecurity Leadership L1 & L2, GRC Specialist, HTB Information Gathering, Google Cybersecurity Professional) were added to `Person.hasCredential`.
+- **Image performance:** All mapped raster assets were converted to WebP — lossless where lossy output was larger — and the social OG image was recompressed to a 78 kB JPEG at unchanged 1376×768 dimensions. Committed raster weight dropped ~305 kB with pixel dimensions, alt text, explicit sizing, and eager/lazy loading semantics preserved.
+- **Rendering:** Below-fold Home sections declare `content-visibility: auto` with `contain-intrinsic-size` so the browser skips offscreen layout and paint work.
+- **Trust:** Added `public/.well-known/security.txt` (RFC 9116) with contact, expiry, and language fields.
+- **Validation:** Lint, type, format, tests (40), build, and the preview smoke suite pass. Converted images were visually verified in the production preview, and a stash A/B build isolated the JavaScript bundle delta to +0.56 kB of writeup data (the remaining difference from spec 001's baseline is the Vite 7.3.1→7.3.6 toolchain change).
+
 ### 5.8 Privacy, Route Metadata, Accessibility, and Delivery (October 2026)
 
 - **Network trace:** Added a pre-action disclosure for the ipify/ipapi request flow, an offline local demo, provider response validation, partial-data handling, and neutral status/error feedback. No request runs until the visitor chooses the live trace.

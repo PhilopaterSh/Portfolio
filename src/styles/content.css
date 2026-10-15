@@ -341,6 +341,10 @@
   vertical-align: middle;
 }
 
+[data-theme="light"] .featured-badge {
+  color: #ffffff;
+}
+
 .project-tag {
   font-size: 0.7rem;
   color: var(--accent-green);
@@ -1027,4 +1031,11 @@
 [data-theme="dark"] .logo-visibility-fix-hackerone {
   filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8))
     drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
+}
+
+/* Skip layout and paint work for below-fold sections until they approach the
+   viewport; the `auto` keyword keeps the last rendered size once measured. */
+main.main-content > .content-section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
 }

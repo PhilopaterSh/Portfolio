@@ -264,7 +264,7 @@
 
 .checklist-gain {
   font-size: 0.7rem;
-  color: #ffa500;
+  color: var(--entropy-weak);
   font-weight: bold;
   font-family: monospace;
 }
@@ -349,6 +349,10 @@
 
 .time-scale-row--active {
   background-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"] .time-scale-row--active {
+  background-color: rgba(3, 105, 161, 0.08);
 }
 
 .time-scale-row-header {

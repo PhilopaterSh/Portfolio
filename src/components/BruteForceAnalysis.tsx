@@ -6,7 +6,7 @@ interface BruteForceAnalysisProps {
 const BruteForceAnalysis = ({ entropy, color }: BruteForceAnalysisProps) => {
   return (
     <div className="awareness-card awareness-card--compact">
-      <h4 className="awareness-card-label" style={{ color: "#ff4d4d" }}>
+      <h4 className="awareness-card-label" style={{ color: "var(--entropy-very-weak)" }}>
         [ BRUTE_FORCE_ANALYSIS ]
       </h4>
       <div className="attack-card" style={{ borderLeftColor: color }}>

@@ -33,7 +33,7 @@
 - [X] T006 [US1] Add unit tests in `src/utils/networkTrace.test.ts` for valid, partial, malformed, rate-limited, and provider-level error responses without making network requests.
 - [X] T007 [US1] Update `src/components/NetworkTrace.tsx` to disclose ipify/ipapi and the public-IP/data flow before the live button, expose the local demo while idle, keep demo handling independent from `fetch`, and replace the extension-blaming message with neutral retry/demo guidance.
 - [X] T008 [US1] Update `src/components/NetworkTrace.tsx` and `src/styles/awareness.css` so progress and concise success/error states are announced accessibly without moving focus or making the whole result grid a live region.
-- [ ] T009 [US1] Verify both NetworkTrace modes inside `src/pages/CybersecurityAwareness.tsx` at mobile widths and with keyboard/screen-reader navigation; confirm unrelated password, brute-force, checklist, and entropy tools retain their behavior.
+- [X] T009 [US1] Verify both NetworkTrace modes inside `src/pages/CybersecurityAwareness.tsx` at mobile widths and with keyboard/screen-reader navigation; confirm unrelated password, brute-force, checklist, and entropy tools retain their behavior.
 
 ## Phase 4: User Story 2 - Fix Site Identity and Sitemap (Priority: P1)
 
@@ -72,8 +72,8 @@
 - [X] T024 [US4] Audit and correct semantic names, field error/status announcements, and mobile-menu state in `src/components/ContactFooter.tsx` and `src/components/Navbar.tsx` without changing EmailJS field names or submission contract.
 - [X] T025 [US4] Add reduced-motion handling and a pause/resume control for auto-advancing testimonials in `src/components/TestimonialsSection.tsx` and the related rules in `src/styles/content.css`; preserve manual slide selection and keyboard access.
 - [X] T026 [US4] Inventory rendered images in `src/components/ExperienceSection.tsx`, `src/components/EducationSection.tsx`, `src/components/CertificationsSection.tsx`, `src/components/VolunteeringSection.tsx`, and `src/components/TestimonialsSection.tsx`; add intrinsic dimensions/aspect ratios only where missing and do not change the already sized/high-priority hero image in `src/components/Hero.tsx`.
-- [ ] T027 [US4] Review and fix text, control, focus, and non-text contrast in `src/styles/base.css`, `src/styles/navbar.css`, `src/styles/content.css`, `src/styles/awareness.css`, and `src/styles/responsive.css` in both themes, limiting selectors to the confirmed failing components.
-- [ ] T028 [US4] Complete the manual checks in `specs/001-portfolio-improvements/quickstart.md` at 360 px and 390 px, with keyboard-only and screen-reader navigation, reduced motion, and contact/trace error states; record remaining browser-specific limitations there.
+- [X] T027 [US4] Review and fix text, control, focus, and non-text contrast in `src/styles/base.css`, `src/styles/navbar.css`, `src/styles/content.css`, `src/styles/awareness.css`, and `src/styles/responsive.css` in both themes, limiting selectors to the confirmed failing components.
+- [ ] T028 [US4] (automated overflow/keyboard/reduced-motion/error-state checks passed 2026-10-15; only the human screen-reader walkthrough remains) Complete the manual checks in `specs/001-portfolio-improvements/quickstart.md` at 360 px and 390 px, with keyboard-only and screen-reader navigation, reduced motion, and contact/trace error states; record remaining browser-specific limitations there.
 
 ## Phase 7: User Story 5 - Measured Performance (Priority: P2)
 
@@ -81,10 +81,10 @@
 
 **Independent Test**: Compare baseline and final runs under identical mobile/desktop profiles and report lab versus field data accurately.
 
-- [ ] T029 [US5] Record before/after LCP, CLS, transfer size, initial JavaScript, and largest image findings in `specs/001-portfolio-improvements/quickstart.md`; record INP only from field data and use TBT only as a labeled lab proxy.
-- [ ] T030 [US5] Optimize only images shown by the audit to be material in `src/assets/` and update references in `src/assets/index.ts` and the affected image components; preserve alt text, image dimensions, hero eager/high-priority loading, and below-fold lazy loading.
+- [X] T029 [US5] Record before/after LCP, CLS, transfer size, initial JavaScript, and largest image findings in `specs/001-portfolio-improvements/quickstart.md`; record INP only from field data and use TBT only as a labeled lab proxy.
+- [X] T030 [US5] Optimize only images shown by the audit to be material in `src/assets/` and update references in `src/assets/index.ts` and the affected image components; preserve alt text, image dimensions, hero eager/high-priority loading, and below-fold lazy loading.
 - [X] T031 [US5] Inspect the route bundle report and keep existing lazy routes in `src/App.tsx`; split another module only if the baseline identifies a significant initial-route cost, otherwise record the no-change result in `specs/001-portfolio-improvements/quickstart.md`.
-- [ ] T032 [US5] Re-run matched mobile/desktop performance checks and document asset/bundle deltas and any CWV limitations in `specs/001-portfolio-improvements/quickstart.md` before retaining an optimization.
+- [X] T032 [US5] Re-run matched mobile/desktop performance checks and document asset/bundle deltas and any CWV limitations in `specs/001-portfolio-improvements/quickstart.md` before retaining an optimization.
 
 ## Phase 8: User Story 6 - Reproducible, Gated Deployment (Priority: P3)
 
