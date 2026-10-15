@@ -225,6 +225,11 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.11 Measured Performance & Automated Accessibility Verification (October 2026)
+
+- **Performance (lab data):** Lighthouse 13.5 before/after comparison against `main` at f1a7ba8 — three runs per state per profile, medians reported, both served by local `vite preview`. Mobile: score 77 → 84, transfer 604 → 485 kB (−20 %), LCP 5.9 → 4.2 s. Desktop: score 92 → 93, transfer 652 → 525 kB, LCP 1.8 → 1.7 s. TBT stayed under the 200 ms lab threshold; CLS negligible in every run. Run-to-run spread was large (mobile LCP 2.7–5.9 s), so only medians are meaningful; no field CWV/INP claims are made. Mobile LCP above the 2.5 s good threshold identifies JavaScript slimming (framer-motion) as the next lever.
+- **Accessibility (automated portion of T009/T028):** no horizontal overflow at 360/390 px on all routes in both themes; keyboard-reachable navigation; `prefers-reduced-motion` disables slider transitions; contact empty-submit is blocked by native validation and failure feedback carries `role="alert"`; the Network Trace keyboard-driven demo at 360 px announces status via `aria-live` with zero provider requests. A human screen-reader walkthrough remains the last open item.
+
 ### 5.10 WCAG 2.2 AA Contrast Compliance (October 2026)
 
 - **Audit:** Automated text-contrast audit (computed styles, translucent-background compositing, both themes, Home and Awareness) found 21 failing element groups; worst cases were hardcoded signal colors (`#ffff00`, `#ffa500`, `#ff4d4d`, `#555`) rendered on light-theme cards.
