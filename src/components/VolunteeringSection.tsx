@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { volunteering } from "../data/portfolioData";
 import type { Volunteering } from "../data/portfolioData";
@@ -18,7 +18,7 @@ const itemVariants = {
 };
 
 const VolunteeringCard = ({ v }: { v: Volunteering }) => (
-  <motion.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
+  <m.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
     <div className="exp-sidebar">
       <span className="exp-year">{v.period}</span>
       {v.image && (
@@ -38,12 +38,12 @@ const VolunteeringCard = ({ v }: { v: Volunteering }) => (
       <h4 className="company-name">{v.organization}</h4>
       <p className="volunteering-desc">{v.desc}</p>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 const VolunteeringSection = () => {
   return (
-    <motion.section
+    <m.section
       id="volunteering"
       className="content-section"
       initial="hidden"
@@ -57,7 +57,7 @@ const VolunteeringSection = () => {
           <VolunteeringCard key={i} v={v} />
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

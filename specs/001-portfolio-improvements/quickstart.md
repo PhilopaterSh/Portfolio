@@ -44,6 +44,8 @@ Performance comparison (2026-10-15, branch `002-p1-hardening` vs `main` at f1a7b
 
 Automated accessibility checks (2026-10-15, branch `002-p1-hardening`): all three routes produce no horizontal overflow at 360 px and 390 px in both themes; Tab reaches navigation and interactive elements; `prefers-reduced-motion: reduce` yields `transition: none` on the testimonial slider track; an empty contact submit is blocked by native `required` validation, and a configured-but-failing submit renders `.form-feedback.error` carrying `role="alert"` (implicitly assertive live-region semantics) while success feedback carries explicit `aria-live="polite"`; the Network Trace local demo at 360 px, triggered by keyboard only, announces completion through an `aria-live="polite"` status paragraph and sends zero provider requests. A human screen-reader session (NVDA/VoiceOver walkthrough per the checklist above) remains the only outstanding T028 item.
 
+Motion slimming addendum (2026-10-16, branch `003-motion-slimming`): converting all `motion.*` to `m.*` under `<LazyMotion features={domAnimation} strict>` reduced the main chunk 430.79 → 384.35 kB raw (153.18 → 140.50 kB gzip, −8.3 %) with identical animation output (verified by console-error capture and a full scroll-through reaching final opacity everywhere). Lighthouse mobile medians of 3: transfer 485 → 472 kB, TBT 180 → 120 ms; score/LCP deltas remain inside the ±1.1 s lab noise floor. Details in `specs/003-motion-slimming/plan.md`.
+
 ## Visitor Trust and Trace
 
 1. Open the canonical Cybersecurity Awareness route at `/Portfolio/Cybersecurity_Awareness/`.

@@ -225,6 +225,13 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.12 Motion Bundle Slimming via LazyMotion (October 2026)
+
+- **Loader change, not a redesign:** All 14 animated components now import `m` instead of `motion`, and `App.tsx` wraps the tree once in `<LazyMotion features={domAnimation} strict>` — loading only the animation feature subset the codebase uses (no drag/layout anywhere).
+- **Measured:** Main chunk 430.79 → 384.35 kB raw (153.18 → 140.50 kB gzip, −8.3 %); Lighthouse lab medians: transfer 485 → 472 kB, TBT 180 → 120 ms; score/LCP deltas within the documented ±1.1 s lab noise. Numbers in `specs/003-motion-slimming/plan.md`.
+- **Regression guard:** `strict` mode throws at development time if any `motion.*` full-runtime component is reintroduced, preventing silent bundle re-growth.
+- **Verification:** 40/40 tests (slider tests render inside the real provider), lint/types/format/build/preview smoke green, zero console errors, both themes scroll through to full opacity.
+
 ### 5.11 Measured Performance & Automated Accessibility Verification (October 2026)
 
 - **Performance (lab data):** Lighthouse 13.5 before/after comparison against `main` at f1a7ba8 — three runs per state per profile, medians reported, both served by local `vite preview`. Mobile: score 77 → 84, transfer 604 → 485 kB (−20 %), LCP 5.9 → 4.2 s. Desktop: score 92 → 93, transfer 652 → 525 kB, LCP 1.8 → 1.7 s. TBT stayed under the 200 ms lab threshold; CLS negligible in every run. Run-to-run spread was large (mobile LCP 2.7–5.9 s), so only medians are meaningful; no field CWV/INP claims are made. Mobile LCP above the 2.5 s good threshold identifies JavaScript slimming (framer-motion) as the next lever.

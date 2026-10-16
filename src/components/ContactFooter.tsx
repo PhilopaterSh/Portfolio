@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import SectionHeader from "./SectionHeader";
 import { contact } from "../data/portfolioData";
@@ -109,7 +109,7 @@ const ContactFooter = () => {
 
           <AnimatePresence>
             {formStatus === "success" && (
-              <motion.div
+              <m.div
                 className="form-feedback success"
                 role="status"
                 aria-live="polite"
@@ -119,10 +119,10 @@ const ContactFooter = () => {
                 exit={{ opacity: 0 }}
               >
                 [ SYSTEM: MESSAGE RECEIVED. SECURE CHANNEL ESTABLISHED. ]
-              </motion.div>
+              </m.div>
             )}
             {formStatus === "error" && (
-              <motion.div
+              <m.div
                 className="form-feedback error"
                 role="alert"
                 aria-atomic="true"
@@ -131,7 +131,7 @@ const ContactFooter = () => {
                 exit={{ opacity: 0 }}
               >
                 [ ERROR: {formError} ]
-              </motion.div>
+              </m.div>
             )}
           </AnimatePresence>
         </form>

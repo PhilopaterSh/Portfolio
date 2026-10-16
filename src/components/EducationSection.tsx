@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { education } from "../data/portfolioData";
 import { imageDimensions } from "../assets";
@@ -10,7 +10,7 @@ const itemVariants = {
 
 const EducationSection = () => {
   return (
-    <motion.section
+    <m.section
       id="education"
       className="content-section"
       initial="hidden"
@@ -40,7 +40,7 @@ const EducationSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

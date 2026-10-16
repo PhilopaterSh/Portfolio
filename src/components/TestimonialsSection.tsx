@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { testimonialImages } from "../data/portfolioData";
 import { imageDimensions } from "../assets";
@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   }, [isPaused, prefersReducedMotion]);
 
   return (
-    <motion.section
+    <m.section
       id="testimonials"
       className="content-section"
       initial={shouldReduceMotion ? false : "hidden"}
@@ -86,7 +86,7 @@ const TestimonialsSection = () => {
           </button>
         </div>
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

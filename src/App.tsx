@@ -1,5 +1,6 @@
 import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
+import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "./pages/Home";
 import { ThemeProvider } from "./ThemeContext";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -103,19 +104,21 @@ function NotFoundPage() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider>
-        <Router basename="/Portfolio">
-          <Suspense fallback={<RouteLoadingFallback />}>
-            <RouteMetadataHead />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/Cybersecurity_Awareness" element={<CybersecurityAwareness />} />
-              <Route path="/Resume" element={<Resume />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </Router>
-      </ThemeProvider>
+      <LazyMotion features={domAnimation} strict>
+        <ThemeProvider>
+          <Router basename="/Portfolio">
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <RouteMetadataHead />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/Cybersecurity_Awareness" element={<CybersecurityAwareness />} />
+                <Route path="/Resume" element={<Resume />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </Router>
+        </ThemeProvider>
+      </LazyMotion>
     </ErrorBoundary>
   );
 }

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 
 const itemVariants = {
@@ -8,7 +8,7 @@ const itemVariants = {
 
 const LanguagesSection = () => {
   return (
-    <motion.section
+    <m.section
       id="languages"
       className="content-section mini-section"
       initial="hidden"
@@ -40,7 +40,7 @@ const LanguagesSection = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

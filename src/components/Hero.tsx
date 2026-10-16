@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Typewriter from "./Typewriter";
 import { profileImg } from "../assets";
 import { contact, resumeLastUpdated } from "../data/portfolioData";
@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <header className="hero-section">
       <div className="hero-content">
-        <motion.div
+        <m.div
           className="hero-text"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -82,8 +82,8 @@ const Hero = () => {
             </Link>
           </div>
           <p className="cv-updated-note">CV updated: {resumeLastUpdated}</p>
-        </motion.div>
-        <motion.div
+        </m.div>
+        <m.div
           className="hero-image-wrapper-container"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -101,7 +101,7 @@ const Hero = () => {
             />
           </div>
           <div className="status-badge">Available for Work</div>
-        </motion.div>
+        </m.div>
       </div>
     </header>
   );

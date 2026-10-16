@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface SectionHeaderProps {
   num: string;
@@ -6,7 +6,7 @@ interface SectionHeaderProps {
 }
 
 const SectionHeader = ({ num, title }: SectionHeaderProps) => (
-  <motion.div
+  <m.div
     className="section-header"
     initial={{ opacity: 0, x: -20 }}
     whileInView={{ opacity: 1, x: 0 }}
@@ -15,7 +15,7 @@ const SectionHeader = ({ num, title }: SectionHeaderProps) => (
   >
     <span className="section-num">{num}</span>
     <h2>{title}</h2>
-  </motion.div>
+  </m.div>
 );
 
 export default SectionHeader;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { certs } from "../data/portfolioData";
 
@@ -22,7 +22,7 @@ const CertificationsSection = () => {
   }, []);
 
   return (
-    <motion.section
+    <m.section
       id="certs"
       className="content-section"
       initial="hidden"
@@ -49,17 +49,17 @@ const CertificationsSection = () => {
 
       <div className="certs-grid">
         {certs.map((c, i) => (
-          <motion.div
+          <m.div
             key={i}
             className="cert-item-v2"
             whileHover={{ scale: 1.05, borderColor: "var(--accent-green)" }}
           >
             <span className="cert-name">{c.name}</span>
             <span className="cert-date">{c.date}</span>
-          </motion.div>
+          </m.div>
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

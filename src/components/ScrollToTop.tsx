@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const ScrollToTop = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -19,7 +19,7 @@ const ScrollToTop = () => {
   return (
     <AnimatePresence>
       {showScrollTop && (
-        <motion.button
+        <m.button
           className="scroll-top-btn"
           onClick={scrollToTop}
           aria-label="Back to Top"
@@ -40,7 +40,7 @@ const ScrollToTop = () => {
           >
             <polyline points="18 15 12 9 6 15"></polyline>
           </svg>
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );

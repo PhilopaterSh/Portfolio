@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { writeups } from "../data/portfolioData";
 import type { Writeup } from "../data/portfolioData";
@@ -17,7 +17,7 @@ const itemVariants = {
 };
 
 const WriteupCard = ({ w }: { w: Writeup }) => (
-  <motion.article
+  <m.article
     className={`writeup-card ${w.featured ? "featured-writeup" : ""}`}
     variants={itemVariants}
     whileHover={{
@@ -67,12 +67,12 @@ const WriteupCard = ({ w }: { w: Writeup }) => (
           : "Read Full Writeup & Research →"}
       </a>
     </div>
-  </motion.article>
+  </m.article>
 );
 
 const WriteupsSection = () => {
   return (
-    <motion.section
+    <m.section
       id="writeups"
       className="content-section"
       initial="hidden"
@@ -90,7 +90,7 @@ const WriteupsSection = () => {
           <WriteupCard key={i} w={w} />
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

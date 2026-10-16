@@ -1,4 +1,5 @@
 import { act, fireEvent, render, screen } from "@testing-library/react";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import TestimonialsSection from "./TestimonialsSection";
 
@@ -18,7 +19,11 @@ describe("TestimonialsSection rotation controls", () => {
       },
     );
     vi.useFakeTimers();
-    const { container } = render(<TestimonialsSection />);
+    const { container } = render(
+      <LazyMotion features={domAnimation} strict>
+        <TestimonialsSection />
+      </LazyMotion>,
+    );
     const track = container.querySelector(".slider-track");
     const pauseButton = screen.getByRole("button", { name: "Pause testimonial rotation" });
 

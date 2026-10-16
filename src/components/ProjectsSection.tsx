@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { projects } from "../data/portfolioData";
 import type { Project } from "../data/portfolioData";
@@ -17,7 +17,7 @@ const itemVariants = {
 };
 
 const ProjectCard = ({ p }: { p: Project }) => (
-  <motion.div
+  <m.div
     className={`project-card ${p.isMajor ? "major-project" : ""}`}
     variants={itemVariants}
     whileHover={{
@@ -58,12 +58,12 @@ const ProjectCard = ({ p }: { p: Project }) => (
         View Repository →
       </a>
     )}
-  </motion.div>
+  </m.div>
 );
 
 const ProjectsSection = () => {
   return (
-    <motion.section
+    <m.section
       id="projects"
       className="content-section"
       initial="hidden"
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
           <ProjectCard key={i} p={p} />
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 import { experiences } from "../data/portfolioData";
 import type { Experience } from "../data/portfolioData";
@@ -19,7 +19,7 @@ const itemVariants = {
 };
 
 const ExperienceCard = ({ exp }: { exp: Experience }) => (
-  <motion.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
+  <m.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>
     <div className="exp-sidebar">
       <span className="exp-year">{exp.period}</span>
       <div className="company-logos-container">
@@ -91,12 +91,12 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
         ))}
       </ul>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 const ExperienceSection = () => {
   return (
-    <motion.section
+    <m.section
       id="experience"
       className="content-section"
       initial="hidden"
@@ -110,7 +110,7 @@ const ExperienceSection = () => {
           <ExperienceCard key={i} exp={exp} />
         ))}
       </div>
-    </motion.section>
+    </m.section>
   );
 };
 
