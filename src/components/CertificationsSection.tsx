@@ -8,6 +8,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Certifications list plus the Credly badge embed, loaded lazily and safe when the embed fails. */
 const CertificationsSection = () => {
   useEffect(() => {
     const script = document.createElement("script");

@@ -8,6 +8,7 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
+/** App-level error boundary rendering a themed fallback instead of a blank page when a child component throws. */
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = { hasError: false };
 

@@ -1,3 +1,4 @@
+/** Awareness card explaining the entropy formula E = log2(R^L). */
 const FormulaCard = () => {
   return (
     <div className="awareness-card awareness-card--compact">

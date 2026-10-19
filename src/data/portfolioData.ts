@@ -24,76 +24,138 @@ import {
 
 export { hackeroneLogo, bugcrowdLogo };
 
+/**
+ * Single source of truth for every portfolio section's content: about copy,
+ * contact channels, experience timeline, projects, writeups, volunteering,
+ * certifications, skills, languages, and education. Components read from these
+ * exports and never hardcode content, so editing this file updates the whole
+ * site without touching UI code.
+ */
+
+/** Ordered testimonial screenshot assets rendered by the slider. */
 export const testimonialImages = [img3, img4, ss1, ss2, ss3, ss4, sc1, sc2, sc3, sc4, sc5];
 
+/** A career entry rendered in the Professional Experience timeline. */
 export interface Experience {
+  /** Company, institution, or program display name. */
   company: string;
+  /** Human-readable date range, e.g. "Feb 2025 - May 2025". */
   period: string;
+  /** Role or participation title shown next to the period. */
   role: string;
+  /** Single logo asset URL; mutually exclusive with `images`. */
   image?: string;
+  /** Multiple logo asset URLs for combined cards (e.g. bug bounty platforms). */
   images?: string[];
+  /** Optional external profile link rendered as "View Profile". */
   link?: string;
+  /** Achievement bullets rendered under the role. */
   highlights: string[];
 }
 
+/** A security tool or project rendered in the Projects grid. */
 export interface Project {
+  /** Tool or project display name. */
   title: string;
+  /** Short technology tag, e.g. "Go / Automation". */
   tag: string;
+  /** One-sentence summary shown on the card. */
   desc: string;
+  /** Reconnaissance or workflow gap the tool addresses. */
   problem: string;
+  /** Design approach that closes that gap. */
   solution: string;
+  /** Technology labels rendered as chips. */
   tools: string[];
+  /** Qualitative outcome; keep it verifiable, no invented benchmarks. */
   outcome: string;
+  /** Repository or article URL the card links to. */
   link: string;
+  /** Marks the card as a featured "Major Project" with a larger layout. */
   isMajor?: boolean;
 }
 
+/** A published security article rendered in the Writeups section. */
 export interface Writeup {
+  /** Article title exactly as published on the target platform. */
   title: string;
+  /** Platform label, e.g. "TryHackMe / Medium". */
   platform: string;
+  /** Category badge, e.g. "CTF Walkthrough" or "Tool Breakdown". */
   badge: string;
+  /** Reading-time hint; free-form ("6 min read", "Article"). */
   readTime: string;
+  /** One-sentence description of the walkthrough or guide. */
   desc: string;
+  /** Topic tags rendered as chips on the card. */
   tags: string[];
+  /** Direct article URL — never a profile or listing page root. */
   link: string;
+  /** Featured cards render ahead of the rest in the grid. */
   featured?: boolean;
 }
 
+/** A volunteer role rendered in the Volunteering section. */
 export interface Volunteering {
+  /** Position held, e.g. "Technical Mentor". */
   role: string;
+  /** Organization display name. */
   organization: string;
+  /** Human-readable date range, e.g. "2024 - Present". */
   period: string;
+  /** Organization logo asset URL. */
   image: string;
+  /** One-sentence description of the contribution. */
   desc: string;
 }
 
+/** A certification entry rendered in the Certifications section. */
 export interface Certification {
+  /** Full certificate title as issued. */
   name: string;
+  /** Issue date, e.g. "May 2026". */
   date: string;
 }
 
+/** A grouped skills block rendered in the Skills section. */
 export interface SkillCategory {
+  /** Group heading, e.g. "Web Application Security". */
   category: string;
+  /** Skill labels rendered as tags under the heading. */
   items: string[];
 }
 
+/** A spoken-language proficiency entry. */
 export interface Language {
+  /** Language display name. */
   name: string;
+  /** Proficiency level, e.g. "Native Speaker". */
   level: string;
 }
 
+/** Contact channels rendered in the footer and reused by the JSON-LD schema. */
 export interface ContactInfo {
+  /** City/country label, not a mailing address. */
   location: string;
+  /** Public phone number in international format. */
   phone: string;
+  /** Public contact email. */
   email: string;
+  /** LinkedIn profile URL. */
   linkedin: string;
+  /** GitHub profile URL. */
   github: string;
+  /** Medium profile URL. */
   medium: string;
+  /** TryHackMe profile URL. */
   tryHackMe: string;
+  /** X (Twitter) profile URL. */
   x: string;
+  /** WhatsApp click-to-chat URL. */
   whatsapp: string;
 }
 
+/** Profile intro and career objective shown in the About section. */
 export const about = {
   introduction:
     "Information Technology graduate and Junior Penetration Tester specializing in offensive security, vulnerability management, and risk analysis. Backed by intensive practical training from NTI, DEPI, and a prestigious cybersecurity diploma, I possess a proven track record in conducting structured web and network security assessments.",
@@ -102,6 +164,7 @@ export const about = {
   field: "Junior Penetration Tester",
 };
 
+/** Public contact channels rendered in the footer and reused by JSON-LD. */
 export const contact: ContactInfo = {
   location: "Cairo, Egypt",
   phone: "+201555181415",
@@ -114,8 +177,10 @@ export const contact: ContactInfo = {
   whatsapp: "https://wa.me/message/YMTBQC253E7DE1",
 };
 
+/** Month/year the generated PDF resume was last refreshed; shown in the hero. */
 export const resumeLastUpdated = "June 2026";
 
+/** Career timeline in reverse-chronological order for the Experience section. */
 export const experiences: Experience[] = [
   {
     company: "Digilians Pioneers",
@@ -183,6 +248,7 @@ export const experiences: Experience[] = [
   },
 ];
 
+/** Open-source security tools rendered in the Projects grid; major first. */
 export const projects: Project[] = [
   {
     title: "PhilopaterSh URL",
@@ -214,6 +280,7 @@ export const projects: Project[] = [
   },
 ];
 
+/** Published security articles; featured entries lead the grid. */
 export const writeups: Writeup[] = [
   {
     title: "TryHackMe Blue Writeup Walkthrough with Answers",
@@ -293,6 +360,7 @@ export const writeups: Writeup[] = [
   },
 ];
 
+/** Community roles rendered in the Volunteering section. */
 export const volunteering: Volunteering[] = [
   {
     role: "Assistant Group Leader",
@@ -310,6 +378,7 @@ export const volunteering: Volunteering[] = [
   },
 ];
 
+/** Certifications in reverse-chronological order for the Credentials section. */
 export const certs: Certification[] = [
   {
     name: "Cybersecurity Leadership and Management (L1 & L2)",
@@ -343,6 +412,7 @@ export const certs: Certification[] = [
   { name: "Introduction to Cybersecurity (Palo Alto)", date: "Aug 2022" },
 ];
 
+/** Grouped technical competencies rendered in two columns. */
 export const technicalSkills: SkillCategory[] = [
   {
     category: "Web Application Security",
@@ -408,6 +478,7 @@ export const technicalSkills: SkillCategory[] = [
   },
 ];
 
+/** Soft-skill labels rendered as tags beside the technical skills. */
 export const softSkills = [
   "Leadership & Team Management",
   "Agile Methodologies",
@@ -419,11 +490,13 @@ export const softSkills = [
   "Adaptability",
 ];
 
+/** Spoken languages with proficiency levels. */
 export const languages: Language[] = [
   { name: "Arabic", level: "Native Speaker" },
   { name: "English", level: "Conversational / Professional" },
 ];
 
+/** Degree, institution, GPA, and graduation-project summary. */
 export const education = {
   period: "2020 - 2024",
   degree: "Bachelor of Information Technology",

@@ -41,6 +41,7 @@ const VolunteeringCard = ({ v }: { v: Volunteering }) => (
   </m.div>
 );
 
+/** Volunteering roles with organization logos. */
 const VolunteeringSection = () => {
   return (
     <m.section

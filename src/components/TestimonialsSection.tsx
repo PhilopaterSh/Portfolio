@@ -9,6 +9,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Auto-advancing testimonial slider with pause/resume, reduced-motion support, and keyboard-accessible pagination dots. */
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isPaused, setIsPaused] = useState(false);

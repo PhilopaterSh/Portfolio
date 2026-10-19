@@ -49,6 +49,7 @@ const timeScale = [
   },
 ];
 
+/** Interactive security education hub: password entropy lab, checklist, formula and brute-force cards, crack-time table, and the opt-in network trace. */
 const CybersecurityAwareness = () => {
   const [password, setPassword] = useState("");
 

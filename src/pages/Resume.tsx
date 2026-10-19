@@ -10,6 +10,7 @@ import {
   contact,
 } from "../data/portfolioData";
 
+/** Print-friendly ATS resume composed from the same portfolio data; the PDF generator captures this route. */
 const Resume = () => {
   const featuredCerts = certs.slice(0, 10);
 

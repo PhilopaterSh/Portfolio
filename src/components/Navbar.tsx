@@ -11,6 +11,7 @@ const navLinks = [
   { label: "SKILLS", hash: "#skills" },
 ];
 
+/** Sticky navigation with scroll-spy active states, theme switcher, and an accessible mobile drawer that closes on selection. */
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);

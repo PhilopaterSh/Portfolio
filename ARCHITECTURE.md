@@ -225,6 +225,12 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.14 Google-Style JSDoc Coverage (October 2026)
+
+- **Coverage completed (branch `005-jsdoc-coverage`):** every exported symbol under `src/` now carries Google-style JSDoc per constitution Principle VII — all data interfaces/constants in `portfolioData.ts` (66 doc blocks documenting field semantics, e.g. writeup links must be direct article URLs), all 21 section/utility components, the three pages, `ThemeContext`, `main.tsx` bootstrap (documenting the intentional `createRoot`-not-hydration decision), the asset mapping, and the three build scripts (module-level contracts for the route-HTML generator, preview smoke suite, and PDF generator).
+- **Lint regression fixed en route:** `react-refresh/only-export-components` on the shared `strengthForEntropy` export (present since the spec 003 single-source refactor but masked by piped lint output) is now suppressed with a file-level justification; `ThemeProvider` regained its lost `export`.
+- Comment-only change: no runtime behavior, bundle, or test deltas.
+
 ### 5.13 Prerender/LCP Investigation — Closed Without Change (October 2026)
 
 - **Investigated (spec `004-prerender-lcp`):** build-time route prerendering via headless-Chrome DOM capture, plus a hero-image preload variant, as candidate fixes for the remaining mobile-LCP gap.

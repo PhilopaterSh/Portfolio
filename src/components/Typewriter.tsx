@@ -5,6 +5,11 @@ interface TypewriterProps {
   delay?: number;
 }
 
+/** Types `text` one character at a time and keeps a blinking cursor block.
+ *
+ * @param text - String to reveal character by character.
+ * @param delay - Milliseconds between characters.
+ */
 const Typewriter = ({ text, delay = 100 }: TypewriterProps) => {
   const [currentText, setCurrentText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);

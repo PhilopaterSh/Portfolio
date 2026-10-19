@@ -8,6 +8,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Education section rendering the single `education` record with its logo. */
 const EducationSection = () => {
   return (
     <m.section

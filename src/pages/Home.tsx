@@ -13,6 +13,7 @@ import LanguagesSection from "../components/LanguagesSection";
 import ContactFooter from "../components/ContactFooter";
 import ScrollToTop from "../components/ScrollToTop";
 
+/** Landing page composing every portfolio section in scroll order, plus the navbar, footer, and back-to-top control. */
 const Home = () => {
   return (
     <div className="portfolio-root">

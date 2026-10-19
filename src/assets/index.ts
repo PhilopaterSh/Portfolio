@@ -1,3 +1,10 @@
+/**
+ * Central image-asset mapping: every import lives here so components and the
+ * data module reference one source. `imageDimensions` pairs each emitted URL
+ * with its intrinsic pixel size so <img> elements reserve space before load
+ * (CLS guard); the keys are derived from the imports and update automatically
+ * when a file is replaced.
+ */
 // Profile
 import profileImg from "./profile.webp";
 

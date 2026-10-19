@@ -7,6 +7,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Skills section: grouped technical skills and soft-skill tags in two columns. */
 const SkillsSection = () => {
   return (
     <m.section

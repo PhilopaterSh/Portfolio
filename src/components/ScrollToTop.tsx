@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { m, AnimatePresence } from "framer-motion";
 
+/** Floating back-to-top button that appears after 400 px of scroll and animates in and out via AnimatePresence. */
 const ScrollToTop = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
 

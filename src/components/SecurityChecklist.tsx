@@ -9,6 +9,11 @@ interface SecurityChecklistProps {
   isComplete: boolean;
 }
 
+/** Awareness checklist whose items light up as password criteria are met.
+ *
+ * @param criteria - Criteria list with per-item met state and bit-gain labels.
+ * @param isComplete - Whether all criteria are met; switches the status line.
+ */
 const SecurityChecklist = ({ criteria, isComplete }: SecurityChecklistProps) => {
   return (
     <div className="awareness-card">

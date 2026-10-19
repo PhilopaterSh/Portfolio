@@ -5,6 +5,11 @@ interface SectionHeaderProps {
   title: string;
 }
 
+/** Numbered section heading ("01 Profile") with a slide-in reveal on scroll.
+ *
+ * @param num - Zero-padded section number rendered in the accent color.
+ * @param title - Section title rendered as the h2.
+ */
 const SectionHeader = ({ num, title }: SectionHeaderProps) => (
   <m.div
     className="section-header"

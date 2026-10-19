@@ -1,3 +1,10 @@
+/**
+ * Generates dist/CV_Philopater.pdf from the built Resume route.
+ *
+ * Spawns a temporary `vite preview` on a free port, waits for readiness,
+ * prints the rendered .ats-cv document to A4 via headless Chrome, and refuses
+ * to write if the route did not render (wrong-content guard).
+ */
 const puppeteer = require("puppeteer");
 const { spawn } = require("child_process");
 const { createServer } = require("net");

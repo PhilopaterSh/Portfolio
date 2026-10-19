@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import SectionHeader from "./SectionHeader";
 import { contact } from "../data/portfolioData";
 
+/** Footer with contact channels and an EmailJS contact form whose success/error feedback is announced via live regions; credentials come from VITE_EMAILJS_* env vars only. */
 const ContactFooter = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");

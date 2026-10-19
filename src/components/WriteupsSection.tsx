@@ -70,6 +70,7 @@ const WriteupCard = ({ w }: { w: Writeup }) => (
   </m.article>
 );
 
+/** Security writeups grid; scrolls as a snap rail under 640 px and links each card to its published article. */
 const WriteupsSection = () => {
   return (
     <m.section

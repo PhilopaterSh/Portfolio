@@ -1,3 +1,11 @@
+/**
+ * Generates per-route HTML documents in dist/ from the built root document.
+ *
+ * Reads src/data/siteMetadata.json (single source of truth), swaps the
+ * ROUTE_METADATA block for each route, writes dist/<route>/index.html,
+ * regenerates dist/sitemap.xml, and validates uniqueness/shape of every
+ * record so a bad manifest fails the build instead of deploying wrong heads.
+ */
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";

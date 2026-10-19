@@ -6,6 +6,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Spoken languages with animated proficiency bars. */
 const LanguagesSection = () => {
   return (
     <m.section

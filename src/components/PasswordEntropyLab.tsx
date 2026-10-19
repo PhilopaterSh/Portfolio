@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components -- strengthForEntropy is the shared entropy-to-label/color mapping consumed by the page as well */
 import { useState, useMemo } from "react";
 import { calculateEntropy } from "../utils/passwordEntropy";
 

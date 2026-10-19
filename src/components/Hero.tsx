@@ -4,6 +4,7 @@ import Typewriter from "./Typewriter";
 import { profileImg } from "../assets";
 import { contact, resumeLastUpdated } from "../data/portfolioData";
 
+/** Above-the-fold header: name, typed subtitle, social links, CTAs, and the eager-loaded LCP profile image with explicit dimensions and high fetch priority. */
 const Hero = () => {
   return (
     <header className="hero-section">

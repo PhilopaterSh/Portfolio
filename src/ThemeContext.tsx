@@ -1,8 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useContext, useEffect, useState } from "react";
 
+/** User-selectable theme modes; "system" follows `prefers-color-scheme`. */
 type Theme = "light" | "dark" | "system";
 
+/** Shared theme state: selected mode, resolved light/dark value, and setter. */
 interface ThemeContextType {
   theme: Theme;
   setTheme: (theme: Theme) => void;
@@ -11,6 +13,10 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+/**
+ * Applies the saved or system theme to `<html data-theme>`, persists the choice
+ * to localStorage, and reacts to OS scheme changes while in system mode.
+ */
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
     const saved = localStorage.getItem("theme") as Theme;
@@ -58,6 +64,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   );
 };
 
+/** Returns the current theme state; throws when used outside a ThemeProvider. */
 export const useTheme = () => {
   const context = useContext(ThemeContext);
   if (context === undefined) {

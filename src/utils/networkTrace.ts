@@ -56,7 +56,16 @@ export function normalizeLocation(value: unknown): NetworkTraceData {
   };
 }
 
-/** Performs the visitor-initiated requests to ipify and ipapi. */
+/**
+ * Performs the visitor-initiated requests to ipify and ipapi.
+ *
+ * Runs only when the visitor selects the live trace: resolves the public IP
+ * first (ipify), then uses it to fetch location/network details (ipapi).
+ * Provider failures and malformed responses throw so the component can render
+ * a neutral error state.
+ *
+ * @returns Normalized trace data with `simulated: false`.
+ */
 export async function fetchNetworkTrace(): Promise<NetworkTraceData> {
   const ipResponse = await fetch("https://api.ipify.org?format=json");
   if (!ipResponse.ok) throw new Error("The IP provider request failed.");

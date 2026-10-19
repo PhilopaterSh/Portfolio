@@ -1,3 +1,13 @@
+/**
+ * Headless smoke suite against a running `vite preview` server.
+ *
+ * Asserts route titles/canonicals, unknown-route noindex, image intrinsic
+ * sizing, project/writeup link presence, zero trace-provider requests in demo
+ * mode, keyboard menu toggling, password/checklist interaction, the writeups
+ * mobile rail, and 360 px overflow. Exits non-zero on any failure.
+ *
+ * Override the target with PORTFOLIO_PREVIEW_URL (default 4173).
+ */
 import assert from "node:assert/strict";
 import puppeteer from "puppeteer";
 

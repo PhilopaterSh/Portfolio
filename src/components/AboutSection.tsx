@@ -7,6 +7,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0 },
 };
 
+/** Profile section: field of specialization, intro copy, and career objective from `about`. */
 const AboutSection = () => {
   return (
     <m.section

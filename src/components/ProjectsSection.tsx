@@ -61,6 +61,7 @@ const ProjectCard = ({ p }: { p: Project }) => (
   </m.div>
 );
 
+/** Projects grid with problem/solution/outcome cards; the `isMajor` project renders larger. */
 const ProjectsSection = () => {
   return (
     <m.section

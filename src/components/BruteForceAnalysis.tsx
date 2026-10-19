@@ -3,6 +3,11 @@ interface BruteForceAnalysisProps {
   color: string;
 }
 
+/** Awareness card estimating brute-force attempts from entropy bits.
+ *
+ * @param entropy - Current password entropy in bits.
+ * @param color - CSS color token for the strength-tinted value and border.
+ */
 const BruteForceAnalysis = ({ entropy, color }: BruteForceAnalysisProps) => {
   return (
     <div className="awareness-card awareness-card--compact">

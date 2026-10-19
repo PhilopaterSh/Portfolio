@@ -94,6 +94,7 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => (
   </m.div>
 );
 
+/** Professional Experience timeline with staggered card reveals; logos sized via `imageDimensions`. */
 const ExperienceSection = () => {
   return (
     <m.section

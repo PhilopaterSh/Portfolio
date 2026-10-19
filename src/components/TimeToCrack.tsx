@@ -13,6 +13,12 @@ interface TimeToCrackProps {
   password: string;
 }
 
+/** Awareness card mapping entropy ranges to crack-time bands; the active row is highlighted and others dim when a password exists.
+ *
+ * @param timeScale - Crack-time bands keyed by entropy range.
+ * @param entropy - Current password entropy in bits.
+ * @param password - Raw password, used only to detect "has input" for dimming.
+ */
 const TimeToCrack = ({ timeScale, entropy, password }: TimeToCrackProps) => {
   return (
     <div className="awareness-card awareness-card--compact">
