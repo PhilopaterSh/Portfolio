@@ -225,6 +225,12 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.13 Prerender/LCP Investigation — Closed Without Change (October 2026)
+
+- **Investigated (spec `004-prerender-lcp`):** build-time route prerendering via headless-Chrome DOM capture, plus a hero-image preload variant, as candidate fixes for the remaining mobile-LCP gap.
+- **Measured, both rejected:** prerendering regressed TBT 160 → 390 ms and FCP 1.7 → 2.6 s (client `createRoot` re-render over the captured tree); the preload showed no benefit beyond the ±1 s lab noise in interleaved A/B because the LCP element paints only after React executes. Both reverted; the build chain is unchanged from spec 003.
+- **Recorded conclusion:** mobile LCP in this stack is bounded by client-side rendering itself. The follow-up options (hydration-capable prerendering via `hydrateRoot`, or an SSG migration) are architecture-level and documented in `specs/004-prerender-lcp/plan.md` rather than attempted incrementally.
+
 ### 5.12 Motion Bundle Slimming via LazyMotion (October 2026)
 
 - **Loader change, not a redesign:** All 14 animated components now import `m` instead of `motion`, and `App.tsx` wraps the tree once in `<LazyMotion features={domAnimation} strict>` — loading only the animation feature subset the codebase uses (no drag/layout anywhere).

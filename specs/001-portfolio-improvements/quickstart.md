@@ -46,6 +46,8 @@ Automated accessibility checks (2026-10-15, branch `002-p1-hardening`): all thre
 
 Motion slimming addendum (2026-10-16, branch `003-motion-slimming`): converting all `motion.*` to `m.*` under `<LazyMotion features={domAnimation} strict>` reduced the main chunk 430.79 → 384.35 kB raw (153.18 → 140.50 kB gzip, −8.3 %) with identical animation output (verified by console-error capture and a full scroll-through reaching final opacity everywhere). Lighthouse mobile medians of 3: transfer 485 → 472 kB, TBT 180 → 120 ms; score/LCP deltas remain inside the ±1.1 s lab noise floor. Details in `specs/003-motion-slimming/plan.md`.
 
+Prerender/LCP investigation (2026-10-17, branch `004-prerender-lcp` — closed, nothing retained): build-time DOM prerendering worked technically (rendered hero in HTML, route heads preserved, all gates green) but regressed the lab profile — TBT 160 → 390 ms (React re-renders the full captured tree) and FCP 1.7 → 2.6 s. A hero-image `<link rel="preload">` variant (hash-rewritten by Vite, home-only) measured no benefit in interleaved A/B (base 78/5.4 s/160 ms vs preload 75/5.6 s/210 ms): the LCP element paints only after React executes, and the 57 kB image already downloads inside the JS bundle's shadow. Both changes were reverted per the measured-benefit rule. Conclusion: this stack's mobile LCP is bounded by client-side rendering itself; material improvement requires hydration-capable prerendering (`hydrateRoot` with stable markup) or an SSG migration — recorded as architecture-level options, not to be re-attempted incrementally. Full data in `specs/004-prerender-lcp/plan.md`.
+
 ## Visitor Trust and Trace
 
 1. Open the canonical Cybersecurity Awareness route at `/Portfolio/Cybersecurity_Awareness/`.
