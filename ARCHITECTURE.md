@@ -225,6 +225,13 @@ deployment
 
 ## 5. Recent Change Log
 
+### 5.15 LCP Critical-Path Reduction (October 2026)
+
+- **Hero eligibility:** the hero image wrapper no longer starts at opacity 0 (its entrance keeps a scale motion only) — the LCP algorithm ignores opacity-0 elements, so the measured LCP previously waited out the 0.8 s entrance animation after the JavaScript wait.
+- **Lazy below-fold sections:** ten section components plus `ContactFooter` (carrying the EmailJS SDK) load via `React.lazy` with per-region `Suspense`; critical-path JavaScript drops 384.35 → 371.0 kB raw (140.50 → 138.0 kB gzip) across the main and shared chunks, and each section is its own cacheable chunk.
+- **Measured (interleaved A/B ×3, fingerprints verified):** LCP 3.9 → 2.9 s with zero run variance, score 87 → 95, TBT 100 → 60 ms, transfer +9 kB. Cumulative lab LCP since measurement began: 5.9 → 2.9 s.
+- **Regression caught during verification:** one lazy wrapper initially used a named-import adapter that resolved to `undefined` (React error #306); caught by the first-paint/scroll-through check, diagnosed via a dev-mode build, fixed to direct default-import `lazy()`.
+
 ### 5.14 Google-Style JSDoc Coverage (October 2026)
 
 - **Coverage completed (branch `005-jsdoc-coverage`):** every exported symbol under `src/` now carries Google-style JSDoc per constitution Principle VII — all data interfaces/constants in `portfolioData.ts` (66 doc blocks documenting field semantics, e.g. writeup links must be direct article URLs), all 21 section/utility components, the three pages, `ThemeContext`, `main.tsx` bootstrap (documenting the intentional `createRoot`-not-hydration decision), the asset mapping, and the three build scripts (module-level contracts for the route-HTML generator, preview smoke suite, and PDF generator).

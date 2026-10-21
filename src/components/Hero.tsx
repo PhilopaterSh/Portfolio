@@ -86,8 +86,8 @@ const Hero = () => {
         </m.div>
         <m.div
           className="hero-image-wrapper-container"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 0.92 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <div className="hero-image-wrapper">
