@@ -1,0 +1,507 @@
+import {
+  digiliansLogo,
+  ntiLogo,
+  depiLogo,
+  yatLogo,
+  asorcLogo,
+  eeluLogo,
+  bugcrowdLogo,
+  hackeroneLogo,
+  scoutLogo,
+  deciLogo,
+  img3,
+  img4,
+  ss1,
+  ss2,
+  ss3,
+  ss4,
+  sc1,
+  sc2,
+  sc3,
+  sc4,
+  sc5,
+} from "../assets";
+
+export { hackeroneLogo, bugcrowdLogo };
+
+/**
+ * Single source of truth for every portfolio section's content: about copy,
+ * contact channels, experience timeline, projects, writeups, volunteering,
+ * certifications, skills, languages, and education. Components read from these
+ * exports and never hardcode content, so editing this file updates the whole
+ * site without touching UI code.
+ */
+
+/** Ordered testimonial screenshot assets rendered by the slider. */
+export const testimonialImages = [img3, img4, ss1, ss2, ss3, ss4, sc1, sc2, sc3, sc4, sc5];
+
+/** A career entry rendered in the Professional Experience timeline. */
+export interface Experience {
+  /** Company, institution, or program display name. */
+  company: string;
+  /** Human-readable date range, e.g. "Feb 2025 - May 2025". */
+  period: string;
+  /** Role or participation title shown next to the period. */
+  role: string;
+  /** Single logo asset URL; mutually exclusive with `images`. */
+  image?: string;
+  /** Multiple logo asset URLs for combined cards (e.g. bug bounty platforms). */
+  images?: string[];
+  /** Optional external profile link rendered as "View Profile". */
+  link?: string;
+  /** Achievement bullets rendered under the role. */
+  highlights: string[];
+}
+
+/** A security tool or project rendered in the Projects grid. */
+export interface Project {
+  /** Tool or project display name. */
+  title: string;
+  /** Short technology tag, e.g. "Go / Automation". */
+  tag: string;
+  /** One-sentence summary shown on the card. */
+  desc: string;
+  /** Reconnaissance or workflow gap the tool addresses. */
+  problem: string;
+  /** Design approach that closes that gap. */
+  solution: string;
+  /** Technology labels rendered as chips. */
+  tools: string[];
+  /** Qualitative outcome; keep it verifiable, no invented benchmarks. */
+  outcome: string;
+  /** Repository or article URL the card links to. */
+  link: string;
+  /** Marks the card as a featured "Major Project" with a larger layout. */
+  isMajor?: boolean;
+}
+
+/** A published security article rendered in the Writeups section. */
+export interface Writeup {
+  /** Article title exactly as published on the target platform. */
+  title: string;
+  /** Platform label, e.g. "TryHackMe / Medium". */
+  platform: string;
+  /** Category badge, e.g. "CTF Walkthrough" or "Tool Breakdown". */
+  badge: string;
+  /** Reading-time hint; free-form ("6 min read", "Article"). */
+  readTime: string;
+  /** One-sentence description of the walkthrough or guide. */
+  desc: string;
+  /** Topic tags rendered as chips on the card. */
+  tags: string[];
+  /** Direct article URL — never a profile or listing page root. */
+  link: string;
+  /** Featured cards render ahead of the rest in the grid. */
+  featured?: boolean;
+}
+
+/** A volunteer role rendered in the Volunteering section. */
+export interface Volunteering {
+  /** Position held, e.g. "Technical Mentor". */
+  role: string;
+  /** Organization display name. */
+  organization: string;
+  /** Human-readable date range, e.g. "2024 - Present". */
+  period: string;
+  /** Organization logo asset URL. */
+  image: string;
+  /** One-sentence description of the contribution. */
+  desc: string;
+}
+
+/** A certification entry rendered in the Certifications section. */
+export interface Certification {
+  /** Full certificate title as issued. */
+  name: string;
+  /** Issue date, e.g. "May 2026". */
+  date: string;
+}
+
+/** A grouped skills block rendered in the Skills section. */
+export interface SkillCategory {
+  /** Group heading, e.g. "Web Application Security". */
+  category: string;
+  /** Skill labels rendered as tags under the heading. */
+  items: string[];
+}
+
+/** A spoken-language proficiency entry. */
+export interface Language {
+  /** Language display name. */
+  name: string;
+  /** Proficiency level, e.g. "Native Speaker". */
+  level: string;
+}
+
+/** Contact channels rendered in the footer and reused by the JSON-LD schema. */
+export interface ContactInfo {
+  /** City/country label, not a mailing address. */
+  location: string;
+  /** Public phone number in international format. */
+  phone: string;
+  /** Public contact email. */
+  email: string;
+  /** LinkedIn profile URL. */
+  linkedin: string;
+  /** GitHub profile URL. */
+  github: string;
+  /** Medium profile URL. */
+  medium: string;
+  /** TryHackMe profile URL. */
+  tryHackMe: string;
+  /** X (Twitter) profile URL. */
+  x: string;
+  /** WhatsApp click-to-chat URL. */
+  whatsapp: string;
+}
+
+/** Profile intro and career objective shown in the About section. */
+export const about = {
+  introduction:
+    "Information Technology graduate and Junior Penetration Tester specializing in offensive security, vulnerability management, and risk analysis. Backed by intensive practical training from NTI, DEPI, and a prestigious cybersecurity diploma, I possess a proven track record in conducting structured web and network security assessments.",
+  careerObjective:
+    "As a Bug Bounty Hunter on Bugcrowd and HackerOne, I leverage a true Red Team mindset to identify and responsibly disclose critical vulnerabilities, including IDOR, PII Breaches, Broken Access Control, XSS, and OTP Bypasses. Adept at building custom automation tools in Go and Python, as well as delivering clear, compliance-aligned remediation reports that secure complex enterprise environments.",
+  field: "Junior Penetration Tester",
+};
+
+/** Public contact channels rendered in the footer and reused by JSON-LD. */
+export const contact: ContactInfo = {
+  location: "Cairo, Egypt",
+  phone: "+201555181415",
+  email: "Philopater.Pentester@outlook.com",
+  linkedin: "https://linkedin.com/in/philopater-shenouda",
+  github: "https://github.com/PhilopaterSh",
+  medium: "https://medium.com/@PhilopaterSh",
+  tryHackMe: "https://tryhackme.com/p/PhilopaterSh",
+  x: "https://x.com/PhilopaterSh",
+  whatsapp: "https://wa.me/message/YMTBQC253E7DE1",
+};
+
+/** Month/year the generated PDF resume was last refreshed; shown in the hero. */
+export const resumeLastUpdated = "June 2026";
+
+/** Career timeline in reverse-chronological order for the Experience section. */
+export const experiences: Experience[] = [
+  {
+    company: "Digilians Pioneers",
+    period: "Dec 2025 - Sep 2026",
+    role: "Cybersecurity Participant (Diploma)",
+    image: digiliansLogo,
+    highlights: [
+      "Selected for an intensive residential scholarship hosted at the Egyptian Military Academy in partnership with NTI, Military Technical College, and global tech leaders (Google, AWS, Palo Alto, Fortinet).",
+      "Completed 1,330 total accredited hours: 750h technical/practical skills, 300h leadership/business/freelancing, 220h capstone project & field training, and 60h agentic AI.",
+      "Configured enterprise routing, switching, and firewall security policies using Huawei HCIA-Datacom standards and Fortinet (FortiOS 7.6) Next-Gen Firewalls.",
+      "Graduation Project: Led a technical team developing 'Argus', an autonomous AI framework automating end-to-end pentesting in air-gapped environments.",
+    ],
+  },
+  {
+    company: "Bug Bounty Hunter",
+    period: "Aug 2025 - Dec 2025",
+    role: "Bug Bounty Hunter (Part-time)",
+    images: [bugcrowdLogo, hackeroneLogo],
+    highlights: [
+      "Discovered and responsibly disclosed critical vulnerabilities across enterprise target scopes, including IDOR, PII Breaches, Broken Access Control, XSS, and OTP Bypasses.",
+      "Demonstrated high-impact flaws by manipulating HTTP requests, bypassing multi-factor authentication (MFA) logic, and hijacking administrative privileges.",
+      "Authored detailed vulnerability reports with technical proof-of-concepts (PoCs) and actionable remediation strategies.",
+    ],
+  },
+  {
+    company: "National Telecommunication Institute (NTI)",
+    period: "Feb 2025 - May 2025",
+    role: "Ethical Hacking Intern",
+    image: ntiLogo,
+    highlights: [
+      "Participated in an intensive 288-hour program simulating advanced web and network Red Team exercises and real-world attack campaigns.",
+      "Utilized Nmap, Burp Suite, Metasploit, and Wireshark for target reconnaissance, traffic analysis, and Active Directory exploitation.",
+      "Developed custom Python and Go scripts to automate network packet manipulation and optimize exploit research workflows.",
+    ],
+  },
+  {
+    company: "Digital Egypt Pioneers Initiative (DEPI)",
+    period: "Apr 2024 - Oct 2024",
+    role: "Vulnerability Analyst Intern",
+    image: depiLogo,
+    highlights: [
+      "Conducted automated and manual vulnerability analysis using Nessus and OpenVAS, mapping infrastructure flaws to NIST and ISO 27001 compliance frameworks.",
+      "Exploited OWASP Top 10 flaws (SQLi, XSS, CSRF) within simulated staging environments to validate risk severity and document hardening techniques.",
+    ],
+  },
+  {
+    company: "YAT Learning Centers",
+    period: "Feb 2024 - Sep 2025",
+    role: "Technical Trainer (DECI Program - Part-time)",
+    image: yatLogo,
+    highlights: [
+      "Instructed 100+ students in programming and cybersecurity, simplifying complex security and ethical hacking into engaging models.",
+      "Increased technical awareness by 30% through simplified security frameworks and hands-on demonstrations.",
+    ],
+  },
+  {
+    company: "ASORC - Assiut Oil Refining Company",
+    period: "Sep 2022",
+    role: "IT & Network Trainee",
+    image: asorcLogo,
+    highlights: [
+      "Rotated through various departments, including the Network department and Data Center, to gain hands-on IT infrastructure experience.",
+      "Assisted with server management, router and switch configurations, and overall network security setups.",
+    ],
+  },
+];
+
+/** Open-source security tools rendered in the Projects grid; major first. */
+export const projects: Project[] = [
+  {
+    title: "PhilopaterSh URL",
+    tag: "Go / Automation",
+    desc: "Go-based tool for automated URL extraction and filtering, featuring enhanced performance and multiple data sources.",
+    problem:
+      "Existing URL extraction tools were often slow and missed endpoints by not integrating enough data sources, which hindered the reconnaissance phase of security assessments.",
+    solution:
+      "Developed a high-performance, concurrent tool in Go that aggregates data from multiple passive sources and applies intelligent filtering to extract unique URLs efficiently.",
+    tools: ["Go (Golang)", "Concurrency", "HTTP APIs", "Regex"],
+    outcome:
+      "Aggregates URLs from multiple passive sources and filters unique endpoints to support reconnaissance workflows.",
+    link: "https://github.com/PhilopaterSh/Ph.Sh_url",
+    isMajor: true,
+  },
+  {
+    title: "PhilopaterSh Subdomain",
+    tag: "Go / Recon",
+    desc: "High-performance subdomain enumeration tool in Go integrating multiple passive data sources with concurrent discovery.",
+    problem:
+      "Fragmented subdomain data across different providers made it difficult to get a complete view of a target's attack surface during the discovery phase.",
+    solution:
+      "Built a Go-based tool that integrates various passive API sources with active concurrent discovery to provide a comprehensive and accurate list of subdomains.",
+    tools: ["Go", "JSON APIs", "Parallel Processing", "DNS Recon"],
+    outcome:
+      "Combines passive sources and concurrent discovery to help map a broader view of a target's subdomains.",
+    link: "https://github.com/PhilopaterSh/Ph.Sh-Subdomain",
+    isMajor: false,
+  },
+];
+
+/** Published security articles; featured entries lead the grid. */
+export const writeups: Writeup[] = [
+  {
+    title: "TryHackMe Blue Writeup Walkthrough with Answers",
+    platform: "TryHackMe / Medium",
+    badge: "CTF Walkthrough",
+    readTime: "6 min read",
+    desc: "TryHackMe Blue walkthrough covering Nmap reconnaissance, MS17-010 EternalBlue exploitation with Metasploit, shell conversion, and privilege escalation to NT AUTHORITY\\SYSTEM.",
+    tags: ["MS17-010", "EternalBlue", "Metasploit", "Privilege Escalation", "TryHackMe"],
+    link: "https://medium.com/@PhilopaterSh/tryhackme-blue-writeup-walkthrough-with-answers-765c273485e2",
+    featured: true,
+  },
+  {
+    title: "Basic Pentesting TryHackMe Walkthrough",
+    platform: "TryHackMe / Medium",
+    badge: "Hands-on Pentest",
+    readTime: "6 min read",
+    desc: "TryHackMe Basic Pentesting walkthrough covering service discovery, web and SMB enumeration, SSH access, and Linux privilege escalation.",
+    tags: ["Web Recon", "Hydra", "John the Ripper", "SSH Key Cracking", "Linux Pentesting"],
+    link: "https://medium.com/@PhilopaterSh/basic-pentesting-walkthrough-2fdd9d0c30d6",
+    featured: true,
+  },
+  {
+    title: "Ph.Sh_URL: High-Speed Go URL Discovery for Security Researchers",
+    platform: "Medium / GitHub / Go.dev",
+    badge: "Tool Breakdown",
+    readTime: "6 min read",
+    desc: "Technical deep-dive into developing an OSINT URL discovery tool in Golang. Covers concurrent HTTP fetching, multiple passive threat intelligence feeds integration, smart deduplication, and endpoint filtering for bug bounty workflows.",
+    tags: ["Golang", "OSINT", "Automation", "Reconnaissance", "Bug Bounty"],
+    link: "https://github.com/PhilopaterSh/Ph.Sh_url",
+    featured: true,
+  },
+  {
+    title: "Linux User, Group & Permission Management — Practical Assignment Guide",
+    platform: "Medium",
+    badge: "Security Guide",
+    readTime: "5 min read",
+    desc: "Step-by-step practical guide covering Linux user and group management, supplementary groups, password aging policies with chage, and file/directory permissions with chmod from a security-focused perspective.",
+    tags: [
+      "Linux Hardening",
+      "Access Control",
+      "File Permissions",
+      "System Administration",
+      "Security",
+    ],
+    link: "https://medium.com/@PhilopaterSh/linux-user-group-permission-management-practical-assignment-guide-a8796f762946",
+    featured: false,
+  },
+  {
+    title: "HCIA — Routing: Static Routing Lab on Huawei Routers",
+    platform: "Medium / Huawei HCIA",
+    badge: "Network Lab",
+    readTime: "Article",
+    desc: "Hands-on Huawei HCIA lab building a three-router topology over WAN serial links, configuring static routes on each router, and verifying end-to-end reachability with routing-table and ping diagnostics.",
+    tags: ["HCIA", "Static Routing", "Huawei", "Networking", "Routing Tables"],
+    link: "https://medium.com/@PhilopaterSh/hcia-routing-5c960276228d",
+    featured: false,
+  },
+  {
+    title: "Hack The Box: Cap Walkthrough",
+    platform: "Medium / Hack The Box",
+    badge: "HTB Walkthrough",
+    readTime: "Article",
+    desc: "A walkthrough of the Hack The Box Cap machine, documenting its reconnaissance and exploitation path.",
+    tags: ["Hack The Box", "Cap", "Reconnaissance", "CTF"],
+    link: "https://medium.com/@PhilopaterSh/hackthebox-com-machines-cap-519d78712a82",
+    featured: true,
+  },
+  {
+    title: "Google XSS Game Walkthrough",
+    platform: "Medium / Google XSS Game",
+    badge: "Web Security Lab",
+    readTime: "Article",
+    desc: "A walkthrough of the Google XSS Game challenges and their cross-site scripting concepts.",
+    tags: ["XSS", "Web Security", "Google XSS Game", "CTF"],
+    link: "https://medium.com/@PhilopaterSh/google-xss-game-6dbd1c8b3eb8",
+    featured: true,
+  },
+];
+
+/** Community roles rendered in the Volunteering section. */
+export const volunteering: Volunteering[] = [
+  {
+    role: "Assistant Group Leader",
+    organization: "Egyptian Air Scouts Association",
+    period: "May 2019 - Present",
+    image: scoutLogo,
+    desc: "Initiated and organized scouting events and recreational activities for preparatory students, fostering leadership, discipline, and teamwork through camp management and interactive workshops.",
+  },
+  {
+    role: "Technical Mentor",
+    organization: "Digital Egypt Cubs Initiative (DECI)",
+    period: "2024 - Present",
+    image: deciLogo,
+    desc: "Volunteered to guide and mentor students aged 12-17 in the fundamentals of cybersecurity and ethical hacking, helping them build a strong foundation in digital safety.",
+  },
+];
+
+/** Certifications in reverse-chronological order for the Credentials section. */
+export const certs: Certification[] = [
+  {
+    name: "Cybersecurity Leadership and Management (L1 & L2)",
+    date: "May 2026",
+  },
+  {
+    name: "Governance, Risk, and Compliance (GRC) Specialist",
+    date: "May 2026",
+  },
+  {
+    name: "Information Gathering - Web Edition (HTB)",
+    date: "May 2026",
+  },
+  { name: "Google Cybersecurity Professional Certificate", date: "April 2026" },
+  { name: "Malware Analysis & Reverse Engineering", date: "Sep 2024" },
+  {
+    name: "Vulnerability Analyst / Pentester (DEPI)",
+    date: "Oct 2024",
+  },
+  {
+    name: "EC-Council Certified Incident Handler (ECIH) v2",
+    date: "May 2024",
+  },
+  { name: "ITI Introduction to Cybersecurity Bootcamp", date: "Sep 2023" },
+  { name: "eLearnSecurity Junior PT (eJPT v1)", date: "Aug 2023" },
+  { name: "Certified Ethical Hacker (CEH)", date: "July 2023" },
+  { name: "OWASP Top 10 & API Security Top 10", date: "July 2023" },
+  { name: "External Pentest Playbook (TCM Security)", date: "July 2023" },
+  { name: "Cyber Security Engineer (ITI)", date: "Jan 2023" },
+  { name: "(ISC)2 Candidate", date: "Dec 2022" },
+  { name: "Introduction to Cybersecurity (Palo Alto)", date: "Aug 2022" },
+];
+
+/** Grouped technical competencies rendered in two columns. */
+export const technicalSkills: SkillCategory[] = [
+  {
+    category: "Web Application Security",
+    items: [
+      "OWASP Top 10",
+      "API Security Top 10",
+      "SQL Injection (SQLi)",
+      "Cross-Site Scripting (XSS)",
+      "SSRF & LFI/RFI",
+      "Broken Access Control",
+    ],
+  },
+  {
+    category: "Offensive Security & Pentesting",
+    items: [
+      "Network Penetration Testing",
+      "Vulnerability Scanning (Nessus)",
+      "Exploitation (Metasploit)",
+      "Red Teaming & Infrastructure Security",
+      "Payload Development",
+      "Information Gathering (HTB)",
+    ],
+  },
+  {
+    category: "Incident Response & Malware Analysis",
+    items: [
+      "Cybersecurity Incident Response (ECIH)",
+      "Malware Sandbox & Analysis",
+      "Executable File Analysis",
+      "SIEM (Google/SIEM Tools)",
+      "Threat Detection & Response",
+    ],
+  },
+  {
+    category: "Networking & Traffic Analysis",
+    items: [
+      "TCP/IP & Networking Protocols",
+      "DNS Security & IPv4",
+      "Traffic Analysis & Wireshark",
+      "Switching & Routing (CCNA)",
+      "Intrusion Detection/Prevention (IDS/IPS)",
+    ],
+  },
+  {
+    category: "AI, Automation & Scripting",
+    items: [
+      "Large Language Models (LLMs) & ChatGPT",
+      "Machine Learning & AI Strategy",
+      "Python & Go for Security",
+      "Bash & PowerShell Scripting",
+      "Security Automation",
+    ],
+  },
+  {
+    category: "GRC & Professional Documentation",
+    items: [
+      "Governance, Risk, and Compliance (GRC)",
+      "Security Frameworks & CIA Triad",
+      "Cybersecurity Leadership & Management",
+      "Agile Quality Work (IBM)",
+      "Technical Reporting & Mentorship",
+    ],
+  },
+];
+
+/** Soft-skill labels rendered as tags beside the technical skills. */
+export const softSkills = [
+  "Leadership & Team Management",
+  "Agile Methodologies",
+  "Analytical Problem-Solving",
+  "Technical Communication",
+  "Continuous Self-Learning",
+  "Research Coordination",
+  "Professional Ethics",
+  "Adaptability",
+];
+
+/** Spoken languages with proficiency levels. */
+export const languages: Language[] = [
+  { name: "Arabic", level: "Native Speaker" },
+  { name: "English", level: "Conversational / Professional" },
+];
+
+/** Degree, institution, GPA, and graduation-project summary. */
+export const education = {
+  period: "2020 - 2024",
+  degree: "Bachelor of Information Technology",
+  university: "The Egyptian E-Learning University (EELU)",
+  logo: eeluLogo,
+  details:
+    "GPA: 3.08/4.0. Graduation Project: Electronics E-store (Grade: A+). Responsible for programming an AI server in Python and establishing an API to connect it with a PHP backend.",
+};

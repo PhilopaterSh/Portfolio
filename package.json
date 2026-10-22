@@ -1,0 +1,48 @@
+{
+  "name": "website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build \u0026\u0026 node scripts/generate-route-html.mjs",
+    "build:with-cv": "npm run build \u0026\u0026 npm run generate:cv",
+    "generate:cv": "node scripts/generate-pdf.cjs",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check index.html package.json scripts/*.cjs scripts/*.mjs .github/workflows/ci.yml src/App.tsx src/assets/index.ts src/components/ContactFooter.tsx src/components/EducationSection.tsx src/components/ExperienceSection.tsx src/components/Hero.tsx src/components/Navbar.tsx src/components/NetworkTrace.tsx src/components/NetworkTrace.test.tsx src/components/TestimonialsSection.tsx src/components/TestimonialsSection.test.tsx src/components/VolunteeringSection.tsx src/data/siteMetadata.json src/data/siteMetadata.test.ts src/pages/CybersecurityAwareness.tsx src/pages/Home.tsx src/pages/Resume.tsx src/styles/awareness.css src/styles/base.css src/styles/content.css src/styles/navbar.css src/utils/networkTrace.ts src/utils/networkTrace.test.ts src/utils/routeMetadata.ts src/utils/routeMetadata.test.ts",
+    "preview": "vite preview",
+    "verify:preview": "node scripts/verify-preview.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^12.38.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.4",
+    "puppeteer": "^25.1.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.48.0",
+    "vite": "^7.3.1",
+    "vitest": "^4.1.10"
+  }
+}

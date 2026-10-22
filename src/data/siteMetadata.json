@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/",
+    "title": "Philopater Shenouda (PhilopaterSh) | Junior Penetration Tester",
+    "description": "Philopater Shenouda (PhilopaterSh), Junior Penetration Tester and Bug Bounty Hunter. CEH and eJPT certified, specializing in web application security and vulnerability assessment.",
+    "canonicalUrl": "https://philopatersh.github.io/Portfolio/",
+    "socialImageUrl": "https://philopatersh.github.io/Portfolio/og-image.jpg",
+    "socialImageAlt": "Philopater Shenouda - Junior Penetration Tester"
+  },
+  {
+    "path": "/Resume/",
+    "title": "Resume | Philopater Shenouda (PhilopaterSh)",
+    "description": "Review the cybersecurity experience, education, certifications, skills, and selected projects of Philopater Shenouda.",
+    "canonicalUrl": "https://philopatersh.github.io/Portfolio/Resume/",
+    "socialImageUrl": "https://philopatersh.github.io/Portfolio/og-image.jpg",
+    "socialImageAlt": "Philopater Shenouda - Junior Penetration Tester"
+  },
+  {
+    "path": "/Cybersecurity_Awareness/",
+    "title": "Cybersecurity Awareness Lab | PhilopaterSh",
+    "description": "Explore interactive cybersecurity awareness tools for password entropy, brute-force estimates, and an optional network identity trace.",
+    "canonicalUrl": "https://philopatersh.github.io/Portfolio/Cybersecurity_Awareness/",
+    "socialImageUrl": "https://philopatersh.github.io/Portfolio/og-image.jpg",
+    "socialImageAlt": "Philopater Shenouda - Cybersecurity Awareness Lab"
+  }
+]
