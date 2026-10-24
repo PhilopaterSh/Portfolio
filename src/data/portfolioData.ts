@@ -9,6 +9,9 @@ import {
   hackeroneLogo,
   scoutLogo,
   deciLogo,
+  fortressLogo,
+  mostaqlLogo,
+  khamsatLogo,
   img3,
   img4,
   ss1,
@@ -158,7 +161,7 @@ export interface ContactInfo {
 /** Profile intro and career objective shown in the About section. */
 export const about = {
   introduction:
-    "Information Technology graduate and Junior Penetration Tester specializing in offensive security, vulnerability management, and risk analysis. Backed by intensive practical training from NTI, DEPI, and a prestigious cybersecurity diploma, I possess a proven track record in conducting structured web and network security assessments.",
+    "Information Technology graduate and Junior Penetration Tester currently training as a Penetration Tester at Classera, specializing in offensive security, vulnerability management, and risk analysis. Backed by intensive practical training from NTI, DEPI, and a prestigious cybersecurity diploma, I possess a proven track record in conducting structured web and network security assessments.",
   careerObjective:
     "As a Bug Bounty Hunter on Bugcrowd and HackerOne, I leverage a true Red Team mindset to identify and responsibly disclose critical vulnerabilities, including IDOR, PII Breaches, Broken Access Control, XSS, and OTP Bypasses. Adept at building custom automation tools in Go and Python, as well as delivering clear, compliance-aligned remediation reports that secure complex enterprise environments.",
   field: "Junior Penetration Tester",
@@ -178,10 +181,16 @@ export const contact: ContactInfo = {
 };
 
 /** Month/year the generated PDF resume was last refreshed; shown in the hero. */
-export const resumeLastUpdated = "June 2026";
+export const resumeLastUpdated = "October 2026";
 
 /** Career timeline in reverse-chronological order for the Experience section. */
 export const experiences: Experience[] = [
+  {
+    company: "Classera",
+    period: "Oct 2026 - Present",
+    role: "Penetration Tester Trainee",
+    highlights: ["Professional penetration testing training track at Classera."],
+  },
   {
     company: "Digilians Pioneers",
     period: "Dec 2025 - Sep 2026",
@@ -206,6 +215,16 @@ export const experiences: Experience[] = [
     ],
   },
   {
+    company: "Digital Fortress EG",
+    period: "Aug 2025",
+    role: "Internship Trainee",
+    image: fortressLogo,
+    highlights: [
+      "Conducted independent reconnaissance and exploitation on assigned live targets.",
+      "Built and refined a personalized bug hunting methodology, documenting real-world vulnerabilities in submission-ready professional reports.",
+    ],
+  },
+  {
     company: "National Telecommunication Institute (NTI)",
     period: "Feb 2025 - May 2025",
     role: "Ethical Hacking Intern",
@@ -215,6 +234,20 @@ export const experiences: Experience[] = [
       "Utilized Nmap, Burp Suite, Metasploit, and Wireshark for target reconnaissance, traffic analysis, and Active Directory exploitation.",
       "Developed custom Python and Go scripts to automate network packet manipulation and optimize exploit research workflows.",
     ],
+  },
+  {
+    company: "Mostaql.com (مستقل)",
+    period: "Dec 2024 - Present",
+    role: "Freelancer",
+    image: mostaqlLogo,
+    highlights: ["Active freelancer on the Mostaql marketplace."],
+  },
+  {
+    company: "Khamsat.com (خمسات)",
+    period: "Oct 2024 - Present",
+    role: "Freelancer",
+    image: khamsatLogo,
+    highlights: ["Active freelancer on the Khamsat marketplace."],
   },
   {
     company: "Digital Egypt Pioneers Initiative (DEPI)",
@@ -250,6 +283,20 @@ export const experiences: Experience[] = [
 
 /** Open-source security tools rendered in the Projects grid; major first. */
 export const projects: Project[] = [
+  {
+    title: "Argus-Digilians",
+    tag: "AI / Pentesting",
+    desc: "Autonomous AI pentesting framework automating end-to-end reconnaissance and vulnerability assessment in air-gapped environments.",
+    problem:
+      "Manual end-to-end penetration testing workflows are time-consuming and hard to reproduce consistently across engagements.",
+    solution:
+      "Built an autonomous agent framework on Python, LangChain, and local LLMs that parses dynamic target responses, executes contextual attack workflows, and generates security reports offline.",
+    tools: ["Python", "LangChain", "Local LLMs", "Autonomous Agents"],
+    outcome:
+      "Automates target reconnaissance, contextual attack workflows, and automated security report generation within a secure, air-gapped local environment.",
+    link: "https://github.com/PhilopaterSh/Argus-Digilians",
+    isMajor: true,
+  },
   {
     title: "PhilopaterSh URL",
     tag: "Go / Automation",
@@ -402,6 +449,7 @@ export const certs: Certification[] = [
     name: "EC-Council Certified Incident Handler (ECIH) v2",
     date: "May 2024",
   },
+  { name: "Red Hat System Administration I (MaharaTech / ITI)", date: "Dec 2023" },
   { name: "ITI Introduction to Cybersecurity Bootcamp", date: "Sep 2023" },
   { name: "eLearnSecurity Junior PT (eJPT v1)", date: "Aug 2023" },
   { name: "Certified Ethical Hacker (CEH)", date: "July 2023" },
