@@ -10,7 +10,7 @@
     "generate:cv": "node scripts/generate-pdf.cjs",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check index.html package.json scripts/*.cjs scripts/*.mjs .github/workflows/ci.yml src/App.tsx src/assets/index.ts src/components/ContactFooter.tsx src/components/EducationSection.tsx src/components/ExperienceSection.tsx src/components/Hero.tsx src/components/Navbar.tsx src/components/NetworkTrace.tsx src/components/NetworkTrace.test.tsx src/components/TestimonialsSection.tsx src/components/TestimonialsSection.test.tsx src/components/VolunteeringSection.tsx src/data/siteMetadata.json src/data/siteMetadata.test.ts src/pages/CybersecurityAwareness.tsx src/pages/Home.tsx src/pages/Resume.tsx src/styles/awareness.css src/styles/base.css src/styles/content.css src/styles/navbar.css src/utils/networkTrace.ts src/utils/networkTrace.test.ts src/utils/routeMetadata.ts src/utils/routeMetadata.test.ts",
+    "format:check": "prettier --check .",
     "preview": "vite preview",
     "verify:preview": "node scripts/verify-preview.mjs",
     "test": "vitest run",

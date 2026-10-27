@@ -18,9 +18,9 @@ Two surgical levers on the CPU-bound critical path established by spec 004:
 
 ## Baseline (2026-10-19, spec 005-jsdoc head)
 
-| Build | Main chunk raw | gzip |
-|---|---|---|
-| Baseline | 384.35 kB | 140.50 kB |
+| Build                                               | Main chunk raw             | gzip                      |
+| --------------------------------------------------- | -------------------------- | ------------------------- |
+| Baseline                                            | 384.35 kB                  | 140.50 kB                 |
 | After levers (main + shared chunk on critical path) | 360.55 + 10.41 = 370.96 kB | 130.45 + 7.54 = 137.99 kB |
 
 Ten new lazy chunks (sections + ContactFooter, 0.5–2.7 kB each) load after the
@@ -31,13 +31,13 @@ critical path.
 
 Lighthouse mobile, interleaved A/B ×3 with build fingerprints verified per arm:
 
-| Metric (median) | Base | Change |
-|---|---|---|
-| LCP | 3.9 s (runs 4.7/3.9/3.9) | **2.9 s (runs 2.9/2.9/2.9 — zero variance)** |
-| Performance score | 87 | **95** |
-| TBT | 100 ms | **60 ms** |
-| FCP / SI | 1.7 s / 1.7 s | 1.7 s / 1.7 s |
-| Total transfer | 472 kB | 481 kB (+9 kB chunk overhead) |
+| Metric (median)   | Base                     | Change                                       |
+| ----------------- | ------------------------ | -------------------------------------------- |
+| LCP               | 3.9 s (runs 4.7/3.9/3.9) | **2.9 s (runs 2.9/2.9/2.9 — zero variance)** |
+| Performance score | 87                       | **95**                                       |
+| TBT               | 100 ms                   | **60 ms**                                    |
+| FCP / SI          | 1.7 s / 1.7 s            | 1.7 s / 1.7 s                                |
+| Total transfer    | 472 kB                   | 481 kB (+9 kB chunk overhead)                |
 
 The three identical 2.9 s runs are the decisive signal: the previous spread came
 from the variable opacity-animation wait gating LCP eligibility; removing it made

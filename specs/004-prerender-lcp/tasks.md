@@ -10,16 +10,16 @@
 
 ## Phase 1: Pipeline
 
-- [X] T001 Create `scripts/prerender.mjs` following the `generate-pdf.cjs` server pattern: free port, spawned `vite preview`, readiness polling, per-route capture with scroll-through and settle wait, serialization, and teardown. *(Built and working; removed after the negative measurement.)*
-- [X] T002 Add post-capture guards (canonical link present, non-empty rendered `#root`) that fail the build on any missing/blank capture, and wire the step into the `build` script after `generate-route-html.mjs`. *(Worked, including a real fix for base-relative route URLs; unwired after the measurement.)*
+- [x] T001 Create `scripts/prerender.mjs` following the `generate-pdf.cjs` server pattern: free port, spawned `vite preview`, readiness polling, per-route capture with scroll-through and settle wait, serialization, and teardown. _(Built and working; removed after the negative measurement.)_
+- [x] T002 Add post-capture guards (canonical link present, non-empty rendered `#root`) that fail the build on any missing/blank capture, and wire the step into the `build` script after `generate-route-html.mjs`. _(Worked, including a real fix for base-relative route URLs; unwired after the measurement.)_
 
 ## Phase 2: Verification and Measurement
 
-- [X] T003 Verify `dist/index.html` contains the rendered hero (headline text, hashed hero image URL with high fetch priority) and each route document contains its rendered subtree.
-- [X] T004 Run `npm run lint`, `npm run format:check`, `npx tsc --noEmit`, `npm run test`, `npm run build`, and `npm run verify:preview` on the prerendered output.
-- [X] T005 Capture a two-theme scroll-through with console-error capture confirming animations settle and no section stays hidden.
-- [X] T006 Run Lighthouse mobile 3× against the prerendered build and record medians plus byte deltas in `plan.md` and the spec 001 `quickstart.md` lab section.
+- [x] T003 Verify `dist/index.html` contains the rendered hero (headline text, hashed hero image URL with high fetch priority) and each route document contains its rendered subtree.
+- [x] T004 Run `npm run lint`, `npm run format:check`, `npx tsc --noEmit`, `npm run test`, `npm run build`, and `npm run verify:preview` on the prerendered output.
+- [x] T005 Capture a two-theme scroll-through with console-error capture confirming animations settle and no section stays hidden.
+- [x] T006 Run Lighthouse mobile 3× against the prerendered build and record medians plus byte deltas in `plan.md` and the spec 001 `quickstart.md` lab section.
 
 ## Phase 3: Documentation
 
-- [X] T007 Add the dated `ARCHITECTURE.md` change-log entry, tick this list, commit, and push.
+- [x] T007 Add the dated `ARCHITECTURE.md` change-log entry, tick this list, commit, and push.

@@ -24,15 +24,15 @@ first-paint preview, not a hydration source — no hydration-mismatch surface ex
 
 ## Baseline (2026-10-16, spec 003 head, Vite 7.3.6)
 
-| Metric (mobile, interleaved medians of 3) | Spec 003 head | Prerendered build | Hero-preload build |
-|---|---|---|---|
-| Main chunk (raw / gzip) | 384.35 kB / 140.50 kB | unchanged | unchanged |
-| dist/index.html | ~1.7 kB shell | 70.0 kB rendered (28.5 kB gzip) | ~1.7 kB + preload link |
-| Lighthouse score | 78–80 (run-set medians) | **70** | **75** |
-| LCP | 4.2–5.4 s | **4.6 s** | **5.6 s** |
-| FCP | 1.7 s | **2.6 s** | 1.7 s |
-| TBT | 120–180 ms | **390 ms** | **210 ms** |
-| Total transfer | 472 kB | 498 kB | 472 kB |
+| Metric (mobile, interleaved medians of 3) | Spec 003 head           | Prerendered build               | Hero-preload build     |
+| ----------------------------------------- | ----------------------- | ------------------------------- | ---------------------- |
+| Main chunk (raw / gzip)                   | 384.35 kB / 140.50 kB   | unchanged                       | unchanged              |
+| dist/index.html                           | ~1.7 kB shell           | 70.0 kB rendered (28.5 kB gzip) | ~1.7 kB + preload link |
+| Lighthouse score                          | 78–80 (run-set medians) | **70**                          | **75**                 |
+| LCP                                       | 4.2–5.4 s               | **4.6 s**                       | **5.6 s**              |
+| FCP                                       | 1.7 s                   | **2.6 s**                       | 1.7 s                  |
+| TBT                                       | 120–180 ms              | **390 ms**                      | **210 ms**             |
+| Total transfer                            | 472 kB                  | 498 kB                          | 472 kB                 |
 
 ## Outcome (2026-10-17): nothing retained
 

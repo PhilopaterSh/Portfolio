@@ -12,12 +12,12 @@ whileInView/whileHover), verified by grep inventory below, so the provider loads
 
 ## Measurement Baseline (2026-10-15, Vite 7.3.6 lockfile build)
 
-| Build | Main chunk raw | Main chunk gzip |
-|---|---|---|
-| With framer-motion (current, spec 002 head) | 430.79 kB | 153.18 kB |
-| Shim build (framer-motion aliased to a passthrough) | 305.05 kB | 112.30 kB |
-| **framer-motion share** | **125.74 kB** | **40.88 kB** |
-| After LazyMotion + `m` conversion (2026-10-16) | 384.35 kB | 140.50 kB |
+| Build                                               | Main chunk raw | Main chunk gzip |
+| --------------------------------------------------- | -------------- | --------------- |
+| With framer-motion (current, spec 002 head)         | 430.79 kB      | 153.18 kB       |
+| Shim build (framer-motion aliased to a passthrough) | 305.05 kB      | 112.30 kB       |
+| **framer-motion share**                             | **125.74 kB**  | **40.88 kB**    |
+| After LazyMotion + `m` conversion (2026-10-16)      | 384.35 kB      | 140.50 kB       |
 
 Result: −46.44 kB raw / −12.68 kB gzip (−8.3 % of initial JavaScript) while keeping the
 `m` runtime plus the `domAnimation` feature set (~79 kB raw) in the main chunk. The

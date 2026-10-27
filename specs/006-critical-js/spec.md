@@ -8,7 +8,7 @@
 
 **Input**: Spec 004 proved this stack's mobile LCP is gated on client-side JavaScript execution (CPU-bound), and that DOM-level fixes (prerender without hydration, image preload) do not help. Two levers remain inside the measured-benefit rules: (1) the hero image wrapper animates `opacity: 0 → 1` over 0.8 s, and the LCP algorithm ignores opacity-0 elements, so the measured LCP fires only after the entrance animation completes on top of the JS wait; (2) ~40 kB of the main chunk (below-fold section components + the EmailJS SDK imported by the footer) executes before the hero can paint although nothing above the fold needs it.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Hero Image Eligible for LCP at First Render (Priority: P1)
 

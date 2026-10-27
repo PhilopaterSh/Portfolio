@@ -8,7 +8,7 @@
 
 **Input**: Spec 002/003 lab measurements leave mobile LCP as the one Core Web Vitals metric above the 2.5 s "good" threshold (4.2–5.1 s medians). Root cause is architectural: the LCP element (hero image and headline) is produced by client-side React, so the browser cannot paint it until ~380 kB of JavaScript is downloaded, parsed, and executed. All image and bundle optimizations are exhausted; the remaining lever is shipping rendered HTML.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Instant First Paint of the Hero (Priority: P1)
 

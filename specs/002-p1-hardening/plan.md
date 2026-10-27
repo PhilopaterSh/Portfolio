@@ -11,18 +11,18 @@ except the hero image source import, which keeps identical semantics.
 
 ## Measurement Baseline (2026-10-13, lockfile build)
 
-| Asset | Before | After | Delta |
-|---|---|---|---|
-| `public/og-image.jpg` (recompressed JPEG q85 mozjpeg, same 1376×768) | 417.5 kB | 78.3 kB | −339.2 kB |
-| `src/assets/profile.jpg` → WebP q82 | 104.5 kB | 56.8 kB | −47.7 kB |
-| `src/assets/testimonials/*.png` (11 files) → WebP | 303.8 kB | 154.0 kB | −149.8 kB |
-| `src/assets/experience/deci.png` → WebP q82 | 54.8 kB | 47.6 kB | −7.2 kB |
-| `src/assets/experience/depi.png` → WebP lossless | 22.7 kB | 20.8 kB | −1.9 kB |
-| `src/assets/experience/nti.png` → WebP q82 | 32.3 kB | 4.2 kB | −28.1 kB |
-| `src/assets/education/eelu.png` → WebP q82 | 22.2 kB | 3.3 kB | −18.9 kB |
-| Remaining logos (digilians, asorc, fortress, yat, mostaql, khamsat, hackerone, scout) → WebP | 38.9 kB | 20.8 kB | −18.1 kB |
-| `src/assets/experience/BugCrowd.png` | 9.5 kB | kept PNG | +0 (WebP larger) |
-| Main JS bundle (A/B: HEAD data vs new data, same Vite 7.3.6 toolchain) | 430.23 kB / 152.97 kB gzip | 430.79 kB / 153.18 kB gzip | +0.56 kB (writeup data only) |
+| Asset                                                                                        | Before                     | After                      | Delta                        |
+| -------------------------------------------------------------------------------------------- | -------------------------- | -------------------------- | ---------------------------- |
+| `public/og-image.jpg` (recompressed JPEG q85 mozjpeg, same 1376×768)                         | 417.5 kB                   | 78.3 kB                    | −339.2 kB                    |
+| `src/assets/profile.jpg` → WebP q82                                                          | 104.5 kB                   | 56.8 kB                    | −47.7 kB                     |
+| `src/assets/testimonials/*.png` (11 files) → WebP                                            | 303.8 kB                   | 154.0 kB                   | −149.8 kB                    |
+| `src/assets/experience/deci.png` → WebP q82                                                  | 54.8 kB                    | 47.6 kB                    | −7.2 kB                      |
+| `src/assets/experience/depi.png` → WebP lossless                                             | 22.7 kB                    | 20.8 kB                    | −1.9 kB                      |
+| `src/assets/experience/nti.png` → WebP q82                                                   | 32.3 kB                    | 4.2 kB                     | −28.1 kB                     |
+| `src/assets/education/eelu.png` → WebP q82                                                   | 22.2 kB                    | 3.3 kB                     | −18.9 kB                     |
+| Remaining logos (digilians, asorc, fortress, yat, mostaql, khamsat, hackerone, scout) → WebP | 38.9 kB                    | 20.8 kB                    | −18.1 kB                     |
+| `src/assets/experience/BugCrowd.png`                                                         | 9.5 kB                     | kept PNG                   | +0 (WebP larger)             |
+| Main JS bundle (A/B: HEAD data vs new data, same Vite 7.3.6 toolchain)                       | 430.23 kB / 152.97 kB gzip | 430.79 kB / 153.18 kB gzip | +0.56 kB (writeup data only) |
 
 The 401–402 kB baseline recorded in spec 001 was produced by a local Vite 7.3.1
 install; this spec's tooling install synced `node_modules` to the lockfile (Vite

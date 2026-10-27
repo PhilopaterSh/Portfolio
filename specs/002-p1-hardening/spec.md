@@ -8,7 +8,7 @@
 
 **Input**: Evaluation findings from the October 2026 portfolio review: content accuracy gaps, stale structured-data dates, unoptimized raster assets, and missing trust/scroll-performance primitives.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Verifiable Writeup Destinations (Priority: P1)
 

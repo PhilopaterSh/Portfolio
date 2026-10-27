@@ -8,7 +8,7 @@
 
 **Input**: Spec 002 performance comparison identified mobile LCP (4.2 s median, above the 2.5 s "good" threshold) as gated on initial JavaScript execution. An A/B shim build measured framer-motion's share of the initial chunk at 125.7 kB raw / 40.9 kB gzip (430.8 → 305.1 kB without it) — 27 % of initial JavaScript for entry animations, `whileInView`/`whileHover` reveals, and `AnimatePresence` exit transitions only (no drag, no layout animations anywhere in the codebase).
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Same Motion, Less JavaScript (Priority: P1)
 

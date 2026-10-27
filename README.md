@@ -183,12 +183,12 @@ Passionate about ethical hacking, network security, and building tools that make
 
 #### Core Meta Tags
 
-| Tag | Value / purpose |
-|---------|----------------|
-| `<meta name="keywords">` | `PhilopaterSh, Philopater Shenouda, Junior Penetration Tester, Bug Bounty Hunter, Cybersecurity...` |
-| `<meta name="robots" content="index, follow">` | Allows search engines to index and follow the site |
-| `<meta name="google-site-verification">` | Verifies site ownership in **Google Search Console** |
-| `<meta name="msvalidate.01">` | Verifies site ownership in **Bing Webmaster Tools** |
+| Tag                                            | Value / purpose                                                                                     |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| `<meta name="keywords">`                       | `PhilopaterSh, Philopater Shenouda, Junior Penetration Tester, Bug Bounty Hunter, Cybersecurity...` |
+| `<meta name="robots" content="index, follow">` | Allows search engines to index and follow the site                                                  |
+| `<meta name="google-site-verification">`       | Verifies site ownership in **Google Search Console**                                                |
+| `<meta name="msvalidate.01">`                  | Verifies site ownership in **Bing Webmaster Tools**                                                 |
 
 #### Improved Meta Description
 
@@ -206,13 +206,13 @@ After:
 
 #### Improved Open Graph & Twitter Cards
 
-| Tag | Update |
-|---------|---------|
-| `og:description` | Updated to use the improved description |
-| `og:image:width` | `1376` |
-| `og:image:height` | `768` |
-| `og:image:alt` | `Philopater Shenouda - Junior Penetration Tester` |
-| `twitter:description` | Updated with stronger, more detailed content |
+| Tag                   | Update                                            |
+| --------------------- | ------------------------------------------------- |
+| `og:description`      | Updated to use the improved description           |
+| `og:image:width`      | `1376`                                            |
+| `og:image:height`     | `768`                                             |
+| `og:image:alt`        | `Philopater Shenouda - Junior Penetration Tester` |
+| `twitter:description` | Updated with stronger, more detailed content      |
 
 ---
 
@@ -225,6 +225,7 @@ After:
 ### 📝 Security Writeups & Research Section
 
 A dedicated technical publication hub showcasing real-world penetration testing and tool research:
+
 - **TryHackMe Walkthroughs:** MS17-010 EternalBlue exploitation and Basic Pentesting machine guides.
 - **Tool Architecture Breakdowns:** In-depth engineering analysis of `Ph.Sh_url` and `Ph.Sh-Subdomain`.
 - **Security Engineering Guides:** Linux administration, privilege auditing, and POSIX permissions.
@@ -236,24 +237,24 @@ A dedicated technical publication hub showcasing real-world penetration testing 
 
 The schema was expanded from a basic `Person` object to a complete `@graph` containing:
 
-| Type | Purpose |
-|-------|--------|
-| `Person` (improved) | Includes `alternateName: PhilopaterSh`, `knowsAbout`, `hasCredential` (CEH, eJPT), and Bugcrowd/HackerOne in `sameAs` |
-| `WebSite` (new) | Defines the site as a separate entity for Google |
-| `SoftwareSourceCode` (new) | Documents the Go tools `Ph.Sh_url` and `Ph.Sh-Subdomain` |
-| `WebPage` (new) | Provides page details through `datePublished` and `dateModified` |
-| `BreadcrumbList` (new) | Adds search-result breadcrumbs (Home, Awareness, Resume) |
-| `ProfilePage` (new) | Defines a personal profile page eligible for **Google Rich Results** |
+| Type                       | Purpose                                                                                                               |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `Person` (improved)        | Includes `alternateName: PhilopaterSh`, `knowsAbout`, `hasCredential` (CEH, eJPT), and Bugcrowd/HackerOne in `sameAs` |
+| `WebSite` (new)            | Defines the site as a separate entity for Google                                                                      |
+| `SoftwareSourceCode` (new) | Documents the Go tools `Ph.Sh_url` and `Ph.Sh-Subdomain`                                                              |
+| `WebPage` (new)            | Provides page details through `datePublished` and `dateModified`                                                      |
+| `BreadcrumbList` (new)     | Adds search-result breadcrumbs (Home, Awareness, Resume)                                                              |
+| `ProfilePage` (new)        | Defines a personal profile page eligible for **Google Rich Results**                                                  |
 
 ---
 
 ### 🖼️ OG Image (Replaced)
 
-| | Before | After |
-|-|-----|-----|
-| **Size** | 900×1260 px (portrait) | 1376×768 px (landscape) |
+|            | Before                         | After                                                   |
+| ---------- | ------------------------------ | ------------------------------------------------------- |
+| **Size**   | 900×1260 px (portrait)         | 1376×768 px (landscape)                                 |
 | **Design** | White-background portrait only | Portrait, name, job title, certifications, and site URL |
-| **Use** | Basic sharing preview | Professional preview on LinkedIn, Twitter, and WhatsApp |
+| **Use**    | Basic sharing preview          | Professional preview on LinkedIn, Twitter, and WhatsApp |
 
 ---
 
@@ -283,23 +284,25 @@ The schema was expanded from a basic `Person` object to a complete `@graph` cont
 This roadmap outlines plans to strengthen **PhilopaterSh**'s security authority and SEO presence across additional platforms:
 
 ### 1. 📘 GitBook: Offensive Security & Penetration Testing Playbook
-* **Goal:** Build a documented public security wiki and penetration testing methodology.
-* **Planned content:**
-  * Practical reconnaissance and web application security testing workflows.
-  * One-liners and payloads for Active Directory and privilege escalation.
-  * Automated publishing of organized security notes from Obsidian.
-* **SEO and portfolio impact:**
-  * Earn a trusted backlink from the `gitbook.io` domain.
-  * Show a systematic approach to hiring managers and security teams.
+
+- **Goal:** Build a documented public security wiki and penetration testing methodology.
+- **Planned content:**
+  - Practical reconnaissance and web application security testing workflows.
+  - One-liners and payloads for Active Directory and privilege escalation.
+  - Automated publishing of organized security notes from Obsidian.
+- **SEO and portfolio impact:**
+  - Earn a trusted backlink from the `gitbook.io` domain.
+  - Show a systematic approach to hiring managers and security teams.
 
 ### 2. 🦊 GitLab: DevSecOps & Security Automation Hub
-* **Goal:** Demonstrate security automation and security testing integrated into CI/CD pipelines.
-* **Planned content:**
-  * Example repositories that run SAST (such as Semgrep/Trivy) and DAST (such as OWASP ZAP) in automated pipelines.
-  * Connect the Go tools (`Ph.Sh_url` and `Ph.Sh-Subdomain`) to multi-platform build pipelines for Linux, Windows, and macOS.
-* **SEO and portfolio impact:**
-  * Demonstrate an understanding of enterprise DevOps environments.
-  * Build trusted external links connecting technical accounts to the portfolio.
+
+- **Goal:** Demonstrate security automation and security testing integrated into CI/CD pipelines.
+- **Planned content:**
+  - Example repositories that run SAST (such as Semgrep/Trivy) and DAST (such as OWASP ZAP) in automated pipelines.
+  - Connect the Go tools (`Ph.Sh_url` and `Ph.Sh-Subdomain`) to multi-platform build pipelines for Linux, Windows, and macOS.
+- **SEO and portfolio impact:**
+  - Demonstrate an understanding of enterprise DevOps environments.
+  - Build trusted external links connecting technical accounts to the portfolio.
 
 ---
 
