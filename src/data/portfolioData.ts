@@ -428,7 +428,7 @@ export const volunteering: Volunteering[] = [
 /** Certifications in reverse-chronological order for the Credentials section. */
 export const certs: Certification[] = [
   {
-    name: "Huawei HCIA-Datacom V2.0 (H12-811) - 717/1000, first sitting",
+    name: "Huawei HCIA-Datacom V2.0 (H12-811)",
     date: "October 2026",
   },
   {
