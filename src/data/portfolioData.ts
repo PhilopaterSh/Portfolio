@@ -432,6 +432,10 @@ export const certs: Certification[] = [
     date: "October 2026",
   },
   {
+    name: "Fortinet NSE 4 Certified in FortiOS",
+    date: "August 2026",
+  },
+  {
     name: "Cybersecurity Leadership and Management (L1 & L2)",
     date: "May 2026",
   },
