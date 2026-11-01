@@ -283,7 +283,11 @@ The schema was expanded from a basic `Person` object to a complete `@graph` cont
 
 This roadmap outlines plans to strengthen **PhilopaterSh**'s security authority and SEO presence across additional platforms:
 
-### 1. 📘 GitBook: Offensive Security & Penetration Testing Playbook
+### 1. 📘 GitBook: Offensive Security & Penetration Testing Playbook - 🚧 In Progress
+
+- **Status:** Book content built (7 curated chapters + methodology playbook) at
+  [PhilopaterSh/Notes - gitbook/](https://github.com/PhilopaterSh/Notes/tree/main/gitbook)
+  (sensitive-data gate applied). Next: create the GitBook space and sync from this repo.
 
 - **Goal:** Build a documented public security wiki and penetration testing methodology.
 - **Planned content:**
