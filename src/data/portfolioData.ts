@@ -340,6 +340,21 @@ export const projects: Project[] = [
     link: "https://github.com/PhilopaterSh/Notes",
     isMajor: false,
   },
+  {
+    title: "HCIA-Datacom V2 Review — GitBook",
+    tag: "Networking / Study Platform",
+    desc:
+      "Published GitBook study companion for the Huawei HCIA-Datacom V2.0 exam (H12-811): a full question bank rendered as a filterable, chapter-scoped review app plus a structured online book.",
+    problem:
+      "Exam dumps are flat, unfiltered, and painful to study from - hundreds of mixed-domain questions with no progress tracking, no chapter scoping, and no clean way to review on any device.",
+    solution:
+      "Built a reproducible content pipeline (immutable raw transcript -> build script -> validated question bank -> render) producing a GitBook edition and a self-contained review app with per-chapter filtering and a custom engine profile.",
+    tools: ["GitBook", "JavaScript", "Node.js Build Pipeline", "Python", "Data Validation"],
+    outcome:
+      "A live, publicly available study platform with lint-gated builds and a mechanical validation standard - built once, reusable for any future exam dump with the same pipeline.",
+    link: "https://philopatersh.gitbook.io/hcia-datacom-v2",
+    isMajor: false,
+  },
 ];
 
 /** Published security articles; featured entries lead the grid. */
