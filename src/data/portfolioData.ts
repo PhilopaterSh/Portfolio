@@ -328,8 +328,7 @@ export const projects: Project[] = [
   {
     title: "Security Playbook - GitBook",
     tag: "Documentation / Knowledge Base",
-    desc:
-      "Public offensive-security playbook and methodology wiki: pentesting workflows, structured learning roadmaps, and open-source tooling documentation, curated and auto-published from my Obsidian notes vault.",
+    desc: "Public offensive-security playbook and methodology wiki: pentesting workflows, structured learning roadmaps, and open-source tooling documentation, curated and auto-published from my Obsidian notes vault.",
     problem:
       "Personal security notes scattered across a private vault don't demonstrate systematic methodology to hiring managers - and unstructured publishing risks leaking engagement data or client details.",
     solution:
@@ -343,8 +342,7 @@ export const projects: Project[] = [
   {
     title: "HCIA-Datacom V2 Review — GitBook",
     tag: "Networking / Study Platform",
-    desc:
-      "Published GitBook study companion for the Huawei HCIA-Datacom V2.0 exam (H12-811): a full question bank rendered as a filterable, chapter-scoped review app plus a structured online book.",
+    desc: "Published GitBook study companion for the Huawei HCIA-Datacom V2.0 exam (H12-811): a full question bank rendered as a filterable, chapter-scoped review app plus a structured online book.",
     problem:
       "Exam dumps are flat, unfiltered, and painful to study from - hundreds of mixed-domain questions with no progress tracking, no chapter scoping, and no clean way to review on any device.",
     solution:
