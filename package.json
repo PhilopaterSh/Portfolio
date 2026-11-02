@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build \u0026\u0026 node scripts/generate-route-html.mjs",
-    "build:with-cv": "npm run build \u0026\u0026 npm run generate:cv",
+    "build": "vite build && node scripts/generate-route-html.mjs",
+    "build:with-cv": "npm run build && npm run generate:cv",
     "generate:cv": "node scripts/generate-pdf.cjs",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -14,7 +14,9 @@
     "preview": "vite preview",
     "verify:preview": "node scripts/verify-preview.mjs",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:duplicates": "jscpd",
+    "check:knip": "knip"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -37,7 +39,9 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "jscpd": "^5.4.2",
     "jsdom": "^29.1.1",
+    "knip": "^6.44.1",
     "prettier": "^3.9.4",
     "puppeteer": "^25.1.0",
     "typescript": "~5.9.3",

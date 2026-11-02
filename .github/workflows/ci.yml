@@ -28,6 +28,12 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Check duplicate code
+        run: npm run check:duplicates
+
+      - name: Detect unused exports and dependencies
+        run: npm run check:knip
+
       - name: Check formatting
         run: npm run format:check
 
