@@ -133,7 +133,7 @@ const Resume = () => {
           <div className="ats-cv__langs">
             {languages.map((lang, i) => (
               <span key={i} className="ats-cv__lang">
-                <strong>{lang.name}</strong> — {lang.level}
+                <strong>{lang.name}</strong> - {lang.level}
               </span>
             ))}
           </div>

@@ -8,7 +8,7 @@ import ScrollToTop from "../components/ScrollToTop";
  * Below-fold sections and the footer load as lazy chunks: nothing under the
  * fold needs to execute before the hero paints, so the LCP critical path
  * carries only the shell. One Suspense boundary per region renders null while
- * chunks arrive — sections are content-visibility-hidden until scrolled anyway.
+ * chunks arrive - sections are content-visibility-hidden until scrolled anyway.
  */
 const ExperienceSection = lazy(() => import("../components/ExperienceSection"));
 const EducationSection = lazy(() => import("../components/EducationSection"));

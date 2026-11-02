@@ -92,7 +92,7 @@ export interface Writeup {
   desc: string;
   /** Topic tags rendered as chips on the card. */
   tags: string[];
-  /** Direct article URL — never a profile or listing page root. */
+  /** Direct article URL - never a profile or listing page root. */
   link: string;
   /** Featured cards render ahead of the rest in the grid. */
   featured?: boolean;
@@ -181,7 +181,7 @@ export const contact: ContactInfo = {
 };
 
 /** Month/year the generated PDF resume was last refreshed; shown in the hero. */
-export const resumeLastUpdated = "October 2026";
+export const resumeLastUpdated = "November 2026";
 
 /** Career timeline in reverse-chronological order for the Experience section. */
 export const experiences: Experience[] = [
@@ -374,7 +374,7 @@ export const writeups: Writeup[] = [
     featured: true,
   },
   {
-    title: "Linux User, Group & Permission Management — Practical Assignment Guide",
+    title: "Linux User, Group & Permission Management - Practical Assignment Guide",
     platform: "Medium",
     badge: "Security Guide",
     readTime: "5 min read",
@@ -390,7 +390,7 @@ export const writeups: Writeup[] = [
     featured: false,
   },
   {
-    title: "HCIA — Routing: Static Routing Lab on Huawei Routers",
+    title: "HCIA - Routing: Static Routing Lab on Huawei Routers",
     platform: "Medium / Huawei HCIA",
     badge: "Network Lab",
     readTime: "Article",
