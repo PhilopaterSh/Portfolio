@@ -11,6 +11,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { build as esbuildBuild } from "esbuild";
+import { format as prettierFormat, resolveConfig as prettierResolveConfig } from "prettier";
 
 const ROOT = resolve(import.meta.dirname, "..");
 const OUT = join(ROOT, "resume.json");
@@ -179,7 +180,13 @@ function buildResume(data) {
 
 const data = await loadSiteData();
 const resume = buildResume(data);
-const serialized = JSON.stringify(resume, null, 2) + "\n";
+// Emit in the repo's Prettier style so the formatting gate and the sync gate
+// validate the same bytes.
+const prettierConfig = (await prettierResolveConfig(join(ROOT, "package.json"))) ?? {};
+const serialized = await prettierFormat(JSON.stringify(resume, null, 2), {
+  ...prettierConfig,
+  parser: "json",
+});
 
 const { validate: rawValidate } = await import("@jsonresume/schema");
 // The official validator exposes a callback API: validate(resume, cb(errors, valid)).

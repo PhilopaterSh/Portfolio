@@ -47,9 +47,7 @@
     {
       "name": "Classera",
       "position": "Penetration Tester Trainee",
-      "highlights": [
-        "Professional penetration testing training track at Classera."
-      ],
+      "highlights": ["Professional penetration testing training track at Classera."],
       "startDate": "2026-10-01"
     },
     {
@@ -98,17 +96,13 @@
     {
       "name": "Mostaql.com (مستقل)",
       "position": "Freelancer",
-      "highlights": [
-        "Active freelancer on the Mostaql marketplace."
-      ],
+      "highlights": ["Active freelancer on the Mostaql marketplace."],
       "startDate": "2024-12-01"
     },
     {
       "name": "Khamsat.com (خمسات)",
       "position": "Freelancer",
-      "highlights": [
-        "Active freelancer on the Khamsat marketplace."
-      ],
+      "highlights": ["Active freelancer on the Khamsat marketplace."],
       "startDate": "2024-10-01"
     },
     {
@@ -246,12 +240,7 @@
         "Problem: Manual end-to-end penetration testing workflows are time-consuming and hard to reproduce consistently across engagements.",
         "Solution: Built an autonomous agent framework on Python, LangChain, and local LLMs that parses dynamic target responses, executes contextual attack workflows, and generates security reports offline."
       ],
-      "keywords": [
-        "Python",
-        "LangChain",
-        "Local LLMs",
-        "Autonomous Agents"
-      ],
+      "keywords": ["Python", "LangChain", "Local LLMs", "Autonomous Agents"],
       "url": "https://github.com/PhilopaterSh/Argus-Digilians"
     },
     {
@@ -261,12 +250,7 @@
         "Problem: Existing URL extraction tools were often slow and missed endpoints by not integrating enough data sources, which hindered the reconnaissance phase of security assessments.",
         "Solution: Developed a high-performance, concurrent tool in Go that aggregates data from multiple passive sources and applies intelligent filtering to extract unique URLs efficiently."
       ],
-      "keywords": [
-        "Go (Golang)",
-        "Concurrency",
-        "HTTP APIs",
-        "Regex"
-      ],
+      "keywords": ["Go (Golang)", "Concurrency", "HTTP APIs", "Regex"],
       "url": "https://github.com/PhilopaterSh/Ph.Sh_url"
     },
     {
@@ -276,12 +260,7 @@
         "Problem: Fragmented subdomain data across different providers made it difficult to get a complete view of a target's attack surface during the discovery phase.",
         "Solution: Built a Go-based tool that integrates various passive API sources with active concurrent discovery to provide a comprehensive and accurate list of subdomains."
       ],
-      "keywords": [
-        "Go",
-        "JSON APIs",
-        "Parallel Processing",
-        "DNS Recon"
-      ],
+      "keywords": ["Go", "JSON APIs", "Parallel Processing", "DNS Recon"],
       "url": "https://github.com/PhilopaterSh/Ph.Sh-Subdomain"
     },
     {
@@ -291,13 +270,7 @@
         "Problem: Exam dumps are flat, unfiltered, and painful to study from - hundreds of mixed-domain questions with no progress tracking, no chapter scoping, and no clean way to review on any device.",
         "Solution: Built a reproducible content pipeline (immutable raw transcript -> build script -> validated question bank -> render) producing a GitBook edition and a self-contained review app with per-chapter filtering and a custom engine profile."
       ],
-      "keywords": [
-        "GitBook",
-        "JavaScript",
-        "Node.js Build Pipeline",
-        "Python",
-        "Data Validation"
-      ],
+      "keywords": ["GitBook", "JavaScript", "Node.js Build Pipeline", "Python", "Data Validation"],
       "url": "https://philopatersh.gitbook.io/hcia-datacom-v2"
     }
   ],
