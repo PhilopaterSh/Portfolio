@@ -326,21 +326,7 @@ export const projects: Project[] = [
     isMajor: false,
   },
   {
-    title: "Security Playbook - GitBook",
-    tag: "Documentation / Knowledge Base",
-    desc: "Public offensive-security playbook and methodology wiki: pentesting workflows, structured learning roadmaps, and open-source tooling documentation, curated and auto-published from my Obsidian notes vault.",
-    problem:
-      "Personal security notes scattered across a private vault don't demonstrate systematic methodology to hiring managers - and unstructured publishing risks leaking engagement data or client details.",
-    solution:
-      "Curated a public GitBook edition from the vault with an automated sensitive-data gate (pattern scan for keys/credentials/client identifiers before publish), a structured SUMMARY table of contents, and hard separation between public methodology and private engagement notes.",
-    tools: ["GitBook", "Obsidian", "Markdown", "GitHub Sync", "Content Curation"],
-    outcome:
-      "Public methodology wiki demonstrating systematic documentation habits and secure content-handling discipline; grows automatically with every vault sync.",
-    link: "https://github.com/PhilopaterSh/Notes",
-    isMajor: false,
-  },
-  {
-    title: "HCIA-Datacom V2 Review — GitBook",
+    title: "HCIA-Datacom V2 Review - GitBook",
     tag: "Networking / Study Platform",
     desc: "Published GitBook study companion for the Huawei HCIA-Datacom V2.0 exam (H12-811): a full question bank rendered as a filterable, chapter-scoped review app plus a structured online book.",
     problem:
