@@ -1,12 +1,8 @@
 import { useEffect } from "react";
 import { m } from "framer-motion";
+import { itemVariants } from "../animations/itemVariants";
 import SectionHeader from "./SectionHeader";
 import { certs } from "../data/portfolioData";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 /** Certifications list plus the Credly badge embed, loaded lazily and safe when the embed fails. */
 const CertificationsSection = () => {

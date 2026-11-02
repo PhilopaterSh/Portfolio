@@ -1,13 +1,9 @@
 import { useState, useEffect } from "react";
 import { m, useReducedMotion } from "framer-motion";
+import { itemVariants } from "../animations/itemVariants";
 import SectionHeader from "./SectionHeader";
 import { testimonialImages } from "../data/portfolioData";
 import { imageDimensions } from "../assets";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 /** Auto-advancing testimonial slider with pause/resume, reduced-motion support, and keyboard-accessible pagination dots. */
 const TestimonialsSection = () => {

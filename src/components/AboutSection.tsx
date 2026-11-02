@@ -1,11 +1,7 @@
 import { m } from "framer-motion";
+import { itemVariants } from "../animations/itemVariants";
 import SectionHeader from "./SectionHeader";
 import { about } from "../data/portfolioData";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 /** Profile section: field of specialization, intro copy, and career objective from `about`. */
 const AboutSection = () => {

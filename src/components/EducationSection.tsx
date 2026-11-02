@@ -1,12 +1,8 @@
 import { m } from "framer-motion";
+import { itemVariants } from "../animations/itemVariants";
 import SectionHeader from "./SectionHeader";
 import { education } from "../data/portfolioData";
 import { imageDimensions } from "../assets";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 /** Education section rendering the single `education` record with its logo. */
 const EducationSection = () => {

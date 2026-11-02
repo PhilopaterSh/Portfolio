@@ -1,11 +1,7 @@
 import { m } from "framer-motion";
+import { itemVariants } from "../animations/itemVariants";
 import SectionHeader from "./SectionHeader";
 import { technicalSkills, softSkills } from "../data/portfolioData";
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 /** Skills section: grouped technical skills and soft-skill tags in two columns. */
 const SkillsSection = () => {
