@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { m } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { certs } from "../data/portfolioData";
 

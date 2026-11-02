@@ -1,5 +1,5 @@
 import { m } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { education } from "../data/portfolioData";
 import { imageDimensions } from "../assets";

@@ -1,16 +1,8 @@
 import { m } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { containerVariants, itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { writeups } from "../data/portfolioData";
 import type { Writeup } from "../data/portfolioData";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
 
 const WriteupCard = ({ w }: { w: Writeup }) => (
   <m.article

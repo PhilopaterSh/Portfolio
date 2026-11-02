@@ -1,18 +1,10 @@
 import { m } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { containerVariants, itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { experiences } from "../data/portfolioData";
 import type { Experience } from "../data/portfolioData";
 import { hackeroneLogo, bugcrowdLogo } from "../data/portfolioData";
 import { imageDimensions } from "../assets";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
 
 const ExperienceCard = ({ exp }: { exp: Experience }) => (
   <m.div className="exp-card" variants={itemVariants} whileHover={{ y: -5 }}>

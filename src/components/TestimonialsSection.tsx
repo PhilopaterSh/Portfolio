@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { m, useReducedMotion } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { testimonialImages } from "../data/portfolioData";
 import { imageDimensions } from "../assets";

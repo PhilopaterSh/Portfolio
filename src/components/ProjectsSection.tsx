@@ -1,16 +1,8 @@
 import { m } from "framer-motion";
-import { itemVariants } from "../animations/itemVariants";
+import { containerVariants, itemVariants } from "../animations/variants";
 import SectionHeader from "./SectionHeader";
 import { projects } from "../data/portfolioData";
 import type { Project } from "../data/portfolioData";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
 
 const ProjectCard = ({ p }: { p: Project }) => (
   <m.div
