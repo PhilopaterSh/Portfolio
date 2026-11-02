@@ -433,7 +433,7 @@ export const volunteering: Volunteering[] = [
   {
     role: "Technical Mentor",
     organization: "Digital Egypt Cubs Initiative (DECI)",
-    period: "2024 - Present",
+    period: "2024 - 2025",
     image: deciLogo,
     desc: "Volunteered to guide and mentor students aged 12-17 in the fundamentals of cybersecurity and ethical hacking, helping them build a strong foundation in digital safety.",
   },
