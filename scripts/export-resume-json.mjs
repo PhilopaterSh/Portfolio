@@ -71,7 +71,8 @@ function toIsoDate(value, fallbackDay) {
   const [monthName, year] = value.split(" ");
   const month = MONTHS[monthName.toLowerCase()];
   if (month) return `${year}-${month}-${fallbackDay}`;
-  return `${monthName}-01-01`; // bare year
+  // Bare year: apply the month/day boundary that matches the range side.
+  return `${monthName}-${fallbackDay}-${fallbackDay === "12" ? "31" : "01"}`;
 }
 
 /** Loads the named exports of portfolioData.ts via an esbuild temp bundle. */
@@ -134,13 +135,21 @@ function buildResume(data) {
         { network: "WhatsApp", username: "PhilopaterSh", url: contact.whatsapp },
       ],
     },
-    work: experiences.map((e) => ({
-      name: e.company,
-      position: e.role,
-      location: e.location ?? undefined,
-      highlights: e.highlights,
-      ...parsePeriod(e.period),
-    })),
+    work: experiences.map((e) => {
+      // Single-month periods ("Sep 2022") are finite engagements, not ongoing
+      // ones: emit an identical start/end so consumers don't render "Present".
+      const singleMonth = !e.period.includes("-") && !/present/i.test(e.period);
+      const dates = singleMonth
+        ? { startDate: toIsoDate(e.period.trim(), "01"), endDate: toIsoDate(e.period.trim(), "01") }
+        : parsePeriod(e.period);
+      return {
+        name: e.company,
+        position: e.role,
+        location: e.location ?? undefined,
+        highlights: e.highlights,
+        ...dates,
+      };
+    }),
     volunteer: volunteering.map((v) => ({
       organization: v.organization,
       position: v.role,
