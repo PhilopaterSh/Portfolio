@@ -18,7 +18,10 @@
     "check:duplicates": "jscpd",
     "check:knip": "knip",
     "export:resume": "node scripts/export-resume-json.mjs",
-    "check:resume": "node scripts/export-resume-json.mjs --check"
+    "check:resume": "node scripts/export-resume-json.mjs --check",
+    "build:cv": "node cv-build/build_cv.mjs",
+    "build:cv:onepage": "node cv-build/build_cv.mjs --onepage",
+    "verify:cv": "node cv-build/verify_cv.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -36,6 +39,8 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.2.0",
+    "adm-zip": "^0.6.1",
+    "docx": "^9.15.1",
     "esbuild": "^0.28.2",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",

@@ -27,3 +27,4 @@ dist-ssr
 
 # graphify code-graph artifacts
 graphify-out/
+cv-build/cv.private.json

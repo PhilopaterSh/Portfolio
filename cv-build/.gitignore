@@ -1,0 +1,4 @@
+# Local-only confidential inputs and build artifacts (never commit).
+cv.private.json
+staging-*
+*.pdf
