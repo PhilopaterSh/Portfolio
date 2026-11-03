@@ -27,8 +27,7 @@ const PRIVATE_PATH = path.join(CVDIR, "cv.private.json");
 
 const ONEPAGE = process.argv.includes("--onepage");
 const OUT_ARG = process.argv.slice(2).find((a) => !a.startsWith("--"));
-const OUT =
-  OUT_ARG || path.join(CVDIR, ONEPAGE ? "staging-onepage.docx" : "staging-master.docx");
+const OUT = OUT_ARG || path.join(CVDIR, ONEPAGE ? "staging-onepage.docx" : "staging-master.docx");
 const RESUME_PATH = path.join(ROOT, "resume.json");
 
 const resume = JSON.parse(fs.readFileSync(RESUME_PATH, "utf8"));
