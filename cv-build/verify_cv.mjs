@@ -111,10 +111,19 @@ const candidates = [
 ];
 let soffice = null;
 for (const c of candidates) {
+  // NOTE: never run "soffice --version" on Windows - it prints a banner and
+  // waits for Enter, leaving orphaned soffice.bin processes. An existence
+  // check is enough here (the actual convert call below is real headless).
   try {
-    execFileSync(c, ["--version"], { stdio: "pipe", timeout: 20000 });
-    soffice = c;
-    break;
+    if (c === "soffice") {
+      execFileSync("where.exe", ["soffice"], { stdio: "pipe", timeout: 10000 });
+      soffice = c;
+      break;
+    }
+    if (fs.existsSync(c)) {
+      soffice = c;
+      break;
+    }
   } catch {
     // try next candidate
   }
