@@ -22,11 +22,7 @@ const Hero = () => {
           </h1>
           <h2 className="hero-subtitle">
             <Typewriter
-              texts={[
-                "Junior Penetration Tester",
-                "Bug Bounty Hunter",
-                "Security Researcher",
-              ]}
+              texts={["Junior Penetration Tester", "Bug Bounty Hunter", "Security Researcher"]}
               delay={80}
             />
           </h2>

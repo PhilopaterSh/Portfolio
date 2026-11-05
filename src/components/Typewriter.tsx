@@ -13,10 +13,7 @@ interface TypewriterProps {
  * With `texts`, cycles: type -> hold 2s -> delete -> next phrase.
  */
 const Typewriter = ({ text = "", texts, delay = 100 }: TypewriterProps) => {
-  const phrases = useMemo(
-    () => (texts && texts.length ? texts : [text]),
-    [texts, text]
-  );
+  const phrases = useMemo(() => (texts && texts.length ? texts : [text]), [texts, text]);
   const [display, setDisplay] = useState("");
   const [phraseIdx, setPhraseIdx] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -34,9 +31,8 @@ const Typewriter = ({ text = "", texts, delay = 100 }: TypewriterProps) => {
       setPhraseIdx((prev) => (prev + 1) % phrases.length);
     } else {
       timeout = setTimeout(
-        () =>
-          setDisplay(current.substring(0, display.length + (deleting ? -1 : 1))),
-        deleting ? delay / 2 : delay
+        () => setDisplay(current.substring(0, display.length + (deleting ? -1 : 1))),
+        deleting ? delay / 2 : delay,
       );
     }
     return () => clearTimeout(timeout);
