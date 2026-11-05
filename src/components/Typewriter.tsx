@@ -11,6 +11,7 @@ interface TypewriterProps {
 
 /** Types phrases character by character with a blinking cursor block.
  * With `texts`, cycles: type -> hold 2s -> delete -> next phrase.
+ * All state updates are deferred to timer callbacks (no sync setState in effect).
  */
 const Typewriter = ({ text = "", texts, delay = 100 }: TypewriterProps) => {
   const phrases = useMemo(() => (texts && texts.length ? texts : [text]), [texts, text]);
@@ -20,21 +21,26 @@ const Typewriter = ({ text = "", texts, delay = 100 }: TypewriterProps) => {
 
   useEffect(() => {
     const current = phrases[phraseIdx % phrases.length];
-    let timeout: ReturnType<typeof setTimeout> | undefined;
+    let nextDelay: number;
+    let advance: () => void;
 
     if (!deleting && display === current) {
       // Full phrase typed: hold, then start deleting.
-      timeout = setTimeout(() => setDeleting(true), 2000);
+      nextDelay = 2000;
+      advance = () => setDeleting(true);
     } else if (deleting && display === "") {
       // Fully deleted: advance to the next phrase.
-      setDeleting(false);
-      setPhraseIdx((prev) => (prev + 1) % phrases.length);
+      nextDelay = 150;
+      advance = () => {
+        setDeleting(false);
+        setPhraseIdx((prev) => (prev + 1) % phrases.length);
+      };
     } else {
-      timeout = setTimeout(
-        () => setDisplay(current.substring(0, display.length + (deleting ? -1 : 1))),
-        deleting ? delay / 2 : delay,
-      );
+      nextDelay = deleting ? delay / 2 : delay;
+      advance = () => setDisplay(current.substring(0, display.length + (deleting ? -1 : 1)));
     }
+
+    const timeout = setTimeout(advance, nextDelay);
     return () => clearTimeout(timeout);
   }, [display, deleting, phraseIdx, phrases, delay]);
 
