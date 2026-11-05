@@ -27,7 +27,7 @@ const CertificationsSection = () => {
       viewport={{ once: true, margin: "-100px" }}
       variants={itemVariants}
     >
-      <SectionHeader num="07" title="Certifications" />
+      <SectionHeader num="08" title="Certifications" />
 
       <div className="credly-badges-container">
         <div
@@ -53,6 +53,17 @@ const CertificationsSection = () => {
           >
             <span className="cert-name">{c.name}</span>
             <span className="cert-date">{c.date}</span>
+            {c.verify && (
+              <a
+                className="cert-verify"
+                href={c.verify}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Verify ${c.name}`}
+              >
+                Verify &#8599;
+              </a>
+            )}
           </m.div>
         ))}
       </div>

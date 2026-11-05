@@ -36,9 +36,9 @@ const Home = () => {
           <ProjectsSection />
           <WriteupsSection />
           <TestimonialsSection />
+          <SkillsSection />
           <CertificationsSection />
           <VolunteeringSection />
-          <SkillsSection />
           <LanguagesSection />
         </Suspense>
       </main>

@@ -1,32 +1,50 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 interface TypewriterProps {
-  text: string;
+  /** Single text to type once (used when `texts` is not provided). */
+  text?: string;
+  /** Phrases to type, hold, delete, and cycle through forever. */
+  texts?: string[];
+  /** Milliseconds between characters. */
   delay?: number;
 }
 
-/** Types `text` one character at a time and keeps a blinking cursor block.
- *
- * @param text - String to reveal character by character.
- * @param delay - Milliseconds between characters.
+/** Types phrases character by character with a blinking cursor block.
+ * With `texts`, cycles: type -> hold 2s -> delete -> next phrase.
  */
-const Typewriter = ({ text, delay = 100 }: TypewriterProps) => {
-  const [currentText, setCurrentText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Typewriter = ({ text = "", texts, delay = 100 }: TypewriterProps) => {
+  const phrases = useMemo(
+    () => (texts && texts.length ? texts : [text]),
+    [texts, text]
+  );
+  const [display, setDisplay] = useState("");
+  const [phraseIdx, setPhraseIdx] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText((prevText) => prevText + text[currentIndex]);
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      }, delay);
-      return () => clearTimeout(timeout);
+    const current = phrases[phraseIdx % phrases.length];
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    if (!deleting && display === current) {
+      // Full phrase typed: hold, then start deleting.
+      timeout = setTimeout(() => setDeleting(true), 2000);
+    } else if (deleting && display === "") {
+      // Fully deleted: advance to the next phrase.
+      setDeleting(false);
+      setPhraseIdx((prev) => (prev + 1) % phrases.length);
+    } else {
+      timeout = setTimeout(
+        () =>
+          setDisplay(current.substring(0, display.length + (deleting ? -1 : 1))),
+        deleting ? delay / 2 : delay
+      );
     }
-  }, [currentIndex, delay, text]);
+    return () => clearTimeout(timeout);
+  }, [display, deleting, phraseIdx, phrases, delay]);
 
   return (
     <span>
-      {currentText}
+      {display}
       <span className="typewriter-cursor">|</span>
     </span>
   );

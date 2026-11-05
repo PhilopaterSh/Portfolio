@@ -118,6 +118,8 @@ export interface Certification {
   name: string;
   /** Issue date, e.g. "May 2026". */
   date: string;
+  /** Optional public verification URL (Credly badge or vendor portal). */
+  verify?: string;
 }
 
 /** A grouped skills block rendered in the Skills section. */
@@ -444,10 +446,12 @@ export const certs: Certification[] = [
   {
     name: "Huawei HCIA-Datacom V2.0 (H12-811)",
     date: "October 2026",
+    verify: "https://e.huawei.com/en/talent/#/certification/cert-verification",
   },
   {
     name: "Fortinet NSE 4 Certified in FortiOS",
     date: "August 2026",
+    verify: "https://www.credly.com/badges/a0f914de-2c44-441c-a89b-c8ea3145f37a/public_url",
   },
   {
     name: "Cybersecurity Leadership and Management (L1 & L2)",
@@ -461,7 +465,11 @@ export const certs: Certification[] = [
     name: "Information Gathering - Web Edition (HTB)",
     date: "May 2026",
   },
-  { name: "Google Cybersecurity Professional Certificate", date: "April 2026" },
+  {
+    name: "Google Cybersecurity Professional Certificate",
+    date: "April 2026",
+    verify: "https://www.credly.com/badges/c6090422-235d-46c0-afa1-c4e883cdd29c/public_url",
+  },
   { name: "Malware Analysis & Reverse Engineering", date: "Sep 2024" },
   {
     name: "Vulnerability Analyst / Pentester (DEPI)",

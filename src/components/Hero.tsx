@@ -21,7 +21,14 @@ const Hero = () => {
             <span className="hero-alias"> (PhilopaterSh)</span>
           </h1>
           <h2 className="hero-subtitle">
-            <Typewriter text="Junior Penetration Tester" delay={80} />
+            <Typewriter
+              texts={[
+                "Junior Penetration Tester",
+                "Bug Bounty Hunter",
+                "Security Researcher",
+              ]}
+              delay={80}
+            />
           </h2>
           <p className="hero-description">
             Information Technology graduate and{" "}

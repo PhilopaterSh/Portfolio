@@ -637,6 +637,22 @@
   gap: 14px;
 }
 
+.cert-verify {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.cert-verify:hover {
+  opacity: 0.75;
+}
+
 .cert-item-v2:hover {
   border-color: var(--accent-green);
 }
